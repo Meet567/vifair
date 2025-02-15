@@ -5,7 +5,7 @@
     <title>Vibrant India Fair</title>
     <?php
       // Include common head section
-     include_once "Assets/inner_page/head_link.php";
+     include_once "include/head_link.php";
     ?>
 </head>
 
@@ -35,7 +35,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="#">About Us</a>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="about.php">About Us</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About Vibrant

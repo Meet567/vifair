@@ -8,7 +8,7 @@
 <body>
 
 <?php
-include "Assets/inner_page/header.php";
+include "include/header.php";
  ?>
 
  <section>

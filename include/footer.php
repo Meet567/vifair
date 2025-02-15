@@ -9,7 +9,7 @@
     
   <?php
       // Include common head section
-     include_once "Assets/inner_page/footer_link.php";
+     include_once "include/footer_link.php";
     ?>
 </body>
 </html>

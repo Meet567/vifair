@@ -21,6 +21,7 @@ ini_set('display_errors', 1);
     <script src="Assets/CSS/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 
     <!-- Main Js Local File -->
+     <script src="Assets/Js/data.js"></script>
     <script src="Assets/Js/Main.js"></script>
 <body>
 </html>
