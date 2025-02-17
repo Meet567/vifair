@@ -1,13 +1,13 @@
 /* ----- Common Css ----- */
-:root{
-    --primary-color:#277474;
-    --secondary-color:#CCE9E9;
-    --dark-color:#000;
-    --light-color:#fff;
+:root {
+  --primary-color: #277474;
+  --secondary-color: #cce9e9;
+  --dark-color: #000;
+  --light-color: #fff;
 }
-@font-face{
-    font-family: myFont;
-    src: url("../Fonts/Poppins-Light.ttf");
+@font-face {
+  font-family: myFont;
+  src: url("../Fonts/Poppins-Light.ttf");
 }
 
 body{
