@@ -1,5 +1,4 @@
 // Header Toggle Button
-
 function toggleMenu() {
   var nav = document.getElementById("navLinks");
   var toggleButton = document.getElementById("menuToggle");
@@ -20,10 +19,11 @@ function generateSegments(data, containerId) {
   container.innerHTML = data
     .map(
       (item) => `
-        <div class="visitor-segmentation-segment">
-          <h3 class="visitor-segmentation-count" data-count="${item.count}">0%</h3>
-          <p class"visitor-segmentation-text">${item.name}</p>
-        </div>`
+       <div class="visitor-segmentation-segment" data-aos="zoom-in" data-aos-duration="1000">
+  <h3 class="visitor-segmentation-count" data-count="${item.count}">0%</h3>
+  <p class="visitor-segmentation-text">${item.name}</p>
+</div>
+        `
     )
     .join("");
 }
@@ -60,3 +60,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }, stepTime);
   }
 });
+// about segment js  ends
+
+// product segament js start
+
+// Get the product container
+const productContainer = document.getElementById("product-container");
+
+// Generate rows dynamically
+let rowHtml = "";
+for (let i = 0; i < products.length; i += 4) {
+  rowHtml += `<div class="row justify-content-center">`; // Centering row
+  rowHtml += products
+    .slice(i, i + 4)
+    .map(
+      (product) => `
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+      <div class="product-box" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="product-img-box">
+          <img src="${product.src}" alt="${product.title}" class="img-fluid" />
+        </div>
+        <div class="product-title">${product.title}</div>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+  rowHtml += `</div>`;
+}
+
+productContainer.innerHTML = rowHtml;
+// product segament img js end
+
+// Initialize AOS
+AOS.init();

@@ -1,26 +1,23 @@
-<?php
-include 'include/header.php';
- ?>
+  <?php
+  include 'include/header.php';
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Vibrant India Fair</title>
+
 </head>
+
+
   <body>
-    <!-- ========Banner section is start======== -->
-     <section class="about-banner-section">
-      <div class="container-fluide about-banner">
-       <img src="Assets/Image/about-banner.jpeg" alt="" />
-      </div>
-     </section>
-      <!--=========== Exhibit section is start============ -->
-    <section class="exhibit mt-3">
-      <div class="container ">
-        <div class="exhibit-under-line ">
-        <h3 class="exhibit-text-line">WHY <span class="secondary-text">EXHIBIT</span></h3>
-    </div>
+    
+
+    <section class="exhibit">
+      <div class="container">
+        <h3>WHY <span class="secondary-text"></span></h3>
+        <hr />
         <p class="comman-text">
           VIBRANT INDIA 2025, offers the perfect platform for any international
           & Indian complete home ware manufacturers, exporters, importers or
@@ -28,10 +25,12 @@ include 'include/header.php';
           audience comprising dealers, distributors, wholesalers, retailer,
           corporate & Institutional buyers from across the country.
         </p>
-        
-        <div class="row exhibit-benifit d-flex align-items-center ">
-         <div
-            class="exhibit-benifit-detail col-xl-8 col-lg-8 col-md-6 col-sm-12"
+        <div class="row exhibit-benifit d-flex align-items-center">
+          <div class="exhibit-benifit-img col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <img src="/1.jpg" alt="" />
+          </div>
+          <div
+            class="exhibit-benifit-detail col-xl-7 col-lg-7 col-md-7 col-sm-12"
           >
             <h3>EXHIBITOR BENEFITS</h3>
             <ul class="exhibit-ul">
@@ -97,7 +96,6 @@ include 'include/header.php';
         </div>
       </div>
     </section>
-    <!--========== visitor section is start========== -->
     <section class="visitor mb-3">
       <div class="container">
         <div class="visit-under-line">
@@ -133,11 +131,14 @@ include 'include/header.php';
               categories.
             </p>
           </div>
-         
+          <div
+            class="col-xl-6 col-lg-6 col-md-12 col-sm-12 india-map-img text-center"
+          >
+            <img src="/India-Mep.webp" alt="" />
+          </div>
         </div>
       </div>
     </section>
-     <!-- =========visitor-business-segmentation is start======== -->
     <section class="visitor-segmentation">
       <h2 class="visitor-segmentation-title">VISITOR BUSINESS PROFILE</h2>
       <div class="visitor-segmentation-segments" id="businessProfile"></div>
@@ -147,12 +148,56 @@ include 'include/header.php';
       <h2 class="visitor-segmentation-title">VISITORS JOB PROFILE</h2>
       <div class="visitor-segmentation-segments" id="jobProfile"></div>
     </section>
-  <?php
-include "include/footer.php";
- ?>
-  <?php
-      // Include common head section
-     include_once "include/footer_link.php";
+
+    <!-- Exhibition Calendar start -->
+    <section class="calendar-section py-5">
+      <div class="container">
+        <h1 class="calendar-heading mb-4 text-center">Exhibition Calendar</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="calendar-card">
+              <div class="event-img">
+                <img src="Assets/Image/Exhibition calendar/delhi.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="calendar-event">
+                <span>05</span>
+                <span>06</span>
+                <span>07</span>
+                <span>July</span>
+                <span>2025</span>
+              </div>
+              <div class="calendar-txt">
+                <h3>Yashobhoomi, Dwarka</h3>
+                <div class="event-location"><span><i
+                      class="fa-solid fa-location-dot event-icon"></i></span>New Delhi</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="calendar-card">
+              <div class="event-img">
+                <img src="Assets/Image/Exhibition calendar/chennai.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="calendar-event">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+                <span>August</span>
+                <span>2025</span>
+              </div>
+              <div class="calendar-txt">
+                <h3>Chennai Trade Center, Chennai</h3>
+                <div class="event-location"><span><i
+                      class="fa-solid fa-location-dot event-icon"></i></span>Tamil Nadu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Exhibition Calendar end -->
+    <?php
+    include "include/footer.php";
     ?>
+
   </body>
-</html>
