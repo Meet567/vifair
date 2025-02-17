@@ -9,4 +9,68 @@
     font-family: myFont;
     src: url("../Fonts/Poppins-Light.ttf");
 }
+
+body{
+    font-family: myFont !important;
+}
+.section-margin{
+    margin: 50px 0px;
+}
+.primary-heading{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: myFont;
+    text-align: center;
+    padding: 10px;
+}
+
+ .primary-title{
+   font-size: 25px;
+   font-weight: 500;
+   font-family: myFont;
+   color: var(--dark-color);
+ }
+
+ /* Primary Button  */
+ .primary-btn-box{
+    padding: 15px;
+ }
+ .primary-btn-box .primary-btn{
+   text-decoration: none;
+   position: relative;
+   margin: auto;
+   padding: 11px 22px;
+   transition: all 0.2s ease;
+   color: var(--dark-color);
+ }
+ .primary-btn::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   border-radius: 28px;
+   background-color: var(--light-color); 
+   width: 45px;
+   height: 45px;
+   transition: all 0.3s ease;
+}
+.primary-btn span {
+  position: relative;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 900;
+  vertical-align: middle;
+}
+.primary-btn:hover::before {
+  width: 100%;
+  background-color: var(--light-color);
+}
+.primary-btn:hover span{
+    color: var(--primary-color);
+}
+.primary-btn:active {
+  transform: scale(0.96);
+}
+/* End Primary Button */
 /* ----- End Common CSS ----- */

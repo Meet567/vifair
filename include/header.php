@@ -17,7 +17,7 @@
                 <div class="header-logo">
                     <div class="logo-box">
                         <picture>
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="Assets/Image/Vibrant-India-Mumbai.png" alt="">
                             </a>
                         </picture>

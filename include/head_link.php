@@ -9,7 +9,7 @@ ini_set('display_errors', 1);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <!-- <title>My Website</title> -->
 
      <!--Fab Icon -->
     <link rel="icon" type="image/png" href="Assets/Image/Icon/Fabicon.png" />
