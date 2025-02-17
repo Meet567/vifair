@@ -4,13 +4,13 @@
 <head>
     <title>Vibrant India Fair</title>
     <?php
-      // Include common head section
-     include_once "include/head_link.php";
+    // Include common head section
+    include_once "include/head_link.php";
     ?>
 </head>
 
 <body>
-     <!-- Headr Section -->
+    <!-- Headr Section -->
     <header>
         <div class="main">
             <div class="navbar-main">
@@ -155,7 +155,7 @@
     </header>
     <!-- End Header Section -->
 
-  
+
 </body>
 
 </html>
