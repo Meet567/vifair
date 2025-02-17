@@ -7,17 +7,20 @@ include 'include/header.php';
 
 <head>
     <title>Vibrant India Fair</title>
-
 </head>
-
-
   <body>
-    
-
-    <section class="exhibit">
-      <div class="container">
-        <h3>WHY <span class="secondary-text"></span></h3>
-        <hr />
+    <!-- ========Banner section is start======== -->
+     <section class="about-banner-section">
+      <div class="container-fluide about-banner">
+       <img src="Assets/Image/about-banner.jpeg" alt="" />
+      </div>
+     </section>
+      <!--=========== Exhibit section is start============ -->
+    <section class="exhibit mt-3">
+      <div class="container ">
+        <div class="exhibit-under-line ">
+        <h3 class="exhibit-text-line">WHY <span class="secondary-text">EXHIBIT</span></h3>
+    </div>
         <p class="comman-text">
           VIBRANT INDIA 2025, offers the perfect platform for any international
           & Indian complete home ware manufacturers, exporters, importers or
@@ -25,12 +28,10 @@ include 'include/header.php';
           audience comprising dealers, distributors, wholesalers, retailer,
           corporate & Institutional buyers from across the country.
         </p>
-        <div class="row exhibit-benifit d-flex align-items-center">
-          <div class="exhibit-benifit-img col-xl-5 col-lg-5 col-md-5 col-sm-12">
-            <img src="/1.jpg" alt="" />
-          </div>
-          <div
-            class="exhibit-benifit-detail col-xl-7 col-lg-7 col-md-7 col-sm-12"
+        
+        <div class="row exhibit-benifit d-flex align-items-center ">
+         <div
+            class="exhibit-benifit-detail col-xl-8 col-lg-8 col-md-6 col-sm-12"
           >
             <h3>EXHIBITOR BENEFITS</h3>
             <ul class="exhibit-ul">
@@ -52,15 +53,19 @@ include 'include/header.php';
                 Participation from giant housewares, hotelware & home appliances
                 industries players.
               </li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <ul class="exhibit-ul">
-            <li class="exhibit-li comman-text">
+              <li class="exhibit-li comman-text">
               Opportunity to present your products innovations and new range to
               trade buyer from across the country within just 3 days.
             </li>
+            </ul>
+          </div> 
+        <div class="stall-visit col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <img src="Assets/Image/visit-stall.webp" alt="" />
+          </div>
+         
+        </div>
+        <div>
+          <ul class="exhibit-ul">           
             <li class="exhibit-li comman-text">
               Connects you with new dealers, distributors, wholesalers,
               retailers, corporate & Institutional buyers besides nurturing the
@@ -92,12 +97,19 @@ include 'include/header.php';
         </div>
       </div>
     </section>
+    <!--========== visitor section is start========== -->
     <section class="visitor mb-3">
       <div class="container">
-        <h3>VISITOR <span class="secondary-text"> PROFILE</span></h3>
-        <hr />
-        <div class="row d-flex align-items-center">
-          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="visit-under-line">
+        <h3 class="visit-text-line ">VISITOR <span class="secondary-text"> PROFILE</span></h3>
+        </div>
+        <div class="row d-flex align-items-center mt-4">
+         <div
+            class="col-xl-6 col-lg-6 col-md-12 col-sm-12 india-map-img text-center"
+          >
+            <img src="Assets/Image/visit-India-Mep.webp" alt="" />
+          </div> 
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <h3>A diverse range of key create the right balance:</h3>
             <p class="comman-text">
               Our visitor come from a wide range of sectors and represent the
@@ -121,19 +133,16 @@ include 'include/header.php';
               categories.
             </p>
           </div>
-          <div
-            class="col-xl-6 col-lg-6 col-md-12 col-sm-12 india-map-img text-center"
-          >
-            <img src="/India-Mep.webp" alt="" />
-          </div>
+         
         </div>
       </div>
     </section>
+     <!-- =========visitor-business-segmentation is start======== -->
     <section class="visitor-segmentation">
       <h2 class="visitor-segmentation-title">VISITOR BUSINESS PROFILE</h2>
       <div class="visitor-segmentation-segments" id="businessProfile"></div>
     </section>
-
+ <!-- =========visitor-job-segmentation is start======== -->
     <section class="visitor-segmentation">
       <h2 class="visitor-segmentation-title">VISITORS JOB PROFILE</h2>
       <div class="visitor-segmentation-segments" id="jobProfile"></div>
