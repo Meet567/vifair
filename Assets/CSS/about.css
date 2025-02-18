@@ -281,6 +281,9 @@
 }
 .event-location {
   position: relative;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
 }
 .event-location::before {
   content: "";
