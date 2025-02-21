@@ -71,7 +71,8 @@
     </div>
 
     <!-- Tab Content -->
-         <div id="section1" class="section_tab active gallery-tab-content">
+
+    <div id="section1" class="section_tab active gallery-tab-content mt-5">
         <div class="container">
             <h2 class="primary-heading">July New Delhi-2023</h2>
 
@@ -130,7 +131,7 @@
             <div class="row gallery-item" id="galleryList-delhi23"></div>
         </div>
     </div>
-    <div id="section2" class="section_tab gallery-tab-content">
+    <div id="section2" class="section_tab gallery-tab-content mt-5">
         <div class="container">
             <h2 class="primary-heading">January Mumbai-2023</h2>
 
@@ -171,7 +172,7 @@
                         class="gallery-tab-control outline"
                         data-filter=".product">
                         PRODUCTS
-                    </button>
+                   </button>
                     <button
                         type="button"
                         class="gallery-tab-control outline"
@@ -189,7 +190,7 @@
             <div class="row gallery-item" id="galleryList-mumbai23"></div>
         </div>
     </div>
-    <div id="section3" class="section_tab gallery-tab-content">
+    <div id="section3" class="section_tab gallery-tab-content mt-5">
         <div class="container">
             <h2 class="primary-heading">July New Delhi-2022</h2>
             <div class="gallery-menu mt-2 mb-4">
@@ -247,7 +248,7 @@
             <div class="row gallery-item" id="galleryList-delhi22"></div>
         </div>
     </div>
-    <div id="section4" class="section_tab gallery-tab-content">
+    <div id="section4" class="section_tab gallery-tab-content mt-5">
         <div class="container">
             <h2 class="primary-heading">June New Delhi-2019</h2>
             <div class="gallery-menu mt-2 mb-4">
@@ -312,7 +313,7 @@
             <div class="row gallery-item" id="galleryList-delhi19"></div>
         </div>
     </div>
-    <div id="section5" class="section_tab gallery-tab-content">
+    <div id="section5" class="section_tab gallery-tab-content mt-5">
         <div class="container">
             <h2 class="primary-heading">June New Delhi-2018</h2>
 
@@ -377,7 +378,7 @@
             <div class="row gallery-item" id="galleryList-delhi18"></div>
         </div>
     </div>
-        
+
 
 
     <?php

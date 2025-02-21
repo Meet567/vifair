@@ -13,18 +13,22 @@ ini_set('display_errors', 1);
     <!-- <title>My Website</title> -->
 </head>
 <!-- Js CDN -->
-<script src="Assets/CSS/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script src="assets/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 
 <!-- Jquery CDN -->
-<script src="Assets/Js/Jquery/jquery-3.7.1.js"></script>
+<script src="assets/js/jquery/jquery-3.7.1.js"></script>
 
 <!-- OWL Carousel -->
-<script src="Assets/CSS/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+<script src="assets/css/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+<!-- OWL Carousel Magnific-Popup   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
 <!-- AOS Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<!-- Mixitup -->
+ 
+  <!-- Mixitup -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.2.2/mixitup.min.js"></script>
 <!-- fancybox -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
@@ -37,10 +41,10 @@ ini_set('display_errors', 1);
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
 
-<!-- Main Js Local File -->
-<script src="Assets/Js/data.js"></script>
-<script src="Assets/Js/Main.js"></script>
 
+  <!-- Main Js Local File -->
+  <script src="assets/js/data.js"></script>
+<script src="assets/js/Main.js"></script>
 <body>
 
 </html>
