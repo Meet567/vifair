@@ -148,7 +148,7 @@ function openSection(event, sectionId) {
 // Populate Galleries
 function populateGallery(data, galleryId) {
   const galleryList = document.getElementById(galleryId);
-  if (!galleryList || !Array.isArray(data)) return;
+  if (!galleryList) return; // Prevents errors if the ID doesn't exist in HTML
 
   data.forEach((item) => {
     const div = document.createElement("div");
@@ -163,57 +163,74 @@ function populateGallery(data, galleryId) {
     );
 
     div.innerHTML = `
-      <img src="${item.img}" class="img-thumbnail-gallery"/>
-      <div class="gallery-overlay">
-        <div class="gallery-overlay-content">
-          <a data-fancybox="item" title="click to zoom-in" href="${item.link}">
-            <div class="gallery-magnify-icon">
-              <span><i class="fa-solid fa-magnifying-glass-plus magnify-icon"></i></span>
-            </div>
-          </a>
-        </div>
+<img src="${item.img}" class="img-thumbnail-gallery"/>
+<div class="gallery-overlay">
+  <div class="gallery-overlay-content">
+    <a data-fancybox="item" title="click to zoom-in" href="${item.link}">
+      <div class="gallery-magnify-icon">
+        <span><i class="fa-solid fa-magnifying-glass-plus magnify-icon"></i></span>
       </div>
-    `;
+    </a>
+  </div>
+</div>
+`;
     galleryList.appendChild(div);
   });
 }
 
-// Ensure Galleries Are Populated
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof delhi23 !== "undefined")
-    populateGallery(delhi23, "galleryList-delhi23");
-  if (typeof mumbai23 !== "undefined")
-    populateGallery(mumbai23, "galleryList-mumbai23");
-  if (typeof delhi22 !== "undefined")
-    populateGallery(delhi22, "galleryList-delhi22");
-  if (typeof delhi19 !== "undefined")
-    populateGallery(delhi19, "galleryList-delhi19");
-  if (typeof delhi18 !== "undefined")
-    populateGallery(delhi18, "galleryList-delhi18");
-});
+// Populate galleries dynamically
+populateGallery(delhi23, "galleryList-delhi23");
+populateGallery(mumbai23, "galleryList-mumbai23");
+populateGallery(delhi22, "galleryList-delhi22");
+populateGallery(delhi19, "galleryList-delhi19");
+populateGallery(delhi18, "galleryList-delhi18");
 
-// Initialize Mixitup for Gallery Filtering
+var containerEl = document.querySelector(".gallery-item");
+var mixer = mixitup(containerEl, {
+  animation: {
+    effects: "fade translateZ(-100px)",
+    effectsIn: "fade translateY(-100%)",
+    easing: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+  },
+});
 document.addEventListener("DOMContentLoaded", function () {
-  var containerEl = document.querySelector(".gallery-item");
-  if (containerEl) {
-    mixitup(containerEl, {
+  // Store mixers in an object
+  const mixers = {};
+
+  // Initialize MixItUp for each gallery separately
+  document.querySelectorAll(".gallery-item").forEach((containerEl) => {
+    const galleryId = containerEl.getAttribute("id"); // Get the gallery ID
+    mixers[galleryId] = mixitup(containerEl, {
       animation: {
-        effects: "fade translateZ(-100px)",
-        effectsIn: "fade translateY(-100%)",
-        easing: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+        effects: "fade scale(0.5)",
+        easing: "ease-in-out",
       },
     });
-  }
-
-  $("[data-fancybox]").fancybox({
-    loop: true,
-    hash: true,
-    transitionEffect: "slide",
-    clickContent: function (current, event) {
-      return current.type === "image" ? "next" : false;
-    },
   });
 
-  // Initialize AOS
-  AOS.init();
+  // Attach event listeners to filter buttons
+  document.querySelectorAll(".gallery-menu nav").forEach((menu) => {
+    const galleryId = menu.getAttribute("data-gallery"); // Get gallery ID from nav
+    const mixer = mixers[galleryId]; // Get the corresponding mixer instance
+
+    if (mixer) {
+      menu.querySelectorAll(".gallery-tab-control").forEach((button) => {
+        button.addEventListener("click", function () {
+          const filterValue = this.getAttribute("data-filter");
+          mixer.filter(filterValue);
+        });
+      });
+    }
+  });
 });
+
+$("[data-fancybox]").fancybox({
+  loop: true,
+  hash: true,
+  transitionEffect: "slide",
+  clickContent: function (current, event) {
+    return current.type === "image" ? "next" : false;
+  },
+});
+// Initialize AOS
+AOS.init();
