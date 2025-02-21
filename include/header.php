@@ -95,11 +95,10 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Gallery</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="gallery.php">Photo
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Photo
                                             Gallery</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Video
                                             Gallery</a></li>
-
                                 </ul>
                             </div>
                         </li>

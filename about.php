@@ -12,7 +12,7 @@
   <body>
 
     <!-- exhibit is start -->
-    <section class="exhibit section-margin">
+    <section class="exhibit mt-3">
       <div class="container">
         <div class="exhibit-under-line">
           <h3 class="exhibit-text-line">WHY <span class="secondary-text">EXHIBIT</span></h3>

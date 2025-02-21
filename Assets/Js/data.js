@@ -42,7 +42,6 @@ const products = [
   { src: "assets/images/imgData/img16.png", title: "Raw Material" },
 ];
 
-<<<<<<< HEAD
 
 // ***** Home Page *****
 // --- Events Gallery ---
@@ -62,62 +61,3 @@ const carouselData = {
     ]
   }
 };
-=======
-// gallery img data js
-const delhi23 = [
-  {
-    img: "Assets/Image/Delhi.png",
-    link: "Assets/Image/Delhi.png",
-    category: "registration",
-  },
-  { img: "1.webp", link: "1.webp", category: "web" },
-  { img: "1.webp", link: "1.webp", category: "wp" },
-  { img: "1.webp", link: "1.webp", category: "dev" },
-  { img: "1.webp", link: "1.webp", category: "web" },
-];
-
-const mumbai23 = [
-  {
-    img: "Assets/Image/Delhi.png",
-    link: "Assets/Image/Delhi.png",
-    category: "registration",
-  },
-  { img: "1.webp", link: "1.webp", category: "web" },
-  { img: "1.webp", link: "1.webp", category: "wp" },
-  { img: "1.webp", link: "1.webp", category: "dev" },
-  { img: "1.webp", link: "1.webp", category: "web" },
-]; // Duplicate for simplicity
-const delhi22 = [
-  {
-    img: "Assets/Image/Delhi.png",
-    link: "Assets/Image/Delhi.png",
-    category: "registration",
-  },
-  { img: "1.webp", link: "1.webp", category: "web" },
-  { img: "1.webp", link: "1.webp", category: "wp" },
-  { img: "1.webp", link: "1.webp", category: "dev" },
-  { img: "1.webp", link: "1.webp", category: "web" },
-];
-const delhi19 = [
-  {
-    img: "Assets/Image/Delhi.png",
-    link: "Assets/Image/Delhi.png",
-    category: "registration",
-  },
-  { img: "1.webp", link: "1.webp", category: "web" },
-  { img: "1.webp", link: "1.webp", category: "wp" },
-  { img: "1.webp", link: "1.webp", category: "dev" },
-  { img: "1.webp", link: "1.webp", category: "web" },
-];
-const delhi18 = [
-  {
-    img: "Assets/Image/Delhi.png",
-    link: "Assets/Image/Delhi.png",
-    category: "registration",
-  },
-  { img: "1.webp", link: "1.webp", category: "web" },
-  { img: "1.webp", link: "1.webp", category: "wp" },
-  { img: "1.webp", link: "1.webp", category: "dev" },
-  { img: "1.webp", link: "1.webp", category: "web" },
-];
->>>>>>> 7ebb6275b76b5dd34e9731b50b87198dc2612743
