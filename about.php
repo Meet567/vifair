@@ -26,7 +26,7 @@
         </p>
         <div class="row exhibit-benifit d-flex align-items-center">
           <div class="exhibit-benifit-img col-xl-5 col-lg-5 col-md-5 col-sm-12">
-            <img src="Assets/Image/exhibit.jpg" alt="" />
+            <img src="assets/images/exhibit.jpg" alt="" />
           </div>
           <div
             class="exhibit-benifit-detail col-xl-7 col-lg-7 col-md-7 col-sm-12">
@@ -116,7 +116,7 @@
         <div class="row d-flex align-items-center mt-4">
           <div
             class="col-xl-6 col-lg-6 col-md-12 col-sm-12 india-map-img text-center">
-            <img src="Assets/Image/visit-India-Mep.webp" alt="" />
+            <img src="assets/images/visit-India-Mep.webp" alt="" />
           </div>
           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <h3>A diverse range of key create the right balance:</h3>
@@ -167,7 +167,7 @@
           <div class="col-md-6">
             <div class="calendar-card">
               <div class="event-img">
-                <img src="Assets/Image/Exhibition calendar/delhi.jpg" alt="" class="img-fluid" />
+                <img src="assets/images/Exhibition calendar/delhi.jpg" alt="" class="img-fluid" />
               </div>
               <div class="calendar-event">
                 <span>05</span>
@@ -186,7 +186,7 @@
           <div class="col-md-6">
             <div class="calendar-card">
               <div class="event-img">
-                <img src="Assets/Image/Exhibition calendar/chennai.jpg" alt="" class="img-fluid" />
+                <img src="assets/images/Exhibition calendar/chennai.jpg" alt="" class="img-fluid" />
               </div>
               <div class="calendar-event">
                 <span>01</span>

@@ -18,7 +18,7 @@
                     <div class="logo-box">
                         <picture>
                             <a href="index.php">
-                                <img src="Assets/Image/Vibrant-India-Mumbai.png" alt="">
+                                <img src="assets/images/VIFair.png" alt="">
                             </a>
                         </picture>
                     </div>

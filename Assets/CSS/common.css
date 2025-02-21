@@ -32,45 +32,39 @@ body{
  }
 
  /* Primary Button  */
- .primary-btn-box{
-    padding: 15px;
- }
- .primary-btn-box .primary-btn{
-   text-decoration: none;
-   position: relative;
-   margin: auto;
-   padding: 11px 22px;
-   transition: all 0.2s ease;
-   color: var(--dark-color);
- }
- .primary-btn::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   display: block;
-   border-radius: 28px;
-   background-color: var(--light-color); 
-   width: 45px;
-   height: 45px;
-   transition: all 0.3s ease;
-}
-.primary-btn span {
-  position: relative;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 900;
-  vertical-align: middle;
-}
-.primary-btn:hover::before {
-  width: 100%;
-  background-color: var(--light-color);
-}
-.primary-btn:hover span{
-    color: var(--primary-color);
-}
-.primary-btn:active {
-  transform: scale(0.96);
-}
+  .primary-btn {
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--dark-color);
+      text-decoration: none;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .primary-btn:hover{
+      color: var(--light-color);
+    }
+
+    .primary-btn .primary-btn-span,
+    .primary-btn .primary-btn-i {
+      position: relative;
+      z-index: 2;
+    }
+
+    .primary-btn .primary-btn-i {
+      margin-left: 0.5em;
+    }
+
+    .primary-btn .primary-btn-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      background-color: var(--primary-color);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -0.65em;
+      z-index: 1;
+    }
 /* End Primary Button */
 /* ----- End Common CSS ----- */

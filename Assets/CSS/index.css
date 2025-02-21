@@ -27,172 +27,143 @@
     left: 0;
     margin: auto;
 } */
- .banner-thumbnail{
-    max-width: 100%;
- }
- .banner-thumbnail video{
-    width: 100%;
-    height: 100%;
- }
- /* ----- End Banner Section ----- */
-
- /* ----- OWL Carousel ----- */
- .owl-carousel{
-    padding: 10px;
-    /* background-color: var(--primary-color); */
- }
- .owl-carousel-box{
-    position: relative;
- }
- .owl-nav-box{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    padding: 0px 57px;
-    z-index: 2;
- }
- .owl-nav-box .owl-pre-btn{
-    border: none;
-    font-size: 14px;
-    padding: 4px 8px;
-    background-color: var(--light-color);
-    transition: 1s ease-in-out;
- }
-  .owl-nav-box .owl-pre-btn:hover{
-    background-color: var(--secondary-color);
- }
- .owl-nav-box .owl-next-btn{
-    border: none;
-    font-size: 14px;
-    padding: 4px 7px;
-    background-color: var(--light-color);
-    transition: 1s ease-in-out;
- }
- .owl-nav-box .owl-next-btn:hover{
-   background-color: var(--secondary-color);
- }
- .owl-nav {
-    display: none;
- } 
- .owl-dots{
-    display: none;
- }
- /* Event Cart Box  */
- .event-main-cart{
-   position: relative;
- }
- .event-details-box{
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding: 10px;
-   width: 35%;
-   background-color: var(--primary-color);
- }
- .event-city-date-box{
-   padding: 0px 0px 5px 0px;
-   border-bottom: 1px solid var(--secondary-color);
- }
- .event-city{
-   font-size: 14px;
-   font-weight: 600;
-   font-family: myFont;
-   letter-spacing: 1px;
-   color: var(--light-color);
- }
- .event-date{
-   font-size: 10px;
-   font-weight: 500;
-   font-family: myFont;
-   color: var(--light-color);
- }
- .event-location{
-   font-size: 10px;
-   font-weight: 500;
-   font-family: myFont;
-   color: var(--light-color);
-   padding: 5px 0px;
- }
-
- 
-/* Extra Small Devices (up to 480px) */
-@media (max-width: 480px) {
-.owl-nav-box{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    padding: 0px;
-    z-index: 2;
- }
-.owl-nav-box .owl-pre-btn{
-    border: none;
-    font-size: 10px;
-    padding: 4px 12px;
-    background-color: var(--light-color);
-    transition: 1s ease-in-out;
- }
- .owl-nav-box .owl-next-btn{
-    border: none;
-    font-size: 10px;
-    padding: 4px 11px;
-    background-color: var(--light-color);
-    transition: 1s ease-in-out;
- }
- .event-details-box{
-   padding: 3px 10px !important;
+.banner-thumbnail {
+  max-width: 100%;
 }
+.banner-thumbnail video {
+  width: 100%;
+  height: 100%;
 }
+/* ----- End Banner Section ----- */
 
- /* Medium Devices (769px to 992px) */
-@media (max-width: 992px) {
- .event-details-box{
-   position: relative;
-   bottom: 0;
-   left: 0;
-   padding: 10px;
-   width: 100%;
-   background-color: var(--primary-color);
- }
+/* ----- OWL Carousel ----- */
+.owl-carousel {
+  padding: 10px;
+  /* background-color: var(--primary-color); */
 }
- /* ----- End OWL Carousel ----- */
+.owl-carousel-box {
+  position: relative;
+}
+.owl-nav-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  padding: 0px 57px;
+  z-index: 1;
+}
+.owl-nav-box .owl-pre-btn {
+  border: none;
+  font-size: 14px;
+  padding: 4px 7px;
+  background-color: var(--light-color);
+  transition: 1s ease-in-out;
+}
+.owl-nav-box .owl-pre-btn:hover {
+  background-color: var(--secondary-color);
+}
+.owl-nav-box .owl-next-btn {
+  border: none;
+  font-size: 14px;
+  padding: 4px 6px;
+  background-color: var(--light-color);
+  transition: 1s ease-in-out;
+}
+.owl-nav-box .owl-next-btn:hover {
+  background-color: var(--secondary-color);
+}
+.owl-nav {
+  display: none;
+}
+.owl-dots {
+  display: none;
+}
+/* Event Cart Box  */
+.event-main-cart {
+  position: relative;
+}
+.event-details-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  width: 35%;
+  background-color: var(--primary-color);
+}
+.event-city-date-box {
+  padding: 0px 0px 5px 0px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.event-city {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: myFont;
+  letter-spacing: 1px;
+  color: var(--light-color);
+}
+.event-date {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: myFont;
+  color: var(--light-color);
+}
+.event-location-center {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: myFont;
+  color: var(--light-color);
+  padding: 5px 0px;
+}
+/* ----- End OWL Carousel ----- */
 
- /* ----- Visit Exhibit Section ----- */
- /* Visit Part */
- .visit-exhibit-main{
-   background-color: var(--secondary-color);
-   padding: 10px 0px;
- }
- .visit-main-box .visit-attachment{
-   max-width: 500px;
- }
- .visit-attachment picture img{
-   width: 100%;
-   height: 100%;
- }
- .visit-content-first{
-   font-size: 12px;
-   font-weight: 600;
-   padding: 5px 0px;
-   color: var(--primary-color);
- }
- .visit-content-second{
-   font-size: 12px;
-   padding: 5px 0px;
-   margin: 0;
-   font-weight: 600;
-   
- }
- .visit-content-second .visit-link{
-   font-weight: 600;
-   color: var(--primary-color);
- }
- /* .visit-link::before{
+/* ----- Offer Section ----- */
+.offer-progressive{
+  padding: 10px 0;
+}
+.offer-progressive .offer-pro-deals{
+  color: var(--primary-color);
+}
+.offer-unlist{
+  list-style: square;
+}
+.offer-list{
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 5px;
+}
+/* ----- End Offer Section ----- */
+
+/* ----- Visit Exhibit Section ----- */
+/* Visit Part */
+.visit-exhibit-main {
+  background-color: var(--secondary-color);
+  padding: 10px 0px;
+}
+.visit-main-box .visit-attachment {
+  max-width: 500px;
+}
+.visit-attachment picture img {
+  width: 100%;
+  height: 100%;
+}
+.visit-content-first {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 0px;
+  color: var(--primary-color);
+}
+.visit-content-second {
+  font-size: 12px;
+  padding: 5px 0px;
+  margin: 0;
+  font-weight: 600;
+}
+.visit-content-second .visit-link {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+/* .visit-link::before{
    content: "";
    top: 0;
    left: -20px;
@@ -206,16 +177,172 @@
     display: inline-block;
     z-index: 2;
  } */
- .visit-content-third{
-   font-size: 12px;
-   padding: 5px 0px;
-   font-weight: 600;
- }
- .visit-content-fourth{
-   font-size: 12px;
-   padding: 5px 0px;
- }
+.visit-content-third {
+  font-size: 12px;
+  padding: 5px 0px;
+  font-weight: 600;
+}
+.visit-content-fourth {
+  font-size: 12px;
+  padding: 5px 0px;
+}
 
- /* Exhibit Part */
+/* ----- End Visit Exhibit Section ----- */
 
- /* ----- End Visit Exhibit Section ----- */
+/* ----- Events gallery ----- */
+/* .owl-carousel .event-items {
+      position: relative;
+      padding: 10px;
+    }
+    
+    .owl-carousel .event-items img {
+      width: 100%;
+      display: block;
+    }
+
+    .carousel-container-box {
+      margin-bottom: 40px;
+    } */
+
+    
+    .event-gallery-box {
+      max-width: 100%;
+    }
+
+    .event-gallery-box img {
+      width: 100%;
+      height: auto;
+    }
+    .mfp-bottom-bar .mfp-counter{
+      display: none;
+    }
+
+    
+/* ----- End Events Gallery ----- */
+
+/* ----- Supported Company Section ----- */
+.supported-company-main{
+  padding: 10px;
+}
+ .supported-left-part {
+      width: auto;
+      /* position: fixed; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+
+    .supported-section-show-btn {
+      text-align: left;
+      font-size: 25px;
+      display: block;
+      margin: 10px 0px;
+      font-weight: 500;
+      border: none;
+      background-color: transparent;
+      
+    }
+
+ .supported-section-show-btn:hover {
+  color: var(--primary-color);
+    }
+.supported-section-show-btn.active {
+  color: var(--primary-color); /* Change to your desired active color */
+  font-weight: bold;
+}
+    .supported-right-part {
+      padding: 5px;
+      flex: 1;
+    }
+
+    .right-part-show {
+      min-height: 100%;
+      display: none;
+      /* Hide all sections initially */
+    }
+
+    /* Show the first section by default */
+    #section1 {
+      display: block;
+    }
+
+    .supported-img-box{
+      max-width: 100px;
+      margin: 7px;
+    }
+    .supported-img-box .supported-company-logo{
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      border: 1px solid var(--secondary-color);
+      transition: transform 0.7s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+     .supported-img-box .supported-company-logo:hover{
+      border: 1px solid var(--primary-color);
+      transform: scale(1.1); /* Slightly enlarges the image */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+     }
+    
+/* ----- End Supported Company Section ----- */
+
+/* Extra Small Devices (up to 480px) */
+@media (max-width: 480px) {
+  /* Banner Thumbnail */
+  .banner-thumbnail{
+    margin-top: 10%;
+  }
+  /* OWL Carousel  */
+  .owl-nav-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    padding: 0px;
+  }
+  .owl-nav-box .owl-pre-btn {
+    border: none;
+    font-size: 10px;
+    padding: 4px 12px;
+    background-color: var(--light-color);
+    transition: 1s ease-in-out;
+  }
+  .owl-nav-box .owl-next-btn {
+    border: none;
+    font-size: 10px;
+    padding: 4px 11px;
+    background-color: var(--light-color);
+    transition: 1s ease-in-out;
+  }
+  /* Visit Exhibit Section  */
+  .event-details-box {
+    padding: 3px 10px !important;
+  }
+}
+
+/* Small Devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Banner Thumbnail */
+  .banner-thumbnail{
+    margin-top: 7%;
+  }
+}
+/* Medium Devices (769px to 992px) */
+@media (max-width: 992px) {
+  
+  /* Visit Exhibit Section  */
+  .event-details-box {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--primary-color);
+  }
+}
+
+
+
+
