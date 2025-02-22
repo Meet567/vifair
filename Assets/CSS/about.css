@@ -190,7 +190,7 @@
   padding: 20px;
 }
 
-.product-box .product-img-box {
+.product-img-box {
   max-width: 150px;
   margin: auto;
   background-color: #fff;
@@ -200,11 +200,12 @@
 }
 
 /* Ensuring images are fully responsive */
-.product-box .product-img-box .product-img-box img {
+.product-img-box img {
   width: 100%;
   height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
+  display: block !important;
 }
 
 /* Adding hover effect */

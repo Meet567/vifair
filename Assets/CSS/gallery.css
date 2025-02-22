@@ -1,3 +1,17 @@
+/* heding responsive start   */
+@media (min-width: 480px) and (max-width: 663px) {
+  /* Your styles here */
+  .gallery-tab-content .primary-heading {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 346px) {
+  .gallery-tab-content .primary-heading {
+    font-size: 25px;
+  }
+}
+/* heding responsive end  */
+
 /* off canvas  tab css start */
 .section_tab {
   display: none;
@@ -6,18 +20,16 @@
   display: block;
 }
 .gallery-tab-content {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 10px;
-  margin: 10px;
+  margin-top: 60px;
 }
 /* off canvas tab css end */
 
-/* off canva open btn css start */
+/* gallery show  btn css start */
 .gallery-show-btn {
   position: relative;
   margin: 0;
   padding: 0;
-  top: 60px;
+  top: 115px;
   left: 5px;
   padding: 8px 12px; /* Adjusted padding for responsiveness */
   width: 100%; /* Adjust width to be flexible */
@@ -41,7 +53,7 @@
 }
 
 /* Icon animation */
-.gallery-show-icon {
+.gallery-show-btn .gallery-show-icon {
   background-size: contain;
   width: 25px;
   height: 25px;
@@ -49,7 +61,7 @@
   animation: clickEffect 0.7s ease-in-out infinite;
 }
 
-/* Click animation */
+/* Click animation to gallery show btn */
 @keyframes clickEffect {
   0% {
     transform: scale(1);
@@ -62,14 +74,14 @@
   }
 }
 
-/* Responsive Design */
+/* Responsive Design to gallery show btn start*/
 @media (max-width: 768px) {
   .gallery-show-btn {
-    width: 25%; /* Makes it take full width on small screens */
-    max-width: none; /* Allows it to expand */
-    font-size: 14px; /* Slightly smaller text */
-    padding: 5px; /* More padding for touchscreens */
-    gap: 5px;
+    width: 160px;
+    font-size: 15px;
+    padding: 5px;
+    gap: 10px;
+    font-weight: 500;
   }
 
   .gallery-show-btn::after {
@@ -77,36 +89,76 @@
     height: 20px;
   }
 }
+/* Responsive Design to gallery show btn end*/
+/* gallery show  btn css end */
 
-@media (max-width: 480px) {
-  .gallery-show-btn {
-    position: relative;
-    font-size: 14px;
-    top: 3px;
-    left: 50px;
-    width: 150px;
-    padding: 5px;
-    gap: 10px;
-  }
-
-  .gallery-show-btn::after {
-    width: 18px;
-    height: 18px;
-  }
+/* drop down btn  start css */
+.gallery-dropdown {
+  width: 100%;
+  margin-top: 3px;
+}
+.gallery-dropdown .gallery-dropdown-show-btn {
+  width: 100%;
+  padding: 7px 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  opacity: 8;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.gallery-dropdown .gallery-dropdown-list {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate3d(10px, 61px, 0px);
+  width: 100%;
+  padding: 5px 5px !important;
+}
+.gallery-dropdown .gallery-dropdown-btn {
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
-/* section canava btn */
+@media (max-width: 663px) {
+  .controls {
+    display: none !important;
+  }
+  .gallery-show-btn {
+    position: fixed;
+    rotate: 270deg;
+    z-index: 1;
+    left: -36px;
+    top: 55%;
+    width: 120px;
+    padding: 0px 7px;
+  }
+  .gallery-show-btn .gallery-show-icon {
+    display: none;
+  }
+}
+@media (min-width: 663px) {
+  .gallery-dropdown {
+    display: none !important;
+  }
+}
+/* drop down btn  end  css */
+/*  off canva open section btn css end  */
 .gallery-canva-btn {
   background-color: var(--primary-color);
   width: 100%;
   border: none;
-  padding: 10px 0px;
+  padding: 8px 0px;
   font-size: 20px;
   font-weight: 600;
-  border-radius: 30px;
+  border-radius: 10px;
   color: var(--light-color);
   transition: 0.5s ease-in-out;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .gallery-canva-btn:hover {
@@ -114,30 +166,22 @@
   color: var(--dark-color);
   outline: 2px solid var(--dark-color);
 }
+/* off canva open section btn css end */
 
-/* off canva open btn css end */
-
-/* gallery css  section start */
-.gallery-section {
-  padding: 50px 0;
-  background-color: var(--light-color);
-}
-/* gallery css  section end */
-
-/* gallery tab css start*/
+/* gallery tab btn css start*/
 .gallery-menu {
   text-align: center; /* Center the buttons */
-  padding: 10px;
+  padding: 5px;
 }
 
-.controls {
+.gallery-menu .controls {
   display: flex;
   flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
   justify-content: center; /* Center buttons */
   gap: 10px; /* Add space between buttons */
 }
 
-.gallery-tab-control {
+.gallery-menu .gallery-tab-control {
   background: var(--primary-color);
   color: var(--light-color);
   padding: 5px 10px;
@@ -149,7 +193,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-.gallery-tab-control:hover {
+.gallery-menu .gallery-tab-control:hover {
   background: var(--secondary-color);
   color: var(--dark-color);
 }
@@ -178,15 +222,14 @@
     font-weight: 500;
   }
 }
+/* gallery tab btn css end*/
 
-/* gallery tab css end */
-
-/* gallery img css start */
+/* gallery img in hover effect  start */
 .gallery-item {
   padding: 10px;
 }
 
-.img-thumbnail-gallery {
+.gallery-item .img-thumbnail-gallery {
   padding: 0.25rem;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -272,7 +315,7 @@
   display: inline-block;
   transition: all 0.25s;
   font-size: 15px;
-  color: #000;
+  color: var(--dark-color);
   line-height: 40px;
   cursor: pointer;
   position: relative;
@@ -286,6 +329,7 @@
   position: absolute;
   left: 30%;
   bottom: 30%;
+  font-size: 20px;
 }
 
 .gallery-overlay-content {
@@ -293,9 +337,4 @@
   left: 40%;
   top: 40%;
 }
-
-.gallery-section {
-  padding: 50px 0;
-  background-color: #fff;
-}
-/* gallery img css end */
+/* gallery img in hover effect end */

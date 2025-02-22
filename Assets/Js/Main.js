@@ -4,13 +4,11 @@ function toggleMenu() {
   var nav = document.getElementById("navLinks");
   var toggleButton = document.getElementById("menuToggle");
 
-  nav.classList.toggle("show");
+  if (nav && toggleButton) {
+    nav.classList.toggle("show");
 
-  // Change button icon based on menu state
-  if (nav.classList.contains("show")) {
-    toggleButton.innerHTML = "X"; // × ✖ Close icon✖
-  } else {
-    toggleButton.innerHTML = "☰"; // Open icon
+    // Change button icon based on menu state
+    toggleButton.innerHTML = nav.classList.contains("show") ? "✖" : "☰";
   }
 }
 // --- End Header Toggle Button ---
@@ -32,12 +30,6 @@ $(document).ready(function () {
       0: {
         items: 1,
         stagePadding: false,
-      },
-      600: {
-        items: 2,
-      },
-      1000: {
-        items: 2,
       },
     },
   });
@@ -232,7 +224,7 @@ $(document).ready(function () {
 
 // --- End Data Fetch Image ---
 
-// ✅ Generate Visitor Segments
+// Visitor Business proflie js and job proflie start js
 document.addEventListener("DOMContentLoaded", function () {
   function generateSegments(data, containerId) {
     const container = document.getElementById(containerId);
@@ -286,8 +278,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, stepTime);
   }
 });
+// Visitor Business proflie js and job proflie end js
 
-// ✅ Generate Product Segments
+// 16 segments js data fech start js
 document.addEventListener("DOMContentLoaded", function () {
   const productContainer = document.getElementById("product-container");
   if (!productContainer || typeof products === "undefined") return;
@@ -319,8 +312,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   productContainer.innerHTML = rowHtml;
 });
+// 16 segments js data fech end js
 
-// ✅ Off-canvas Gallery Section
+// Off-canvas Gallery Section tab start js
 function openSection(event, sectionId) {
   document
     .querySelectorAll(".section_tab")
@@ -341,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach((s, i) => (s.style.display = i ? "none" : "block"));
   document.querySelector(".tab-link")?.classList.add("active");
 });
+// Off-canvas Gallery Section tab end js
 
 // ✅ Populate Galleries
 function populateGallery(data, galleryId) {
@@ -379,7 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typeof delhi18 !== "undefined")
     populateGallery(delhi18, "galleryList-delhi18");
 
-  // ✅ Fix MixItUp Filtering Issue
+  // MixItUp Filtering
   const mixers = {};
   document.querySelectorAll(".gallery-item").forEach((containerEl) => {
     const galleryId = containerEl.getAttribute("id");
@@ -407,7 +402,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ✅ Initialize Fancybox
+// dropdown js
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all dropdown items
+  document.querySelectorAll(".gallery-dropdown-btn").forEach((item) => {
+    item.addEventListener("click", function () {
+      // Get the button
+      let dropdownButton = document.querySelector(".gallery-dropdown-show-btn");
+      // Change button text to clicked item's text
+      dropdownButton.textContent = this.textContent;
+    });
+  });
+});
+
+//drop ddown fliter
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".gallery-dropdown");
+
+  dropdown.addEventListener("change", function () {
+    const filterValue = this.value;
+    const mixer = mixitup(".gallery-item"); // Make sure MixItUp is initialized
+    mixer.filter(filterValue);
+  });
+});
+
+// Initialize Fancybox
 $("[data-fancybox]").fancybox({
   loop: true,
   hash: true,
