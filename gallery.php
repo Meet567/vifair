@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <button
         class="gallery-show-btn"
         type="button"

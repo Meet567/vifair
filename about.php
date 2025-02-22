@@ -12,7 +12,8 @@
   <body>
 
     <!-- exhibit is start -->
-    <section class="exhibit mt-3">
+     <main class="exhibit-main">
+    <section class="exhibit section-margin">
       <div class="container">
         <div class="exhibit-under-line">
           <h3 class="exhibit-text-line">WHY <span class="secondary-text">EXHIBIT</span></h3>
@@ -93,7 +94,7 @@
     <!-- exhibit is end -->
 
     <!--   visitor-product is start   -->
-    <section class="visitor-product mt-3">
+    <section class="visitor-product section-margin">
       <div>
         <h3 class="visitor-product-heding">
           Show Highlight
@@ -108,7 +109,7 @@
     <!--   visitor-product is end -->
 
     <!-- visitor is start -->
-    <section class="visitor mt-3">
+    <section class="visitor section-margin">
       <div class="container">
         <div class="visit-under-line">
           <h3 class="visit-text-line ">VISITOR <span class="secondary-text"> PROFILE</span></h3>
@@ -146,21 +147,21 @@
     <!-- visitor is end -->
 
     <!-- =========visitor-job-segmentation is start======== -->
-    <section class="visitor-segmentation mt-3">
+    <section class="visitor-segmentation section-margin">
       <h2 class="visitor-segmentation-title">VISITOR BUSINESS PROFILE</h2>
       <div class="visitor-segmentation-segments" id="businessProfile"></div>
     </section>
     <!-- =========visitor-job-segmentation is end======== -->
 
     <!-- =========visitor-job-segmentation is start======== -->
-    <section class="visitor-segmentation mt-3">
+    <section class="visitor-segmentation section-margin">
       <h2 class="visitor-segmentation-title">VISITORS JOB PROFILE</h2>
       <div class="visitor-segmentation-segments" id="jobProfile"></div>
     </section>
     <!-- =========visitor-job-segmentation is end -->
 
     <!-- Exhibition Calendar start -->
-    <section class="calendar-section py-5">
+    <section class="calendar-section section-margin">
       <div class="container">
         <h1 class="calendar-heading mb-4 text-center">Exhibition Calendar</h1>
         <div class="row">
@@ -205,6 +206,7 @@
         </div>
       </div>
     </section>
+    </main>
     <!-- Exhibition Calendar end -->
     <?php
     include "include/footer.php";

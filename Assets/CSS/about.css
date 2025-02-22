@@ -2,12 +2,8 @@
 .secondary-text {
   color: var(--primary-color);
 }
-.about-banner {
-  max-width: 100%;
-}
-.about-banner img {
-  width: 100%;
-  height: 50%;
+.exhibit-main {
+  margin-top: 100px;
 }
 .comman-text {
   font-size: 15px;
@@ -89,6 +85,9 @@
 }
 /* exhibit and visit section media query */
 @media (max-width: 600px) {
+  .exhibit-main {
+    margin-top: 70px;
+  }
   .comman-text {
     font-size: 15px;
   }
@@ -100,6 +99,9 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .exhibit-main {
+    margin-top: 90px;
+  }
   .comman-text {
     font-size: 15px;
   }
