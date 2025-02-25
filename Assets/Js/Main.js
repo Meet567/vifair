@@ -435,70 +435,59 @@ $("[data-fancybox]").fancybox({
 });
 
 // video js start
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("video-container");
+  const modal = document.getElementById("videoModal");
+  const iframe = document.getElementById("videoFrame");
+  const closeButton = document.querySelector(".close-btn");
 
-  // Ensure the container exists
   if (!container) {
-    console.error("❌ Element with ID 'video-container' not found!");
+    console.error("Error: video-container element not found.");
     return;
   }
 
-  // Ensure the videos array exists and is valid
-  if (
-    typeof videos === "undefined" ||
-    !Array.isArray(videos) ||
-    videos.length === 0
-  ) {
-    console.error("❌ 'videos' array is missing or empty!");
+  if (!Array.isArray(videos)) {
+    console.error("Error: videos is not defined or not an array.");
     return;
   }
-
-  // Clear existing content to prevent duplication
-  container.innerHTML = "";
 
   videos.forEach((video) => {
     const videoCard = document.createElement("div");
     videoCard.classList.add("video-card");
 
     videoCard.innerHTML = `
-      <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="Thumbnail">
-      <div class="video-title">${video.title}</div>
-    `;
+          <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="Thumbnail">
+          <div class="video-title">${video.title}</div>
+        `;
 
     videoCard.addEventListener("click", () => openModal(video.id));
 
     container.appendChild(videoCard);
   });
 
-  function openModal(videoId) {
-    const modal = document.getElementById("videoModal");
-    const iframe = document.getElementById("videoFrame");
-
-    if (!modal || !iframe) {
-      console.error("❌ Modal or iframe element not found!");
-      return;
+  window.openModal = function (videoId) {
+    if (modal && iframe) {
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modal.style.display = "flex";
+    } else {
+      console.error("Error: Modal or iframe not found.");
     }
+  };
 
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    modal.style.display = "flex";
-  }
-
-  function closeModal() {
-    const modal = document.getElementById("videoModal");
-    const iframe = document.getElementById("videoFrame");
-
-    if (!modal || !iframe) {
-      console.error("❌ Modal or iframe element not found!");
-      return;
+  window.closeModal = function () {
+    if (modal && iframe) {
+      iframe.removeAttribute("src"); // Prevents unnecessary reloads
+      modal.style.display = "none";
     }
+  };
 
-    iframe.src = "";
-    modal.style.display = "none";
+  if (closeButton) {
+    closeButton.addEventListener("click", closeModal);
+  } else {
+    console.error("Error: Close button not found.");
   }
 
   window.onclick = function (event) {
-    const modal = document.getElementById("videoModal");
     if (event.target === modal) {
       closeModal();
     }
