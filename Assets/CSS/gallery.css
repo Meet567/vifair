@@ -337,4 +337,9 @@
   left: 40%;
   top: 40%;
 }
+@media (max-width: 600px) {
+  .gallery-overlay {
+    display: none;
+  }
+}
 /* gallery img in hover effect end */

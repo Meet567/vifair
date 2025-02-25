@@ -59,6 +59,43 @@ const carouselData = {
     ],
   },
 };
+
+// video gallery data
+const videos = [
+  {
+    id: "sBnldxPLZdo",
+    title: "Vibrant India Fair Abu Dhabi(Dhabi)-2024 ",
+  },
+  { id: "uVH3ZqgBlWk", title: "Vibrant India Fair New Delhi July-2024" },
+  { id: "HYk_icYXQIY", title: "Vibrant India Fair Nesco Mumbai-2023" },
+  { id: "kJdSsaK4NGI", title: "Vibrant India Fair Patna-2023" },
+  { id: "V1XZ0PQ6hxE", title: "Vibrant India Fair Pragati Maidan Delhi-2023" },
+  {
+    id: "pPXLBiAsUsM",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2022",
+  },
+  {
+    id: "Qs6iMpmK1Zg",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2018",
+  },
+  {
+    id: "viB5mYtJJ_g",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2018",
+  },
+  {
+    id: "JpkIm6jEFxw",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2017",
+  },
+  {
+    id: "vC4eAtlBVeQ",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2016",
+  },
+  {
+    id: "IjWagYvOc1o",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2016",
+  },
+];
+
 // new gallery data
 const delhi23 = [
   {

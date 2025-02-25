@@ -345,7 +345,7 @@ function populateGallery(data, galleryId) {
   galleryList.innerHTML = data
     .map(
       (item) => `
-      <div class="mix ${item.category} col-xl-3 col-md-4 col-12 col-sm-6 pd">
+      <div class="mix ${item.category} col-xl-3 col-md-4 col-6 col-sm-6 pd">
         <img src="${item.img}" class="img-thumbnail-gallery"/>
         <div class="gallery-overlay">
           <div class="gallery-overlay-content">
@@ -434,5 +434,77 @@ $("[data-fancybox]").fancybox({
   clickContent: (current) => (current.type === "image" ? "next" : false),
 });
 
+// video js start
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("video-container");
+
+  // Ensure the container exists
+  if (!container) {
+    console.error("❌ Element with ID 'video-container' not found!");
+    return;
+  }
+
+  // Ensure the videos array exists and is valid
+  if (
+    typeof videos === "undefined" ||
+    !Array.isArray(videos) ||
+    videos.length === 0
+  ) {
+    console.error("❌ 'videos' array is missing or empty!");
+    return;
+  }
+
+  // Clear existing content to prevent duplication
+  container.innerHTML = "";
+
+  videos.forEach((video) => {
+    const videoCard = document.createElement("div");
+    videoCard.classList.add("video-card");
+
+    videoCard.innerHTML = `
+      <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="Thumbnail">
+      <div class="video-title">${video.title}</div>
+    `;
+
+    videoCard.addEventListener("click", () => openModal(video.id));
+
+    container.appendChild(videoCard);
+  });
+
+  function openModal(videoId) {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoFrame");
+
+    if (!modal || !iframe) {
+      console.error("❌ Modal or iframe element not found!");
+      return;
+    }
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    modal.style.display = "flex";
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoFrame");
+
+    if (!modal || !iframe) {
+      console.error("❌ Modal or iframe element not found!");
+      return;
+    }
+
+    iframe.src = "";
+    modal.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    const modal = document.getElementById("videoModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+});
+
+//video js end
 // ✅ Initialize AOS
 AOS.init();

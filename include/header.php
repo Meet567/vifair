@@ -97,7 +97,7 @@
                                 <ul class="submenu-unlist">
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="gallery.php">Photo
                                             Gallery</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Video
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="video.php">Video
                                             Gallery</a></li>
                                 </ul>
                             </div>
