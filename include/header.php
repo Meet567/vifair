@@ -130,11 +130,11 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Contact</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Contact Us</a>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="contact-us.php">Contact Us</a>
                                     </li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Need Team
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="needTeam.php">Need Team
                                             Support</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Privacy &
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="privacy&policy.php">Privacy &
                                             Policy</a></li>
                                 </ul>
                             </div>

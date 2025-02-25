@@ -320,18 +320,15 @@
   cursor: pointer;
   position: relative;
 }
-
 .gallery-overlay .gallery-magnify-icon:hover {
   background: transparent;
 }
-
 .magnify-icon {
   position: absolute;
   left: 30%;
   bottom: 30%;
   font-size: 20px;
 }
-
 .gallery-overlay-content {
   position: absolute;
   left: 40%;

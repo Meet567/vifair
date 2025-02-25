@@ -1,0 +1,111 @@
+/* contact-us page css start */
+.contact-us-main {
+  margin-top: 100px;
+}
+.contact-us .contact-us-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.contact-us .contact-us-inner-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.contact-us .contact-us-common-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.contact-us .contact-us-company-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.contact-us .contact-us-common-text {
+  font-size: 16px;
+  font-weight: 300;
+}
+.contact-us .contact-us-inner-text {
+  text-decoration: none;
+  color: black;
+}
+.contact-us .contact-us-map {
+  max-width: 550px;
+  width: 100%;
+}
+.contact-us .contact-us-map iframe {
+  width: 100%;
+}
+.contact-us .contact-us-box {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.contact-us .contact-us-form-title {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+.contact-us .contact-us-submit {
+  background-color: #277474;
+  border-radius: 40px;
+  padding: 13px 30px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+.contact-us .contact-us-submit:hover {
+  background-color: #cce9e9;
+  color: #000;
+  text-decoration: none;
+}
+/* contact-us page css end */
+/* privacy&policy page css start */
+.privacy-policy-main {
+  margin-top: 100px;
+}
+.privacy-policy .privacy-policy-heading-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 60px;
+}
+.privacy-policy .privacy-policy-common-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+.privacy-policy .privacy-policy-heading-inner-text {
+  font-size: 22px;
+  font-weight: 650;
+}
+.privacy-policy .privacy-policy-heading-text {
+  font-size: 30px;
+  font-weight: 700;
+}
+.privacy-policy .privacy-policy-secondary-text {
+  color: rgb(35, 169, 169);
+}
+@media (max-width: 600px) {
+  .privacy-policy .privacy-policy-heading-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 50px;
+  }
+  .privacy-policy .privacy-policy-common-text {
+    font-size: 15px;
+  }
+  .privacy-policy .privacy-policy-heading-inner-text {
+    font-size: 18px;
+    font-weight: 650;
+  }
+  .privacy-policy .privacy-policy-heading-text {
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+/* privacy&policy page css end */
