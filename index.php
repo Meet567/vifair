@@ -95,20 +95,23 @@
         <div class="container">
             <div class="row g-3">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div>
-                        <div class="primary-title">
-                            What We Offer
-                        </div>
+                    <div class="offer-left-part">
+                        <div class="primary-title">What We Offer</div>
                         <div class="offer-progressive">
                             Focused on the progressive architecture, construction and design industry, <span class="offer-pro-deals">VIBRANT INDIA FAIR deals across 27 product</span> segments that cover end to end building requirements.
                         </div>
+                       
                         <div class="primary-btn-box">
-                            <a class="primary-btn" href="#"><span>VIEW ALL PRODUCTS</span></a>
+                            <a class="primary-btn" href="#" target="_blank">
+                                <div class="primary-btn-color"></div>
+                                <span class="primary-btn-span">VIEW ALL PRODUCT</span>
+                                <i class="fa-solid fa-arrow-right primary-btn-i"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div>
+                    <div class="offer-right-part">
                         <div>
                             <ul class="offer-unlist">
                                 <li class="offer-list">Bath & Sanitation</li>
@@ -183,8 +186,12 @@
                             <p class="visit-content-fourth">
                                 It’s all possible at VIBRANT INDIA FAIR, The ultimate architecture, building materials & design B2B exhibition. Elevate Your Business: Connect, Grow, Succeed at VIBRANT INDIA FAIR
                             </p>
-                            <div class="primary-btn-box">
-                                <a class="primary-btn" href="#"><span> READ MORE </span></a>
+                             <div class="primary-btn-box">
+                                <a class="primary-btn" href="#" target="_blank">
+                                    <div class="primary-btn-color"></div>
+                                    <span class="primary-btn-span">READ MORE</span>
+                                    <i class="fa-solid fa-arrow-right primary-btn-i"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -206,7 +213,7 @@
         <section class="section-maigin">
             <div class="container-fluid">
                 <div class="primary-heading">Events Gallery</div>
-                    <div class="gallery event-gallery-box">
+                    <!-- <div class="gallery event-gallery-box">
                         <div class="owl-carousel owl-theme" id="event-gallery">
                         <div class="item">
                             <a href="https://vibrantindiafair.com/wp-content/uploads/2023/09/0F2A8966-scaled.jpg" class="popup-link">
@@ -239,120 +246,118 @@
                             </a>
                         </div>
                         </div>
-                    </div>
+                    </div> -->
+                        <!-- First Carousel -->
+                    <div class="owl-carousel event-gallery-owl" data-carousel="1"></div>
                 </div>
             </div>
         </section>
         <!-- End Event Gallery Section -->
          
-        <!-- Supported Company Section -->
+        <!-- About and Exhibitor Profile Section -->
         <section class="section-margin">
-            <div class="container supported-company-main">
+            <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-center">
-                        <!-- Sidebar Navigation -->
-                        <div class="supported-left-part">
-                            <button class="supported-section-show-btn" onclick="showSection('section1')">Supported By</button>
-                            <button class="supported-section-show-btn" onclick="showSection('section2')">International Trade Chambers</button>
+                    <!-- About Section -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="about-left-part">
+                        <div class="primary-title border-bottom">ABOUT VIBRANT INDIA</div>
+                            <p class="about-left-para mt-2">
+                                At VIES EXHIBITIONS PVT LTD, we specialize in organizing premier B2B kitchenware exhibitions that connect industry leaders, innovators, and businesses from around the globe since 2015. With a keen eye for detail and a commitment to excellence, we create dynamic platforms where new trends are unveiled, partnerships are forged, and the future of  complete Houseware is shaped.
+                            </p>
+                            <p class="about-left-para">
+                                Vibrant India brings to you Vibrant India 2025. The 14th annual edition scheduled on <span class="about-location-bold"> July 5th, 6th, 7th 2025 at Yashobhoomi,</span> Dwarka, Sector-25, New Delhi, India and <span class="about-location-bold"> Aug 1st, 2nd, 3rd 2025 at Chennai </span> trade center, Chennai Tamilnadu India.    
+                            </p>
+                            <div class="mt-2">
+                                <a class="about-reedmore-btn" href="about_us.php">Reed More...</a>
+                            </div>
                         </div>
                     </div>
+                    <!-- End About Section -->
+
+                     <!-- Exhibitor Profile Section -->
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                        <div class="supported-right-part">
-                            <div id="section1" class="right-part-show">
-                             <div class="owl-carousel owl-theme supported-owl">
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/SilverGlow.webp" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Jvl.webp" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Shri&sam.webp" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Taj.webp" alt="">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Mintage.webp" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Bhalariya.webp" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo" src="assets/images/supported/Garuda.avif" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/MaxFresh.webp" alt="">
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div id="section2" class="right-part-show">
-                                <div class="owl-carousel owl-theme supported-owl">
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo" src="assets/images/supported/Garuda.avif" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/MaxFresh.webp" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Mintage.webp" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Bhalariya.webp" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Shri&sam.webp" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Taj.webp" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/SilverGlow.webp" alt="">
-                                        </div>
-                                        <div class="supported-img-box">
-                                            <img class="supported-company-logo"  src="assets/images/supported/Jvl.webp" alt="">
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="about-left-part">
+                        <div class="primary-title border-bottom">EXHIBITOR PROFILE</div>
+                            <p class="about-left-para mt-2">
+                                Leading Indian and worldwide companies, producers, exporters, importers, and national distributors of Stainless Steel Houseware, Kitchenware, Tableware, Houseware, Gifts and Decor, Utensils, Plasticware, Hotelware, and Kitchen Appliances are among the exhibitors at Vibrant India. By increasing their retail and distribution networks, exhibitors may more effectively compete on the Indian market. As this trade show draws over 35,000 serious trade visitors from over 570 cities and towns across India.
+                            </p>
+                            <p class="about-left-para">
+                                Vibrant India offers leading brands a platform to simultaneously introduce their innovations, new collections, new brands, and trade schemes among their regular dealers and distributors throughout India. Only merchants, trade, and institutional purchasers are permitted to attend Vibrant India, which is mainly a trade event…..    
+                            </p>
+                            <div class="mt-2">
+                                <a class="about-reedmore-btn" href="exhibitor_profile.php">Reed More...</a>
                             </div>
                         </div>
+                    </div>
+                    <!-- End Exhibitor Profile Section -->
+                </div>
+            </div>
+        </section>
+        <!-- End About and Exhibitor Profile Section -->
+
+
+        <!-- Remarks and Supported Company Section -->
+        <section class="section-margin">
+            <div class="container remarks-supported-main">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="supported-left-part">
+                            <div class="secondary-title text-center border-bottom">REMARKS OF EXHIBITORS </div>
+                            <div class="remarks-details-box">
+                                <div class="owl-carousel remarks-exhibitors" data-carousel="2"></div>
+                                <div class="remarks-owl-nav-box mt-2">
+                                    <button type="button" class="remarks-owl-pre-btn" id="remarks-prev2"> ←  Prev </button>
+                                    <button type="button" class="remarks-owl-next-btn" id="remarks-next2"> Next → </button>
+                                </div>
+                            </div>
+                        </div>                   
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class="secondary-title text-center border-bottom">SUPPORTED BY</div>
+                        <!-- <div class="owl-carousel owl-theme supported-owl">
+                            <div class="item">
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/blowhot.webp" alt="">
+                                </div>
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/allstar.webp" alt="">
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/azo.webp" alt="">
+                                </div>
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/maxfresh.webp" alt="">
+                                </div>
+                            </div>
+                                    
+                            <div class="item">
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/signoraware.webp" alt="">
+                                </div>
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/hiwin.webp" alt="">
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo" src="assets/images/supported/smax.webp" alt="">
+                                </div>
+                                <div class="supported-img-box">
+                                    <img class="supported-company-logo"  src="assets/images/supported/elegan.webp" alt="">
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="owl-carousel supported-company" data-carousel="3"></div>
                     </div>
                 </div>
             </div>
         </section>
-  <!-- End Supported Company Section -->
-
-   
-
-
-    <!-- First Carousel -->
-  <div class="owl-carousel carousel-container1" id="carousell4" data-carousel="1"></div>
-
-  <!-- Second Carousel -->
-  <div class="owl-carousel carousel-container2" id="carousell4" data-carousel="2"></div>
+        <!-- End Remarks and Supported Company Section -->
 
 
 

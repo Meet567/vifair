@@ -1,5 +1,5 @@
+// *** Home- Index Page ***
 // --- Header Toggle Button ---
-
 function toggleMenu() {
   var nav = document.getElementById("navLinks");
   var toggleButton = document.getElementById("menuToggle");
@@ -50,135 +50,39 @@ $(document).ready(function () {
     owl1.trigger('next.owl.carousel');
   })
 });
-  
 // --- End OWL Carousel ---
 
 
 // --- Primary Btn ---
-    let link = document.querySelector(".primary-btn");
-    let pink = document.querySelector(".primary-btn-color");
+let buttons = document.querySelectorAll(".primary-btn");
 
-    let hoverTL = gsap.timeline({ paused: true });
+buttons.forEach((button) => {
+    let pink = button.querySelector(".primary-btn-color");
 
-    hoverTL.to(pink, {
-      width: "calc(100% + 1.3em)",
-      ease: "elastic.out(0.25, 0.3)",
-      duration: 0.4
+    button.addEventListener("mouseenter", () => {
+        pink.style.width = "100%";
+        pink.style.height = "100%";
+        pink.style.left = "0";
+        pink.style.borderRadius = "25px";
     });
 
-    hoverTL.to(pink, {
-      width: "2em",
-      left: "calc(100% - 1.45em)",
-      ease: "elastic.out(0.4, 0.3)",
-      duration: 0.6
+    button.addEventListener("mouseleave", () => {
+        pink.style.width = "33px";
+        pink.style.height = "33px";
+        pink.style.left = "0";
+        pink.style.borderRadius = "20px";
     });
-
-    link.addEventListener("mouseenter", () => {
-      hoverTL.play();
-    });
-
-    link.addEventListener("mouseleave", () => {
-      hoverTL.reverse();
-    });
+});
 // --- End Primary Btn ---
 
-  // --- OWL Carousel Event Gallery Section ---
- $(document).ready(function () {
-      var owl2 = $("#event-gallery");
 
-      owl2.owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 6000, // Sets autoplay interval (in ms)
-        autoplayHoverPause: true, // Pauses autoplay on hover
-        smartSpeed: 3000,
-        responsive: {
-          0: { items: 1 },
-          600: { items: 4 },
-          1000: { items: 4 }
-        }
-      });
-
-      $(".popup-link").magnificPopup({
-        type: "image",
-        gallery: { enabled: true }
-      });
-    });
-  // --- End OWL Carousel Event Gallery Section ---
-  
-  // --- Supported Comapy Section ---
-  function showSection(sectionId) {
-      // Hide all sections
-      document.querySelectorAll('.right-part-show').forEach(section => {
-        section.style.display = 'none';
-      });
-
-      // Show the selected section
-      document.getElementById(sectionId).style.display = 'block';
-    }
-
-    $(document).ready(function () {
-      var owl3 = $(".supported-owl");
-
-      owl3.owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 6000, // Sets autoplay interval (in ms)
-        autoplayHoverPause: true, // Pauses autoplay on hover
-        smartSpeed: 3000,
-        responsive: {
-          0: {
-            items: 3
-          },
-          600: {
-            items: 4
-          },
-          1000: {
-            items: 4
-          }
-        }
-      });
-    });
-    
-    // *** Active btn ***
-     function showSection(sectionId) {
-    // Hide all sections
-    document.querySelectorAll('.right-part-show').forEach(section => {
-      section.style.display = 'none';
-    });
-    // Show the selected section
-    document.getElementById(sectionId).style.display = 'block';
-    // Remove active class from all buttons
-    document.querySelectorAll('.supported-section-show-btn').forEach(button => {
-      button.classList.remove('active');
-    });
-    // Add active class to the clicked button
-    let activeButton = document.querySelector(`button[onclick="showSection('${sectionId}')"]`);
-    if (activeButton) {
-      activeButton.classList.add('active');
-    }
-    // Save selected section in localStorage
-    localStorage.setItem('activeSection', sectionId);
-  }
-  // On page load, check if there's a saved section in localStorage
-  document.addEventListener("DOMContentLoaded", function () {
-    let savedSection = localStorage.getItem('activeSection') || 'section1'; // Default to section1
-    showSection(savedSection);
-  });
-// --- End Supported Company Section ---
-
-
-// --- Data Fetch image ---
+// --- Data Fetch image Map Function  ---
   function initializeCarousel(data) {
     console.log("Initializing carousel with data:", data);
 
-    // Initialize the first carousel
-    $(".carousel-container1").each(function () {
+  // --- OWL Carousel Event Gallery Section ---
+    // event-gallery-owl   @@@@@ Section 1 @@@@@
+    $(".event-gallery-owl").each(function () {
         let carouselId = $(this).data("carousel");
         let images = data.carousels[carouselId];
 
@@ -188,11 +92,15 @@ $(document).ready(function () {
             $carousel1.empty(); // Clear previous images to prevent duplication
 
             images.forEach(image => {
-                $carousel1.append(` <div class="item">
-                        <a href="${image.src}" class="popup-link">
-                            <img src="${image.src}" alt="${image.alt}">
-                        </a>
-                    </div>`);
+              $carousel1.append(` 
+                  <div class="item event-gallery-box">
+                    <a href="${image.src}" class="popup-link">
+                      <img class="event-gallery-img" src="${image.src}" alt="${image.alt}">
+                      <div class="event-gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus event-gallery-search"></i>
+                      </div>
+                    </a>
+                </div>`);
             });
 
             // Initialize Owl Carousel for this specific container
@@ -218,26 +126,41 @@ $(document).ready(function () {
             });
         }
     });
+    // --- End OWL Carousel Event Gallery Section ---
+    
 
-    // Initialize the second carousel with different settings
-    $(".carousel-container2").each(function () {
+    // --- Remarks of Exhibitors --- @@@@@ Section 2 @@@@@
+    $(".remarks-exhibitors").each(function () {
         let carouselId = $(this).data("carousel");
-        let images = data.carousels[carouselId];
+        let remarksimgs = data.carousels[carouselId];
 
-        if (images) {
+        if (remarksimgs) {
             console.log(`Adding images for Carousel ${carouselId}`);
             let $carousel2 = $(this);
             $carousel2.empty();
 
-            images.forEach(image => {
-                $carousel2.append(`<div class="item"><img src="${image.src}" alt="${image.alt}"></div>`);
+            remarksimgs.forEach(remarksimage => {
+              $carousel2.append(`
+                  <div class="item remarks-main-box">
+                   <div class="testimonial-details-box">
+                      <div class="testimonial-background-color"></div>
+                      <div class="testimonial-img-box">
+                        <img class="testimonial-img" src="${remarksimage.src}" alt="${remarksimage.alt1}">
+                      </div>
+                      <div class="remarks-work-box">
+                        <div class="remarks-name">${remarksimage.alt1}</div>
+                        <div class="remarks-company">${remarksimage.alt2}</div>
+                      </div>
+                    </div> 
+                    <p class="remarks-paragraph">${remarksimage.alt3}</p>
+                  </div>`);
             });
 
             // Different settings for the second carousel
             $carousel2.owlCarousel({
-                stagePadding: 20,
+                // stagePadding: 10,
                 loop: true,
-                margin: 20,
+                margin: 10,
                 nav: true, // Enable navigation buttons for the second carousel
                 autoplay: true,
                 autoplayTimeout: 4000,
@@ -245,20 +168,101 @@ $(document).ready(function () {
                 smartSpeed: 2000,
                 responsive: {
                     0: { items: 1 },
-                    600: { items: 3 },
-                    1000: { items: 3 },
+                    600: { items: 1 },
+                    1000: { items: 1 },
+                },
+            });
+             $("#remarks-prev2").click(function () {
+                $carousel2.trigger("prev.owl.carousel");
+            });
+
+            $("#remarks-next2").click(function () {
+                $carousel2.trigger("next.owl.carousel");
+            });
+        }
+    });
+    // --- End Remarks of Exhibitors ---
+
+     // --- Supported Company Logo --- @@@@@ Section 2 @@@@@
+    $(".supported-company").each(function () {
+        let carouselId = $(this).data("carousel");
+        let supportedimgs = data.carousels[carouselId];
+
+        if (supportedimgs) {
+            console.log(`Adding images for Carousel ${carouselId}`);
+            let $carousel3 = $(this);
+            $carousel3.empty();
+
+          for (let i = 0; i < supportedimgs.length; i += 2) {
+                let supportedimage1 = supportedimgs[i];
+            let supportedimage2 = supportedimgs[i + 1];
+            
+            // supportedimgs.forEach(supportedimage => {
+              $carousel3.append(`
+                <div class="item">
+                  <div class="supported-img-box">
+                    <img class="supported-company-logo" src="${supportedimage1.src}" alt="${supportedimage1.alt}">
+                  </div>
+                  ${supportedimage2 ? `
+                  <div class="supported-img-box">
+                    <img class="supported-company-logo" src="${supportedimage2.src}" alt="${supportedimage2.alt}">
+                  </div> ` : ''}
+                </div>`);
+            }
+
+            // Different settings for the second carousel
+            $carousel3.owlCarousel({
+                // stagePadding: 10,
+                loop: true,
+                margin: 10,
+                nav: true, // Enable navigation buttons for the second carousel
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                smartSpeed: 2000,
+                responsive: {
+                    0: { items: 3 },
+                    600: { items: 4 },
+                    1000: { items: 4 },
                 },
             });
         }
     });
+    // --- End Supported Company Logo ---
 }
-// Run carousel setup when document is ready
 $(document).ready(function () {
     initializeCarousel(carouselData);
 });
+// --- End Data Fetch Image Map Function ---
+// *** End Home- Index Page ***
 
-// --- End Data Fetch Image ---
+// *** Exhibitor Profile ***
+// --- FAQ Section ---
+document.querySelector(".faq-accordion").innerHTML = faqData.map(faq => `
+      <div class="faq-accordion-item">
+        <div class="faq-accordion-item-header">${faq.question}</div>
+        <div class="faq-accordion-item-body">
+          <div class="faq-accordion-item-body-content">
+            <div class="faq-main-content-box">
+              <img class="faq-img" src="${faq.image}" alt="FAQ Image">
+              <div class="faq-content">${faq.answer}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join("");
 
+    document.querySelectorAll(".faq-accordion-item-header").forEach(header => {
+      header.addEventListener("click", function () {
+        document.querySelectorAll(".faq-accordion-item-header").forEach(h => {
+          if (h !== this) h.classList.remove("active"), h.nextElementSibling.style.maxHeight = "0";
+        });
+        this.classList.toggle("active");
+        this.nextElementSibling.style.maxHeight = this.classList.contains("active") ? this.nextElementSibling.scrollHeight + "px" : "0";
+      });
+    });
+    // *** End Exhibitor Page ***
+  
 // about segment js  ends
 function generateSegments(data, containerId) {
   const container = document.getElementById(containerId);
