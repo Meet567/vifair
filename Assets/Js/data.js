@@ -44,7 +44,7 @@ const products = [
 
 
 // ***** Home- Index Page *****
-const carouselData = {
+const carouselData1 = {
   "carousels": {
      // --- OWL Carousel Event Gallery Section ---
     "1": [
@@ -194,3 +194,594 @@ const carouselData = {
       }
     ];
 // *** End Exhibitor Profile ***
+// ***** Home Page *****
+// --- Events Gallery ---
+
+const carouselData = {
+  carousels: {
+    1: [
+      { src: "assets/images/Mumbai.png", alt: "Carousel 1 - Image 1" },
+      { src: "assets/images/Delhi.png", alt: "Carousel 1 - Image 2" },
+      { src: "assets/images/Mumbai.png", alt: "Carousel 1 - Image 3" },
+    ],
+    2: [
+      { src: "assets/images/Delhi.png", alt: "Carousel 2 - Image 1" },
+      { src: "assets/images/Mumbai.png", alt: "Carousel 2 - Image 2" },
+      { src: "assets/images/Channai.jpg", alt: "Carousel 2 - Image 3" },
+    ],
+  },
+};
+
+// video gallery data
+const videos = [
+  {
+    id: "sBnldxPLZdo",
+    title: "Vibrant India Fair Abu Dhabi(Dhabi)-2024 ",
+  },
+  { id: "uVH3ZqgBlWk", title: "Vibrant India Fair New Delhi July-2024" },
+  { id: "HYk_icYXQIY", title: "Vibrant India Fair Nesco Mumbai-2023" },
+  { id: "kJdSsaK4NGI", title: "Vibrant India Fair Patna-2023" },
+  { id: "V1XZ0PQ6hxE", title: "Vibrant India Fair Pragati Maidan Delhi-2023" },
+  {
+    id: "pPXLBiAsUsM",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2022",
+  },
+  {
+    id: "Qs6iMpmK1Zg",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2018",
+  },
+  {
+    id: "viB5mYtJJ_g",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2018",
+  },
+  {
+    id: "JpkIm6jEFxw",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2017",
+  },
+  {
+    id: "vC4eAtlBVeQ",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2016",
+  },
+  {
+    id: "IjWagYvOc1o",
+    title: "Vibrant India Fair Pragati Maidan New Delhi-2016",
+  },
+];
+
+// new gallery data
+const delhi23 = [
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/REGISTRATION/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/REGISTRATION/1.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/REGISTRATION/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/REGISTRATION/2.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/REGISTRATION/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/REGISTRATION/3.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/NETWORKING/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/NETWORKING/1.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/NETWORKING/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/NETWORKING/2.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/NETWORKING/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/NETWORKING/3.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/PUBLIC-VISIT/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/PUBLIC-VISIT/1.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/PUBLIC-VISIT/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/PUBLIC-VISIT/2.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/PUBLIC-VISIT/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/PUBLIC-VISIT/3.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/INAUGURATION/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/INAUGURATION/1.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/INAUGURATION/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/INAUGURATION/2.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/INAUGURATION/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/INAUGURATION/3.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/PRODUCTS/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/PRODUCTS/1.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/PRODUCTS/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/PRODUCTS/2.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/PRODUCTS/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/PRODUCTS/3.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/STALL/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/STALL/1.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/STALL/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/STALL/2.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/STALL/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/STALL/3.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/AWARD-NIGHT/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/AWARD-NIGHT/1.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/AWARD-NIGHT/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/AWARD-NIGHT/2.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2023)/AWARD-NIGHT/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2023)/AWARD-NIGHT/3.webp",
+    category: "award",
+  },
+];
+
+const mumbai23 = [
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/REGISTRATION/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/REGISTRATION/1.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/REGISTRATION/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/REGISTRATION/2.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/REGISTRATION/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/REGISTRATION/3.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/NETWORKING/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/NETWORKING/1.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/NETWORKING/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/NETWORKING/2.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/NETWORKING/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/NETWORKING/3.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/PUBLIC-VISIT/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/PUBLIC-VISIT/1.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/PUBLIC-VISIT/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/PUBLIC-VISIT/2.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/PUBLIC-VISIT/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/PUBLIC-VISIT/3.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/INAUGURATION/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/INAUGURATION/1.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/INAUGURATION/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/INAUGURATION/2.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/INAUGURATION/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/INAUGURATION/3.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/PRODUCTS/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/PRODUCTS/1.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/PRODUCTS/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/PRODUCTS/2.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/PRODUCTS/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/PRODUCTS/3.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/STALL/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/STALL/1.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/STALL/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/STALL/2.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/STALL/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/STALL/3.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/AWARD-NIGHT/1.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/AWARD-NIGHT/1.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/AWARD-NIGHT/2.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/AWARD-NIGHT/2.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/January-Mumbai(2023)/AWARD-NIGHT/3.webp",
+    link: "assets/images/gallery-site/January-Mumbai(2023)/AWARD-NIGHT/3.webp",
+    category: "award",
+  },
+]; // Duplicate for simplicity
+const delhi22 = [
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/REGISTRATION/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/REGISTRATION/1.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/REGISTRATION/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/REGISTRATION/2.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/REGISTRATION/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/REGISTRATION/3.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/NETWORKING/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/NETWORKING/1.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/NETWORKING/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/NETWORKING/2.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/NETWORKING/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/NETWORKING/3.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/PUBLIC-VISIT/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/PUBLIC-VISIT/1.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/PUBLIC-VISIT/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/PUBLIC-VISIT/2.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/PUBLIC-VISIT/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/PUBLIC-VISIT/3.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/INAUGURATION/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/INAUGURATION/1.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/INAUGURATION/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/INAUGURATION/2.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/INAUGURATION/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/INAUGURATION/3.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/PRODUCTS/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/PRODUCTS/1.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/PRODUCTS/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/PRODUCTS/2.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/PRODUCTS/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/PRODUCTS/3.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/STALL/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/STALL/1.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/STALL/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/STALL/2.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/STALL/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/STALL/3.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/AWARD-NIGHT/1.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/AWARD-NIGHT/1.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/AWARD-NIGHT/2.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/AWARD-NIGHT/2.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/July-New-Delhi(2022)/AWARD-NIGHT/3.webp",
+    link: "assets/images/gallery-site/July-New-Delhi(2022)/AWARD-NIGHT/3.webp",
+    category: "award",
+  },
+];
+const delhi19 = [
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/REGISTRATION/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/REGISTRATION/1.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/REGISTRATION/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/REGISTRATION/2.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/REGISTRATION/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/REGISTRATION/3.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/NETWORKING/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/NETWORKING/1.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/NETWORKING/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/NETWORKING/2.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/NETWORKING/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/NETWORKING/3.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/PUBLIC-VISIT/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/PUBLIC-VISIT/1.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/PUBLIC-VISIT/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/PUBLIC-VISIT/2.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/PUBLIC-VISIT/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/PUBLIC-VISIT/3.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/INAUGURATION/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/INAUGURATION/1.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/INAUGURATION/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/INAUGURATION/2.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/INAUGURATION/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/INAUGURATION/3.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/PRODUCTS/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/PRODUCTS/1.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/PRODUCTS/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/PRODUCTS/2.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/PRODUCTS/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/PRODUCTS/3.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/STALL/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/STALL/1.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/STALL/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/STALL/2.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/STALL/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/STALL/3.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/AWARD-NIGHT/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/AWARD-NIGHT/1.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/AWARD-NIGHT/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/AWARD-NIGHT/2.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2019)/AWARD-NIGHT/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2019)/AWARD-NIGHT/3.webp",
+    category: "award",
+  },
+];
+const delhi18 = [
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/REGISTRATION/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/REGISTRATION/1.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/REGISTRATION/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/REGISTRATION/2.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/REGISTRATION/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/REGISTRATION/3.webp",
+    category: "registration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/NETWORKING/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/NETWORKING/1.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/NETWORKING/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/NETWORKING/2.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/NETWORKING/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/NETWORKING/3.webp",
+    category: "networking",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/PUBLIC-VISIT/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/PUBLIC-VISIT/1.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/PUBLIC-VISIT/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/PUBLIC-VISIT/2.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/PUBLIC-VISIT/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/PUBLIC-VISIT/3.webp",
+    category: "public",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/INAUGURATION/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/INAUGURATION/1.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/INAUGURATION/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/INAUGURATION/2.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/INAUGURATION/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/INAUGURATION/3.webp",
+    category: "inauguration",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/PRODUCTS/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/PRODUCTS/1.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/PRODUCTS/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/PRODUCTS/2.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/PRODUCTS/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/PRODUCTS/3.webp",
+    category: "product",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/STALL/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/STALL/1.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/STALL/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/STALL/2.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/STALL/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/STALL/3.webp",
+    category: "stall",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/AWARD-NIGHT/1.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/AWARD-NIGHT/1.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/AWARD-NIGHT/2.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/AWARD-NIGHT/2.webp",
+    category: "award",
+  },
+  {
+    img: "assets/images/gallery-site/June-New-Delhi(2018)/AWARD-NIGHT/3.webp",
+    link: "assets/images/gallery-site/June-New-Delhi(2018)/AWARD-NIGHT/3.webp",
+    category: "award",
+  },
+];

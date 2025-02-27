@@ -14,6 +14,8 @@ ini_set('display_errors', 1);
 </head>
 <!-- Js CDN -->
 <script src="assets/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script src="assets/css/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
 
 <!-- Jquery CDN -->
 <script src="assets/js/jquery/jquery-3.7.1.js"></script>
@@ -28,8 +30,24 @@ ini_set('display_errors', 1);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
   <!-- Main Js Local File -->
+
+<!-- Mixitup -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.2.2/mixitup.min.js"></script>
+<!-- fancybox -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+
+<!-- Main Js Local File -->
 <script src="assets/js/data.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/Main.js"></script>
 
 <body>
 
