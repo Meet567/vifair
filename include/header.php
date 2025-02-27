@@ -140,7 +140,7 @@
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Stay and Hotel</a></li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="#">Magazine Latest Edition</a></li>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="magazine.php">Magazine Latest Edition</a></li>
                     </ul>
                 </div>
                 <div class="header-form-btn-box">

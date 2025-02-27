@@ -9,62 +9,56 @@
   font-family: myFont;
   src: url("../Fonts/Poppins-Light.ttf");
 }
-
-body{
-    font-family: myFont !important;
+body {
+  font-family: myFont !important;
 }
-.section-margin{
-    margin: 50px 0px;
+.section-margin {
+  margin: 50px 0px;
 }
-.primary-heading{
-    font-size: 30px;
-    font-weight: 600;
-    font-family: myFont;
-    text-align: center;
-    padding: 10px;
+.primary-heading {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: myFont;
+  text-align: center;
+  padding: 10px;
 }
-
- .primary-title{
-   font-size: 25px;
-   font-weight: 500;
-   font-family: myFont;
-   color: var(--dark-color);
- }
-
- /* Primary Button  */
-  .primary-btn {
-      font-size: 14px;
-      font-weight: bold;
-      color: var(--dark-color);
-      text-decoration: none;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-    .primary-btn:hover{
-      color: var(--light-color);
-    }
-
-    .primary-btn .primary-btn-span,
-    .primary-btn .primary-btn-i {
-      position: relative;
-      z-index: 2;
-    }
-
-    .primary-btn .primary-btn-i {
-      margin-left: 0.5em;
-    }
-
-    .primary-btn .primary-btn-color {
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      background-color: var(--primary-color);
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: -0.65em;
-      z-index: 1;
-    }
+.primary-title {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: myFont;
+  color: var(--dark-color);
+}
+/* Primary Button  */
+.primary-btn {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--dark-color);
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.primary-btn:hover {
+  color: var(--light-color);
+}
+.primary-btn .primary-btn-span,
+.primary-btn .primary-btn-i {
+  position: relative;
+  z-index: 2;
+}
+.primary-btn .primary-btn-i {
+  margin-left: 0.5em;
+}
+.primary-btn .primary-btn-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -0.65em;
+  z-index: 1;
+}
 /* End Primary Button */
 /* ----- End Common CSS ----- */
