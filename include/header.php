@@ -54,7 +54,7 @@
                                 <ul class="submenu-unlist">
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Why Exhibit</a>
                                     </li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibitor_profile.php">Exhibitor
                                             Profile</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Brochure</a>
                                     </li>

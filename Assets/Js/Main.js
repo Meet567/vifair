@@ -1,5 +1,5 @@
+// *** Home- Index Page ***
 // --- Header Toggle Button ---
-
 function toggleMenu() {
   var nav = document.getElementById("navLinks");
   var toggleButton = document.getElementById("menuToggle");
@@ -31,17 +31,22 @@ $(document).ready(function () {
         items: 1,
         stagePadding: false,
       },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 2,
+      },
     },
   });
-
-  $("#prev1").click(function () {
-    owl1.trigger("prev.owl.carousel");
+  
+  $('#prev1').click(function () {
+    owl1.trigger('prev.owl.carousel');
   });
-  $("#next1").click(function () {
-    owl1.trigger("next.owl.carousel");
-  });
+  $('#next1').click(function () {
+    owl1.trigger('next.owl.carousel');
+  })
 });
-
 // --- End OWL Carousel ---
 
 // --- OWL Carousel Event Gallery Section ---
@@ -106,145 +111,273 @@ $(document).ready(function () {
     },
   });
 });
+// --- End OWL Carousel ---
 
-// *** Active btn ***
-function showSection(sectionId) {
-  // Hide all sections
-  document.querySelectorAll(".right-part-show").forEach((section) => {
-    section.style.display = "none";
-  });
-  // Show the selected section
-  document.getElementById(sectionId).style.display = "block";
-  // Remove active class from all buttons
-  document.querySelectorAll(".supported-section-show-btn").forEach((button) => {
-    button.classList.remove("active");
-  });
-  // Add active class to the clicked button
-  let activeButton = document.querySelector(
-    `button[onclick="showSection('${sectionId}')"]`
-  );
-  if (activeButton) {
-    activeButton.classList.add("active");
-  }
-  // Save selected section in localStorage
-  localStorage.setItem("activeSection", sectionId);
-}
-// On page load, check if there's a saved section in localStorage
-document.addEventListener("DOMContentLoaded", function () {
-  let savedSection = localStorage.getItem("activeSection") || "section1"; // Default to section1
-  showSection(savedSection);
+
+// --- Primary Btn ---
+let buttons = document.querySelectorAll(".primary-btn");
+
+buttons.forEach((button) => {
+    let pink = button.querySelector(".primary-btn-color");
+
+    button.addEventListener("mouseenter", () => {
+        pink.style.width = "100%";
+        pink.style.height = "100%";
+        pink.style.left = "0";
+        pink.style.borderRadius = "25px";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        pink.style.width = "33px";
+        pink.style.height = "33px";
+        pink.style.left = "0";
+        pink.style.borderRadius = "20px";
+    });
 });
-// --- End Supported Company Section ---
+// --- End Primary Btn ---
 
-// --- Data Fetch image ---
-function initializeCarousel(data) {
-  console.log("Initializing carousel with data:", data);
 
-  // Initialize the first carousel
-  $(".carousel-container1").each(function () {
-    let carouselId = $(this).data("carousel");
-    let images = data.carousels[carouselId];
+// --- Data Fetch image Map Function  ---
+  function initializeCarousel(data) {
+    console.log("Initializing carousel with data:", data);
+
+  // --- OWL Carousel Event Gallery Section ---
+    // event-gallery-owl   @@@@@ Section 1 @@@@@
+    $(".event-gallery-owl").each(function () {
+        let carouselId = $(this).data("carousel");
+        let images = data.carousels[carouselId];
 
     if (images) {
       console.log(`Adding images for Carousel ${carouselId}`);
       let $carousel1 = $(this);
       $carousel1.empty(); // Clear previous images to prevent duplication
 
-      images.forEach((image) => {
-        $carousel1.append(` <div class="item">
-                        <a href="${image.src}" class="popup-link">
-                            <img src="${image.src}" alt="${image.alt}">
-                        </a>
-                    </div>`);
-      });
+            images.forEach(image => {
+              $carousel1.append(` 
+                  <div class="item event-gallery-box">
+                    <a href="${image.src}" class="popup-link">
+                      <img class="event-gallery-img" src="${image.src}" alt="${image.alt}">
+                      <div class="event-gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus event-gallery-search"></i>
+                      </div>
+                    </a>
+                </div>`);
+            });
 
-      // Initialize Owl Carousel for this specific container
-      $carousel1.owlCarousel({
-        // stagePadding: 40,
-        loop: true,
-        margin: 10,
-        nav: false,
-        autoplay: true,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        smartSpeed: 3000,
-        responsive: {
-          0: { items: 1, stagePadding: false },
-          600: { items: 4 },
-          1000: { items: 4 },
-        },
-      });
-      // Initialize Magnific Popup for image popups
-      $carousel1.find(".popup-link").magnificPopup({
-        type: "image",
-        gallery: { enabled: true },
-      });
-    }
-  });
+            // Initialize Owl Carousel for this specific container
+          $carousel1.owlCarousel({      
+                // stagePadding: 40,
+                loop: true,
+                margin: 10,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                smartSpeed: 3000,
+                responsive: {
+                    0: { items: 1, stagePadding: false },
+                    600: { items: 4 },
+                    1000: { items: 4 },
+                },
+            });
+              // Initialize Magnific Popup for image popups
+            $carousel1.find('.popup-link').magnificPopup({
+                type: 'image',
+                gallery: { enabled: true }
+            });
+        }
+    });
+    // --- End OWL Carousel Event Gallery Section ---
+    
 
-  // Initialize the second carousel with different settings
-  $(".carousel-container2").each(function () {
-    let carouselId = $(this).data("carousel");
-    let images = data.carousels[carouselId];
+    // --- Remarks of Exhibitors --- @@@@@ Section 2 @@@@@
+    $(".remarks-exhibitors").each(function () {
+        let carouselId = $(this).data("carousel");
+        let remarksimgs = data.carousels[carouselId];
 
-    if (images) {
-      console.log(`Adding images for Carousel ${carouselId}`);
-      let $carousel2 = $(this);
-      $carousel2.empty();
+        if (remarksimgs) {
+            console.log(`Adding images for Carousel ${carouselId}`);
+            let $carousel2 = $(this);
+            $carousel2.empty();
 
-      images.forEach((image) => {
-        $carousel2.append(
-          `<div class="item"><img src="${image.src}" alt="${image.alt}"></div>`
-        );
-      });
+            remarksimgs.forEach(remarksimage => {
+              $carousel2.append(`
+                  <div class="item remarks-main-box">
+                   <div class="testimonial-details-box">
+                      <div class="testimonial-background-color"></div>
+                      <div class="testimonial-img-box">
+                        <img class="testimonial-img" src="${remarksimage.src}" alt="${remarksimage.alt1}">
+                      </div>
+                      <div class="remarks-work-box">
+                        <div class="remarks-name">${remarksimage.alt1}</div>
+                        <div class="remarks-company">${remarksimage.alt2}</div>
+                      </div>
+                    </div> 
+                    <p class="remarks-paragraph">${remarksimage.alt3}</p>
+                  </div>`);
+            });
 
-      // Different settings for the second carousel
-      $carousel2.owlCarousel({
-        stagePadding: 20,
-        loop: true,
-        margin: 20,
-        nav: true, // Enable navigation buttons for the second carousel
-        autoplay: true,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: true,
-        smartSpeed: 2000,
-        responsive: {
-          0: { items: 1 },
-          600: { items: 3 },
-          1000: { items: 3 },
-        },
-      });
-    }
-  });
+            // Different settings for the second carousel
+            $carousel2.owlCarousel({
+                // stagePadding: 10,
+                loop: true,
+                margin: 10,
+                nav: true, // Enable navigation buttons for the second carousel
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                smartSpeed: 2000,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 1 },
+                    1000: { items: 1 },
+                },
+            });
+             $("#remarks-prev2").click(function () {
+                $carousel2.trigger("prev.owl.carousel");
+            });
+
+            $("#remarks-next2").click(function () {
+                $carousel2.trigger("next.owl.carousel");
+            });
+        }
+    });
+    // --- End Remarks of Exhibitors ---
+
+     // --- Supported Company Logo --- @@@@@ Section 2 @@@@@
+    $(".supported-company").each(function () {
+        let carouselId = $(this).data("carousel");
+        let supportedimgs = data.carousels[carouselId];
+
+        if (supportedimgs) {
+            console.log(`Adding images for Carousel ${carouselId}`);
+            let $carousel3 = $(this);
+            $carousel3.empty();
+
+          for (let i = 0; i < supportedimgs.length; i += 2) {
+                let supportedimage1 = supportedimgs[i];
+            let supportedimage2 = supportedimgs[i + 1];
+            
+            // supportedimgs.forEach(supportedimage => {
+              $carousel3.append(`
+                <div class="item">
+                  <div class="supported-img-box">
+                    <img class="supported-company-logo" src="${supportedimage1.src}" alt="${supportedimage1.alt}">
+                  </div>
+                  ${supportedimage2 ? `
+                  <div class="supported-img-box">
+                    <img class="supported-company-logo" src="${supportedimage2.src}" alt="${supportedimage2.alt}">
+                  </div> ` : ''}
+                </div>`);
+            }
+
+            // Different settings for the second carousel
+            $carousel3.owlCarousel({
+                // stagePadding: 10,
+                loop: true,
+                margin: 10,
+                nav: true, // Enable navigation buttons for the second carousel
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                smartSpeed: 2000,
+                responsive: {
+                    0: { items: 3 },
+                    600: { items: 4 },
+                    1000: { items: 4 },
+                },
+            });
+        }
+    });
+    // --- End Supported Company Logo ---
 }
-// Run carousel setup when document is ready
 $(document).ready(function () {
-  initializeCarousel(carouselData);
+  initializeCarousel(carouselData1);
 });
+// --- End Data Fetch Image Map Function ---
+// *** End Home- Index Page ***
 
-// --- End Data Fetch Image ---
+// *** Exhibitor Profile ***
+// --- FAQ Section ---
+document.addEventListener("DOMContentLoaded", () => {
+  const faqContainer = document.querySelector(".faq-accordion");
 
-// Visitor Business proflie js and job proflie start js
+  // ✅ Check if the .faq-accordion element exists before modifying innerHTML
+  if (!faqContainer) {
+    console.error("Error: .faq-accordion element not found.");
+    return;
+  }
+
+  // ✅ Check if faqData exists and is an array
+  if (!Array.isArray(faqData) || faqData.length === 0) {
+    console.error("Error: faqData is not defined or is empty.");
+    return;
+  }
+
+  // ✅ Populate FAQ dynamically
+  faqContainer.innerHTML = faqData
+    .map(
+      (faq, index) => `
+      <div class="faq-accordion-item">
+        <div class="faq-accordion-item-header" data-index="${index}">${faq.question}</div>
+        <div class="faq-accordion-item-body">
+          <div class="faq-accordion-item-body-content">
+            <div class="faq-main-content-box">
+              <img class="faq-img" src="${faq.image}" alt="FAQ Image">
+              <div class="faq-content">${faq.answer}</div>
+            </div>
+          </div>
+        </div>
+      </div>`
+    )
+    .join("");
+
+  // ✅ Attach event listeners safely
+  document.querySelectorAll(".faq-accordion-item-header").forEach((header) => {
+    header.addEventListener("click", function () {
+      document.querySelectorAll(".faq-accordion-item-header").forEach((h) => {
+        if (h !== this) {
+          h.classList.remove("active");
+          h.nextElementSibling.style.maxHeight = "0";
+        }
+      });
+
+      this.classList.toggle("active");
+      this.nextElementSibling.style.maxHeight = this.classList.contains("active")
+        ? this.nextElementSibling.scrollHeight + "px"
+        : "0";
+    });
+  });
+});
+    // *** End Exhibitor Page ***
+  
+// about segment js  ends
 document.addEventListener("DOMContentLoaded", function () {
   function generateSegments(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container || !Array.isArray(data) || data.length === 0) return;
 
-    container.innerHTML = data
-      .map(
-        (item) => `
-        <div class="visitor-segmentation-segment" data-aos="zoom-in" data-aos-duration="1000">
-          <h3 class="visitor-segmentation-count" data-count="${item.count}">0%</h3>
-          <p class="visitor-segmentation-text">${item.name}</p>
-        </div>`
-      )
-      .join("");
+    // Append instead of overwriting to prevent data loss
+    data.forEach(item => {
+      const segment = document.createElement("div");
+      segment.classList.add("visitor-segmentation-segment");
+      segment.setAttribute("data-aos", "zoom-in");
+      segment.setAttribute("data-aos-duration", "1000");
+
+      segment.innerHTML = `
+        <h3 class="visitor-segmentation-count" data-count="${item.count}">0%</h3>
+        <p class="visitor-segmentation-text">${item.name}</p>
+      `;
+
+      container.appendChild(segment);
+    });
   }
 
-  if (typeof businessProfileData !== "undefined") {
+  // Ensure `businessProfileData` and `jobProfileData` exist before calling
+  if (typeof businessProfileData !== "undefined" && document.getElementById("businessProfile")) {
     generateSegments(businessProfileData, "businessProfile");
   }
-  if (typeof jobProfileData !== "undefined") {
+  if (typeof jobProfileData !== "undefined" && document.getElementById("jobProfile")) {
     generateSegments(jobProfileData, "jobProfile");
   }
 
@@ -264,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.4 }
   );
 
-  counters.forEach((counter) => observer.observe(counter));
+  counters.forEach(counter => observer.observe(counter));
 
   function animateCount(element, targetValue) {
     let start = 0;
@@ -278,6 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, stepTime);
   }
 });
+
 // Visitor Business proflie js and job proflie end js
 
 // 16 segments js data fech start js
@@ -436,63 +570,72 @@ $("[data-fancybox]").fancybox({
 
 // video js start
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("video-container");
-  const modal = document.getElementById("videoModal");
-  const iframe = document.getElementById("videoFrame");
-  const closeButton = document.querySelector(".close-btn");
+  // Wait until the element is available
+  const waitForElement = (selector, callback, interval = 100) => {
+    const checkElement = setInterval(() => {
+      const element = document.getElementById(selector);
+      if (element) {
+        clearInterval(checkElement);
+        callback(element);
+      }
+    }, interval);
+  };
 
-  if (!container) {
-    console.error("Error: video-container element not found.");
-    return;
-  }
-
-  if (!Array.isArray(videos)) {
+  // Ensure "videos" is defined and an array
+  if (typeof videos === "undefined" || !Array.isArray(videos)) {
     console.error("Error: videos is not defined or not an array.");
     return;
   }
 
-  videos.forEach((video) => {
-    const videoCard = document.createElement("div");
-    videoCard.classList.add("video-card");
+  // Load the video container only when it's available
+  waitForElement("video-container", (container) => {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoFrame");
+    const closeButton = document.querySelector(".close-btn");
 
-    videoCard.innerHTML = `
-          <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="Thumbnail">
-          <div class="video-title">${video.title}</div>
-        `;
+    videos.forEach((video) => {
+      const videoCard = document.createElement("div");
+      videoCard.classList.add("video-card");
 
-    videoCard.addEventListener("click", () => openModal(video.id));
+      videoCard.innerHTML = `
+        <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="Thumbnail">
+        <div class="video-title">${video.title}</div>
+      `;
 
-    container.appendChild(videoCard);
-  });
+      videoCard.addEventListener("click", () => openModal(video.id));
+      container.appendChild(videoCard);
+    });
 
-  window.openModal = function (videoId) {
-    if (modal && iframe) {
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      modal.style.display = "flex";
+    window.openModal = function (videoId) {
+      if (modal && iframe) {
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        modal.style.display = "flex";
+      } else {
+        console.error("Error: Modal or iframe not found.");
+      }
+    };
+
+    window.closeModal = function () {
+      if (modal && iframe) {
+        iframe.removeAttribute("src"); // Prevents unnecessary reloads
+        modal.style.display = "none";
+      }
+    };
+
+    if (closeButton) {
+      closeButton.addEventListener("click", closeModal);
     } else {
-      console.error("Error: Modal or iframe not found.");
+      console.error("Error: Close button not found.");
     }
-  };
 
-  window.closeModal = function () {
-    if (modal && iframe) {
-      iframe.removeAttribute("src"); // Prevents unnecessary reloads
-      modal.style.display = "none";
-    }
-  };
-
-  if (closeButton) {
-    closeButton.addEventListener("click", closeModal);
-  } else {
-    console.error("Error: Close button not found.");
-  }
-
-  window.onclick = function (event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  };
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  });
 });
+
 
 //video js end
 // ✅ Initialize AOS

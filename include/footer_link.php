@@ -29,6 +29,7 @@ ini_set('display_errors', 1);
 <!-- AOS Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
+  <!-- Main Js Local File -->
 
 <!-- Mixitup -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.2.2/mixitup.min.js"></script>

@@ -119,11 +119,17 @@
 /* ----- End OWL Carousel ----- */
 
 /* ----- Offer Section ----- */
+.offer-left-part{
+  padding: 10px;
+}
 .offer-progressive{
   padding: 10px 0;
 }
 .offer-progressive .offer-pro-deals{
   color: var(--primary-color);
+}
+.offer-right-part{
+  padding: 10px;
 }
 .offer-unlist{
   list-style: square;
@@ -190,83 +196,192 @@
 /* ----- End Visit Exhibit Section ----- */
 
 /* ----- Events gallery ----- */
-/* .owl-carousel .event-items {
+ .event-gallery-box {
       position: relative;
-      padding: 10px;
+      overflow: hidden;
     }
-    
-    .owl-carousel .event-items img {
+    .event-gallery-box .event-gallery-img {
       width: 100%;
       display: block;
     }
+    .event-gallery-box::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      height: 80%;
+      opacity: 0;
+      border: 3px solid var(--primary-color);
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transform: translate(-50%, -50%) scale(0.8);
+      pointer-events: none;
+    }
+    .event-gallery-box:hover::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .event-gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0000005c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .event-gallery-box:hover .event-gallery-overlay {
+      opacity: 1;
+    }
 
-    .carousel-container-box {
-      margin-bottom: 40px;
-    } */
+    .event-gallery-overlay .event-gallery-search {
+      color: var(--primary-color);
+      font-size: 15px;
+    }
+  .mfp-bottom-bar .mfp-counter{
+    display: none;
+  } 
 
-    
-    .event-gallery-box {
+
+    /* .event-gallery-box {
       max-width: 100%;
     }
 
     .event-gallery-box img {
       width: 100%;
       height: auto;
-    }
-    .mfp-bottom-bar .mfp-counter{
-      display: none;
-    }
-
+    }*/
+     
+   
     
 /* ----- End Events Gallery ----- */
 
-/* ----- Supported Company Section ----- */
-.supported-company-main{
+/* ----- About and Exhibitor Profile Section ----- */
+ /* About Section  */
+ .about-left-part{
+  padding: 5px;
+ }
+ .about-left-para{
+  font-size: 14px;
+  margin: 0;
+  padding: 8px 0 0 0;
+ }
+ .about-location-bold{
+  font-weight: 600;
+ }
+ .about-reedmore-btn{
+  text-decoration: none;
+  color: var(--primary-color) !important;
+ }
+ /* End About Section */
+/* ----- End About and Exhibitor Profile Section ----- */
+
+/* ----- Remarks and Supported Company Section ----- */
+/* Left Part Remarks of Exhibitors */
+ .remarks-supported-main{
+      padding: 10px;
+    }
+.remarks-exhibitors{
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+.remarks-main-box{
+  padding: 2px;
+}
+ .remarks-left-part {
+      padding: 10px;
+    }
+.testimonial-img-box{
+  max-width: 100px;
+}
+.testimonial-details-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 0 5px 0;
+}
+.testimonial-background-color{
+  background-color: var(--secondary-color);
+  position: absolute;
+  width: 100%;
+  height: 46%;
+  top: 0;
+  z-index: -1;
+}
+.testimonial-background-color::after{
+   content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -2;
+  transform: skewY(350deg);
+}
+.testimonial-details-box::after{
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 50%;
+  top: 0;
+  z-index: -2;
+  transform: skewY(9deg);
+}
+.remarks-paragraph{
+  font-size: 12px;
+}
+.testimonial-img-box .testimonial-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--light-color);
+}
+.testimonial-details-box .remarks-work-box{
   padding: 10px;
+  text-align: center;
 }
- .supported-left-part {
-      width: auto;
-      /* position: fixed; */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
-    }
-
-    .supported-section-show-btn {
-      text-align: left;
-      font-size: 25px;
-      display: block;
-      margin: 10px 0px;
-      font-weight: 500;
-      border: none;
-      background-color: transparent;
-      
-    }
-
- .supported-section-show-btn:hover {
-  color: var(--primary-color);
-    }
-.supported-section-show-btn.active {
-  color: var(--primary-color); /* Change to your desired active color */
-  font-weight: bold;
+.remarks-work-box .remarks-name{
+  font-size: 14px;
+  font-weight: 600;
 }
-    .supported-right-part {
-      padding: 5px;
-      flex: 1;
-    }
+.remarks-work-box .remarks-company{
+  font-size: 12px;
+}
+.remarks-owl-nav-box{
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.remarks-owl-pre-btn{
+  border: none;
+  font-size: 14px;
+  border-radius: 3px;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+}
+.remarks-owl-next-btn{
+  border: none;
+  font-size: 14px;
+  border-radius: 3px;
+  color: var(--light-color);
+  background-color: var(--primary-color);
 
-    .right-part-show {
-      min-height: 100%;
-      display: none;
-      /* Hide all sections initially */
-    }
+}
+/* End Left Part Remarks of Exhibitors */
 
-    /* Show the first section by default */
-    #section1 {
-      display: block;
-    }
-
+/* Right Part Supported Company Secion */
+.supported-owl{
+  margin: 0;
+  padding: 10px 0;
+}
     .supported-img-box{
       max-width: 100px;
       margin: 7px;
@@ -284,7 +399,9 @@
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
      }
     
-/* ----- End Supported Company Section ----- */
+/*  End Right Part Supported Company Section  */
+/* ----- End Remarks and Supported Section ----- */
+
 
 /* Extra Small Devices (up to 480px) */
 @media (max-width: 480px) {
