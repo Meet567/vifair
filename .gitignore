@@ -1,1 +1,4 @@
 ./assets/images
+./admin/assets/img
+./admin/vendor
+./admin/phpqrcode

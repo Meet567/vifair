@@ -27,8 +27,6 @@
 /* gallery show  btn css start */
 .gallery-show-btn {
   position: relative;
-  margin: 0;
-  padding: 0;
   top: 115px;
   left: 5px;
   padding: 8px 12px; /* Adjusted padding for responsiveness */
@@ -49,7 +47,6 @@
   gap: 10px; /* Adds space between text and icon */
   box-shadow: rgba(0, 0, 0, 0.745) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  cursor: pointer;
 }
 
 /* Icon animation */
@@ -172,6 +169,7 @@
 .gallery-menu {
   text-align: center; /* Center the buttons */
   padding: 5px;
+  
 }
 
 .gallery-menu .controls {
@@ -179,6 +177,7 @@
   flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
   justify-content: center; /* Center buttons */
   gap: 10px; /* Add space between buttons */
+
 }
 
 .gallery-menu .gallery-tab-control {
@@ -191,6 +190,7 @@
   margin: 5px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+
 }
 
 .gallery-menu .gallery-tab-control:hover {

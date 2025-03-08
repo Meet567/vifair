@@ -9,9 +9,8 @@
   font-family: myFont;
   src: url("../Fonts/Poppins-Light.ttf");
 }
-
-body{
-    font-family: myFont !important;
+body {
+  font-family: myFont !important;
 }
 
 /* .main-div{
@@ -20,31 +19,29 @@ body{
 .section-margin{
     margin: 40px 0px 0px 0px;
 }
-.primary-heading{
-    font-size: 30px;
-    font-weight: 600;
-    font-family: myFont;
-    text-align: center;
-    padding: 10px;
+.primary-heading {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: myFont;
+  text-align: center;
+  padding: 10px;
+}.primary-title {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: myFont;
+  color: var(--dark-color);
+  position: relative;
+  padding: 0 0 0 40px;
 }
-
- .primary-title{
-   font-size: 25px;
-   font-weight: 500;
-   font-family: myFont;
-   color: var(--dark-color);
-   position: relative;
-   padding: 0 0 0 40px;
+.primary-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 35px;
+  height: 2px;
+  background-color: var(--primary-color);
 }
- .primary-title::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0px;
-    width: 35px;
-    height: 2px;
-    background-color: var(--primary-color);
- }
  
   .secondary-title{
    font-size: 25px;
@@ -110,47 +107,119 @@ body{
     border-radius: 25px;
     transition: color 0.3s ease-in-out;
 }
+/* Primary Button  */
+.primary-btn {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--dark-color);
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.primary-btn:hover {
+  color: var(--light-color);
+}
+.primary-btn .primary-btn-span,
+.primary-btn .primary-btn-i {
+  position: relative;
+  z-index: 2;
+}
+.primary-btn .primary-btn-i {
+  margin-left: 0.5em;
+}
+.primary-btn .primary-btn-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -0.65em;
+  z-index: 1;
+}
+
+.primary-title {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: myFont;
+  color: var(--dark-color);
+  position: relative;
+  padding: 0 0 0 40px;
+}
+.primary-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 35px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.secondary-title {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: myFont;
+  color: var(--primary-color);
+}
+
+/* Primary Button  */
+.primary-btn {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--dark-color);
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  overflow: hidden;
+  border-radius: 25px;
+  transition: color 0.3s ease-in-out;
+}
 
 .primary-btn:hover {
-    color: var(--light-color);
+  color: var(--light-color);
 }
 
 .primary-btn .primary-btn-span,
 .primary-btn .primary-btn-i {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .primary-btn .primary-btn-i {
-   margin-left: 0.5em;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-left: 0.5em;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .primary-btn:hover .primary-btn-i {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.4s; /* Arrow appears after hover animation */
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s; /* Arrow appears after hover animation */
 }
 
 .primary-btn .primary-btn-color {
-    width: 33px;
-    height: 33px;
-    border-radius: 20px;
-    background-color: var(--primary-color);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: 1;
-    transition: all 0.4s ease-in-out;
+  width: 33px;
+  height: 33px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
 }
 
 .primary-btn:hover .primary-btn-color {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  left: 0;
 }
 
 /* End Primary Button */

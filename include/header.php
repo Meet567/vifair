@@ -140,13 +140,13 @@
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Stay and Hotel</a></li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="#">Magazine Latest Edition</a></li>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="magazine.php">Magazine Latest Edition</a></li>
                     </ul>
                 </div>
                 <div class="header-form-btn-box">
                     <ul class="form-unlist-box">
-                        <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO VISIT</a></li>
-                        <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO EXHIBIT</a></li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="visitor_reg.php">I WANT TO VISIT</a></li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="exhibit_reg.php">I WANT TO EXHIBIT</a></li>
                     </ul>
                 </div>
                 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
