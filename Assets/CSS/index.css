@@ -122,10 +122,9 @@
 .offer-left-part{
   padding: 10px;
 }
-.offer-progressive{
-  padding: 10px 0;
-}
-.offer-progressive .offer-pro-deals{
+.section-text-content .offer-pro-deals{
+  font-size: 12px;
+  font-weight: 600;
   color: var(--primary-color);
 }
 .offer-right-part{
@@ -135,8 +134,9 @@
   list-style: square;
 }
 .offer-list{
-  border-bottom: 1px solid var(--secondary-color);
+  font-size: 14px;
   padding: 5px;
+  border-bottom: 1px solid var(--secondary-color);
 }
 /* ----- End Offer Section ----- */
 
@@ -153,19 +153,14 @@
   width: 100%;
   height: 100%;
 }
-.visit-content-first {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 0px;
-  color: var(--primary-color);
-}
+
 .visit-content-second {
   font-size: 12px;
   padding: 5px 0px;
   margin: 0;
   font-weight: 600;
 }
-.visit-content-second .visit-link {
+.section-text-title .visit-link {
   font-weight: 600;
   color: var(--primary-color);
 }
@@ -188,10 +183,7 @@
   padding: 5px 0px;
   font-weight: 600;
 }
-.visit-content-fourth {
-  font-size: 12px;
-  padding: 5px 0px;
-}
+
 
 /* ----- End Visit Exhibit Section ----- */
 
@@ -265,18 +257,32 @@
  .about-left-part{
   padding: 5px;
  }
- .about-left-para{
-  font-size: 14px;
-  margin: 0;
-  padding: 8px 0 0 0;
- }
- .about-location-bold{
+ 
+ .section-text-content .about-location-bold{
   font-weight: 600;
  }
  .about-reedmore-btn{
-  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none !important;
   color: var(--primary-color) !important;
+  position: relative;
  }
+
+.about-reedmore-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.about-reedmore-btn:hover::after {
+    width: 100%;
+}
  /* End About Section */
 /* ----- End About and Exhibitor Profile Section ----- */
 
@@ -347,13 +353,6 @@
   padding: 10px;
   text-align: center;
 }
-.remarks-work-box .remarks-name{
-  font-size: 14px;
-  font-weight: 600;
-}
-.remarks-work-box .remarks-company{
-  font-size: 12px;
-}
 .remarks-owl-nav-box{
   bottom: 0;
   display: flex;
@@ -406,9 +405,9 @@
 /* Extra Small Devices (up to 480px) */
 @media (max-width: 480px) {
   /* Banner Thumbnail */
-  .banner-thumbnail{
+  /* .banner-thumbnail{
     margin-top: 10%;
-  }
+  } */
   /* OWL Carousel  */
   .owl-nav-box {
     width: 100%;
@@ -442,9 +441,9 @@
 /* Small Devices (481px to 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   /* Banner Thumbnail */
-  .banner-thumbnail{
+  /* .banner-thumbnail{
     margin-top: 7%;
-  }
+  } */
 }
 /* Medium Devices (769px to 992px) */
 @media (max-width: 992px) {

@@ -4,8 +4,8 @@
 <head>
     <title>Vibrant India Fair</title>
     <?php
-    // Include common head section
-    include_once "include/head_link.php";
+        // Include common head section
+        include_once "include/head_link.php";
     ?>
 </head>
 
@@ -35,16 +35,16 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="about.php">About Us</a>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="about_us.php">About Us</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About Vibrant
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="about_us.php">About Vibrant
                                             India</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About
                                             Organizer</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Post Show
                                             Report</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Show
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="about.php">Show
                                             Highlights</a></li>
                                 </ul>
                             </div>

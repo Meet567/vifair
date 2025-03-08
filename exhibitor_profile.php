@@ -9,19 +9,31 @@
         include "include/header.php";
     ?>
 </head>
+    <!-- ----- Banner Section ----- -->
+    <section>
+            <div class="banner-main-box">
+                <div class="banner-thumbnail">
+                    <picture> 
+                        <img class="banner-thumbnail-img" src="https://satte.in/UIComponents/images/innerbanner.jpg" alt="">
+                    </picture>
+                </div>
+                <div class="banner-header-title">
+                    EXHIBITOR PROFILE
+                </div>
+            </div>
+    </section>
+    <!-- ----- End Banner Section ----- -->
 
-    <!-- <div>
-        <img src="https://wordpress.mapsted.com/wp-content/uploads/2023/02/TradeShowBlog.jpg" alt="">
-    </div> -->
-    <section class="secion-margin mt-5">
+    <!-- ----- FAQ Section ----- -->
+    <section class="section-margin">
         <div class="main main-div">
             <div class="container-fluid">
                 <div class="primary-heading">Exhibitor Profile</div>
                 <div class="row">
-                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                         <div class="faq-accordion"></div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                         <div class="right-part-message-box">
                             <div class="right-part-sub-box">
                                 <div class="right-part-title">Say Hello!</div>
@@ -29,7 +41,7 @@
                             </div> 
                             <div class="right-main-img-box">
                                 <div class="right-img-box">
-                                    <img class="right-part-img" src="https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Rectangle-38.webp" alt="">
+                                    <img class="right-part-img" src="assets/images/Rectangle.webp" alt="">
                                     <div class="right-message-link-box">
                                         <div class="right-message-icon-box">
                                             <img class="right-message-icon" src="assets/images/icon/chat.png" alt="">
@@ -47,6 +59,7 @@
             </div>
         </div>
     </section>
+    <!-- ----- End FAQ Section ----- -->
 
     <?php
         include "include/footer.php";

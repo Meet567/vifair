@@ -13,8 +13,12 @@
 body{
     font-family: myFont !important;
 }
+
+/* .main-div{
+    min-height: 100vh;
+} */
 .section-margin{
-    margin: 40px 0px;
+    margin: 40px 0px 0px 0px;
 }
 .primary-heading{
     font-size: 30px;
@@ -48,14 +52,56 @@ body{
    font-family: myFont;
    color: var(--primary-color);
  }
- 
+ .section-text-title {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 0px 0px 0px;
+    color: var(--dark-color);
+}
+.section-text-content{
+  font-size: 12px;
+  padding: 5px 0px 0px 0px;
+  color: var(--dark-color);
+}
+ /* --- Banner Heading Section --- */
+.banner-header-title{
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 3vw;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--light-color);
+  z-index: 1;
+}
+
+.banner-header-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+.banner-header-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 30%;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+/* --- End Banner Heading Section --- */
+
 
  /* Primary Button  */
 .primary-btn {
     font-size: 13px;
     font-weight: bold;
     color: var(--dark-color);
-    text-decoration: none;
+    text-decoration: none !important;
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -109,3 +155,9 @@ body{
 
 /* End Primary Button */
 /* ----- End Common CSS ----- */
+/* Extra Small Devices (up to 480px) */
+@media (max-width: 480px) {
+  .section-margin{
+    margin: 20px 0px 0px 0px;
+  }
+}

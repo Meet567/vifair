@@ -1,6 +1,46 @@
- .main-div{
-    margin: 10% 0 0 0;
- }
+/* --- Banner Section --- */
+
+.banner-main-box{
+  width: 100%;
+  padding-bottom: 31%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.banner-main-box .banner-thumbnail{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.banner-thumbnail .banner-thumbnail-img{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+}
+.banner-main-box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #00000090;
+  z-index: 1;
+}
+/* --- End Banner Section --- */
+
+/* --- FAQ Section --- */
  .faq-accordion {
       width: 100%;
       max-width: 100%;
@@ -17,6 +57,7 @@
     }
 
     .faq-accordion-item .faq-accordion-item-header {
+      font-size: 15px;
       padding: 15px;
       font-weight: bold;
       display: flex;
@@ -66,9 +107,9 @@
       background-color: var(--primary-color);
       border-radius: 5px;
       padding: 20px;
-      margin-top: 15px;
+      /* margin-top: 15px; */
       position: sticky;
-      top: 0;
+      top: 80px;
     }
     .right-part-message-box .right-part-sub-box{
 
@@ -145,5 +186,5 @@
   text-decoration: none;
 }
 
-    
     /* --- End Right Part --- */
+    /* --- End FAQ Section --- */
