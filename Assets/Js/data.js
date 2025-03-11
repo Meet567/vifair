@@ -140,7 +140,7 @@ const carouselData1 = {
       {
         question: "HOME WARE",
         answer: "A complete line of homewares including kitchenware, kitchen appliances, cookware, thermoware, tableware, earthenware, bar accessories, bathroom accessories, cleaning and maintenance products, plastic & storage items, home appliances safety & security, disposable articles, and general household products.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0evycsObab3gnM0UUAXPfEc7Y0dNPU17eTy1at_tIMAZW7u1o4JaRZzfhj8UX5qzkIo&usqp=CAU"
+        image: "https://static.thenounproject.com/png/423483-200.png"
       },
       {
         question: "HOME TEXTILES",
@@ -150,47 +150,47 @@ const carouselData1 = {
       {
         question: "HOME DECOR",
         answer: "Decorative wallpapers, wall decorations, blinds, wooden or synthetic ooring, articial grass, rugs & carpets, bathroom accessories, handicrafts, gurines, table decorations, decorative hardware, clocks, decorative lights & fans, decorative accessories, dry owers and fragrances, articial owers and fauna, aroma oils, candles and candle stands are among the products we offer",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/6472/6472347.png"
     },
      {
         question: "HOME FURNITURE",
         answer: "A comprehensive selection of living room, dining room, bedroom, kitchen, study room, children’s room, bathroom, home ofce furniture, accent furniture, outdoor & leisure furniture.Furniture Such As Sofas, Chairs, Dining Tables, Beds, Wardrobes, Coffee Tables, Console Tables, Cabinets, Side Tables, Nesting Tables, Wall Separators, Chairs, Bean Bags & Pouffes, Rocking Chairs & Stools, Kids’ Furniture, Garden Furniture, Racks & Trolleys, Bar Cabinets & Storage Chests, Dressers & Mirrors, Wine Racks, Glass Holders, Book Shelves & Magazine Holders, Showcases And Display Units Are All Examples Of Items We Offer.",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/8694/8694414.png"
     },
      {
         question: "GIFTS",
         answer: "A Wide Range Of Customized Gifts And Promotional Items Are Available, Including Beauty, Health And Wellness Gifts, Gourmet Home Appliances, Customized Branding Machinery, Electronic Gadgets, And Household Appliances. Awards And Rewards, Handmade Crafts, Home Decor, Kitchen Appliances, Stationery, Ofce Supplies, Innovative Gift Boxes, Luxury Gifts And Lifestyle Products, Gold & Silver Gifts, Luxury Gifts And Lifestyle Products, And Celebration & Festive Gifts",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/837/837965.png"
     },
      {
         question: "LOCKING SOLUTION",
         answer: "Mortise Locks, Cylindrical Locks, Deadbolts, Mortise Cylinders, Rim Cylinders, Key-in-knob Cylinders/key-in-lever Cylinders, Exit Devices, High-security Locks, Access Control Locks, Biometric Locks, Safe Locks, Magnetic Locks",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn0.iconfinder.com/data/icons/stem-science-technology-engineering-math-education/64/solve-problem-solution-reveal-key-unlock-secret-512.png"
     },
      {
         question: "LIGHT ACCESSORIES",
         answer: "Lighting for streets and infrastructure, decorative and nished lights, LED architectural and commercial lighting, led components, drivers and accessories, light xtures and smart lighting systems, LED interior and residential lighting, smart and intelligent lighting.",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/1245/1245995.png"
     },
      {
         question: "MODULAR KITCHEN",
         answer: "Kitchen Materials, Kitchen Accoutrements, Modular Furniture, Adhesives, Mattresses, Furnishings, Wooden Flooring.",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/649/649260.png"
     },
      {
         question: "SANETRY & CERAMICS",
         answer: "Bath & Shower Mixers, Faucets, Water Closets (wc), Wash Basins & Bath Tubs, Floor Drains, Ceramic & Tiles, Marble & Stone, & More.",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/3530/3530570.png"
     },
      {
         question: "ARCHITECTURAL HARDWARE",
         answer: "Bathroom Accessories, Door & Window Fittings, Door Locking System,Railing Solutions,Aluminium Section , Glass Hardware,& etc",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEi29gVypufVjLfRTKy2ygGLh8YfeyxIyoPQ&s"
     },
       {
         question: "COLOURS & PAINTS",
         answer: "Paint & Coatings is a comprehensive Paint & Coatings providing platform to the needs of every facade of the coating industry right from raw materials, formulation, application, technology, finishing, quality assurance, recycling and disposal. The Exhibition will feature a wide range display of products, Raw Materials, Application systems, Machines, Tools, current trends, development & innovations shaping future of coating industry.  Paint is a finishing material that gives a building to next level. Here is a list of different types of  paints using based on technical specifications. This paints guide help you to use the right paints for the house, residential, office buildings, commercial and other industrial building construction projects. Let’s take a look types of wall paint and types of paints and their uses in construction.",
-        image: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/02/Categorey-Icon-8.svg"
+        image: "https://cdn-icons-png.flaticon.com/512/2850/2850423.png"
       }
     ];
 // *** End Exhibitor Profile ***

@@ -4,13 +4,24 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: var(--primary-color);
-    position: fixed;
+    /* position: sticky; */
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
     z-index: 3;
 
 }
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    /* background: #ffffff;  */
+    z-index: 1000;
+}
+
 .dropdown-submenu{
     display: none;
 }

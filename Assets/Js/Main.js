@@ -1,4 +1,5 @@
 // *** Home- Index Page ***
+// *** --- Header --- ***
 // --- Header Toggle Button ---
 function toggleMenu() {
   var nav = document.getElementById("navLinks");
@@ -12,6 +13,28 @@ function toggleMenu() {
   }
 }
 // --- End Header Toggle Button ---
+// --- Header Screen Scroll Sticki ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const headerHeight = document.querySelector("header").offsetHeight + 10;
+    
+    document.querySelectorAll(".link-menubar").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute("href"));
+            if (target) {
+                window.scrollTo({ 
+                    top: target.offsetTop - headerHeight, 
+                    behavior: "smooth" 
+                });
+            }
+        });
+    });
+});
+
+
+// --- End Header Screen Scroll Sticki ---
+// *** --- End Header --- ***
+
 
 // --- OWL Carousel ---
 $(document).ready(function () {
@@ -209,11 +232,11 @@ buttons.forEach((button) => {
                         <img class="testimonial-img" src="${remarksimage.src}" alt="${remarksimage.alt1}">
                       </div>
                       <div class="remarks-work-box">
-                        <div class="remarks-name">${remarksimage.alt1}</div>
-                        <div class="remarks-company">${remarksimage.alt2}</div>
+                        <div class="section-text-title">${remarksimage.alt1}</div>
+                        <div class="section-text-content">${remarksimage.alt2}</div>
                       </div>
                     </div> 
-                    <p class="remarks-paragraph">${remarksimage.alt3}</p>
+                    <div class="section-text-content">${remarksimage.alt3}</div>
                   </div>`);
             });
 
@@ -278,9 +301,11 @@ buttons.forEach((button) => {
                 margin: 10,
                 nav: true, // Enable navigation buttons for the second carousel
                 autoplay: true,
-                autoplayTimeout: 4000,
                 autoplayHoverPause: true,
-                smartSpeed: 2000,
+                autoplayTimeout: 2000,
+                smartSpeed: 3000,
+                autoplaySpeed: 3000,
+                slideTransition: "linear",
                 responsive: {
                     0: { items: 3 },
                     600: { items: 4 },
@@ -351,6 +376,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
     // *** End Exhibitor Page ***
   
+// --- Footer Back to Top Button ---
+    document.addEventListener("DOMContentLoaded", function () {
+			const backToTopBtn = document.getElementById("backToTop");
+
+			window.addEventListener("scroll", function () {
+				if (window.scrollY > 400) { // Show after scrolling 200px
+					backToTopBtn.classList.add("show");
+				} else {
+					backToTopBtn.classList.remove("show");
+				}
+			});
+
+			backToTopBtn.addEventListener("click", function () {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
+			});
+		});
+// --- End Footer Back to Top Button ---
 // about segment js  ends
 document.addEventListener("DOMContentLoaded", function () {
   function generateSegments(data, containerId) {
@@ -640,3 +685,4 @@ document.addEventListener("DOMContentLoaded", () => {
 //video js end
 // ✅ Initialize AOS
 AOS.init();
+

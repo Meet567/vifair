@@ -4,8 +4,8 @@
 <head>
     <title>Vibrant India Fair</title>
     <?php
-    // Include common head section
-    include_once "include/head_link.php";
+        // Include common head section
+        include_once "include/head_link.php";
     ?>
 </head>
 
@@ -35,16 +35,16 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="about.php">About Us</a>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="about_us.php">About Us</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About Vibrant
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="about_us.php">About Vibrant
                                             India</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About
                                             Organizer</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Post Show
                                             Report</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Show
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="about.php">Show
                                             Highlights</a></li>
                                 </ul>
                             </div>
@@ -79,9 +79,9 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Visitors</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Why Visit ?</a>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="delhi_exhibit_reg.php">Why Visit ?</a>
                                     </li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="delhi_visit_reg.php">Visitor
                                             Profile</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
                                             Registration</a></li>
@@ -145,8 +145,8 @@
                 </div>
                 <div class="header-form-btn-box">
                     <ul class="form-unlist-box">
-                        <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO VISIT</a></li>
-                        <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO EXHIBIT</a></li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="chennai_visit_reg.php">I WANT TO VISIT</a></li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="chennai_exhibit_reg.php">I WANT TO EXHIBIT</a></li>
                     </ul>
                 </div>
                 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
