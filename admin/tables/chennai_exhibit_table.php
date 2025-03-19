@@ -649,7 +649,6 @@
                     </div>
                   </div>
                 </li>
-
                 <li class="nav-item topbar-user dropdown hidden-caret">
                   <a
                     class="dropdown-toggle profile-pic"

@@ -112,12 +112,22 @@
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">News Letter</a>
                                 </ul>
                             </div>
-                        </li>
+                        </li><?php
+include 'admin/includes/db.php'; // Database connection
+
+$sql = "SELECT * FROM pdf_files ORDER BY uploaded_at DESC";
+$result = mysqli_query($conn, $sql);
+?>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Registration</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vender
-                                            Registration</a></li>
+                                    <li class="submenu-list-menu"><?php while ($row = mysqli_fetch_assoc($result)) : ?>
+        <li>
+            <a href="<?= $row['file_path']; ?>" target="_blank" class="drop-link-menubar">
+                <?= $row['file_name']; ?>
+            </a>
+        </li>
+    <?php endwhile; ?></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
                                             Registration</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
