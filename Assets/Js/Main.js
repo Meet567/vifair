@@ -316,6 +316,100 @@ function initializeCarousel(data) {
     }
   });
   // --- End Supported Company Logo ---
+
+  // --- Why Exhibit Page ---
+  // --- Exhibition Stall Design Section ---
+  $(".exhibition-stall-design").each(function () {
+    let carouselId = $(this).data("carousel");
+    let exhibitionStalls = data.carousels[carouselId];
+
+    if (exhibitionStalls) {
+      console.log(`Adding images for Carousel ${carouselId}`);
+      let $carousel4 = $(this);
+      $carousel4.empty();
+
+      exhibitionStalls.forEach((exhibitionStall) => {
+        $carousel4.append(`
+                  <div class="item">
+                    <div class="exhibition-carousel-stall-img-box">
+                      <img class="exhibition-carousel-stall-img" src="${exhibitionStall.src}" alt="${exhibitionStall.alt}">
+                    </div>
+                  </div>`);
+      });
+
+      // Different settings for the second carousel
+      $carousel4.owlCarousel({
+        // stagePadding: 10,
+        loop: true,
+        margin: 10,
+        nav: true, // Enable navigation buttons for the second carousel
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 2000,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 2 },
+        },
+      });
+      $("#exhi-stall-prev").click(function () {
+        $carousel4.trigger("prev.owl.carousel");
+      });
+
+      $("#exhi-stall-next").click(function () {
+        $carousel4.trigger("next.owl.carousel");
+      });
+    }
+  });
+  // --- End Exhibition Stall Design Section ---
+  // --- End Why Exhibit Page ---
+
+  // --- Why Visit Page OWL Section ---
+  $(".why-visit-main-owl").each(function () {
+    let carouselId = $(this).data("carousel");
+    let whyVisits = data.carousels[carouselId];
+
+    if (whyVisits) {
+      console.log(`Adding images for Carousel ${carouselId}`);
+      let $carousel5 = $(this);
+      $carousel5.empty();
+
+      whyVisits.forEach((whyVisit) => {
+        $carousel5.append(`
+                  <div class="item">
+                    <div class="why-visit-owl-img-box">
+                      <img class="why-visit-owl-img" src="${whyVisit.src}" alt="${whyVisit.alt}">
+                    </div>
+                  </div>`);
+      });
+
+      // Different settings for the second carousel
+      $carousel5.owlCarousel({
+        // stagePadding: 10,
+        loop: true,
+        margin: 10,
+        nav: true, // Enable navigation buttons for the second carousel
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 2000,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 1 },
+          1000: { items: 2 },
+        },
+      });
+      $("#why-visit-prev").click(function () {
+        $carousel5.trigger("prev.owl.carousel");
+      });
+
+      $("#why-visit-next").click(function () {
+        $carousel5.trigger("next.owl.carousel");
+      });
+    }
+  });
+  // --- End Why Visit Page OWL Section ---
 }
 $(document).ready(function () {
   initializeCarousel(carouselData1);
@@ -328,14 +422,18 @@ $(document).ready(function () {
 document.addEventListener("DOMContentLoaded", () => {
   const faqContainer = document.querySelector(".faq-accordion");
 
-  // ✅ Check if the .faq-accordion element exists before modifying innerHTML
+  // ✅ Check if .faq-accordion element exists
   if (!faqContainer) {
     console.error("Error: .faq-accordion element not found.");
     return;
   }
 
   // ✅ Check if faqData exists and is an array
-  if (!Array.isArray(faqData) || faqData.length === 0) {
+  if (
+    typeof faqData === "undefined" ||
+    !Array.isArray(faqData) ||
+    faqData.length === 0
+  ) {
     console.error("Error: faqData is not defined or is empty.");
     return;
   }
@@ -346,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (faq, index) => `
       <div class="faq-accordion-item">
         <div class="faq-accordion-item-header" data-index="${index}">${faq.question}</div>
-        <div class="faq-accordion-item-body">
+        <div class="faq-accordion-item-body" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
           <div class="faq-accordion-item-body-content">
             <div class="faq-main-content-box">
               <img class="faq-img" src="${faq.image}" alt="FAQ Image">
@@ -361,22 +459,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Attach event listeners safely
   document.querySelectorAll(".faq-accordion-item-header").forEach((header) => {
     header.addEventListener("click", function () {
-      document.querySelectorAll(".faq-accordion-item-header").forEach((h) => {
-        if (h !== this) {
-          h.classList.remove("active");
-          h.nextElementSibling.style.maxHeight = "0";
+      const body = this.nextElementSibling;
+
+      // Close all other FAQs
+      document.querySelectorAll(".faq-accordion-item-body").forEach((item) => {
+        if (item !== body) {
+          item.style.maxHeight = "0";
+          item.previousElementSibling.classList.remove("active");
         }
       });
 
-      this.classList.toggle("active");
-      this.nextElementSibling.style.maxHeight = this.classList.contains(
-        "active"
-      )
-        ? this.nextElementSibling.scrollHeight + "px"
-        : "0";
+      // Toggle current FAQ
+      if (body.style.maxHeight === "0px" || !body.style.maxHeight) {
+        body.style.maxHeight = body.scrollHeight + "px";
+        this.classList.add("active");
+      } else {
+        body.style.maxHeight = "0";
+        this.classList.remove("active");
+      }
     });
   });
 });
+
+// --- End FAQ Section ---
 // *** End Exhibitor Page ***
 
 // --- Footer Back to Top Button ---
@@ -484,13 +589,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
           <div class="product-box" data-aos="zoom-in" data-aos-duration="1000">
             <div class="product-img-box">
-              <img
+              <img class="product-img"
                 src="${product.src}"
                 alt="${product.title}"
                 class="img-fluid"
               />
             </div>
-            <div class="product-title">${product.title}</div>
+            <div class="hightlight-product-text">${product.title}</div>
           </div>
         </div>
         `

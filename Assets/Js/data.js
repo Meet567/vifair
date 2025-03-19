@@ -30,7 +30,7 @@ const products = [
   { src: "assets/images/imgData/img4.png", title: "Tableware" },
   { src: "assets/images/imgData/img5.png", title: "Kitchenware" },
   { src: "assets/images/imgData/img6.png", title: "Modular Kitchen" },
-  { src: "assets/images/imgData/img7.png", title: "Hotelware" },
+  { src: "assets/images/imgData/img7.png", title: "Houseware" },
   { src: "assets/images/imgData/img8.png", title: "Cookware" },
   { src: "assets/images/imgData/img9.png", title: "Household Items" },
   { src: "assets/images/imgData/img10.png", title: "Gifts & Decor" },
@@ -148,6 +148,80 @@ const carouselData1 = {
       { src: "assets/images/supported/ronol.webp", alt: "Ronol" },
     ],
     // --- End Supported Company Section ---
+
+    // --- Why Exhibit Page ---
+    // --- Exhibition Stall Design Section ---
+    4: [
+      {
+        src: "assets/images/why-exhibit/exhibit1.webp",
+        alt: "Carousel 4 - Image 1",
+      },
+      {
+        src: "assets/images/why-exhibit/exhibit2.webp",
+        alt: "Carousel 4 - Image 2",
+      },
+      // { "src": "assets/images/why-exhibit/exhibit3.webp", "alt": "Carousel 4 - Image 3" },
+      {
+        src: "assets/images/why-exhibit/exhibit4.webp",
+        alt: "Carousel 4 - Image 4",
+      },
+      {
+        src: "assets/images/why-exhibit/exhibit5.webp",
+        alt: "Carousel 4 - Image 5",
+      },
+      // { "src": "assets/images/why-exhibit/exhibit6.webp", "alt": "Carousel 4 - Image 6" },
+      {
+        src: "assets/images/why-exhibit/exhibit7.webp",
+        alt: "Carousel 4 - Image 7",
+      },
+      {
+        src: "assets/images/why-exhibit/exhibit8.webp",
+        alt: "Carousel 4 - Image 8",
+      },
+    ],
+    // --- End Exhibition Stall Design Section ---
+    // --- End Why Exhibit Page ---
+
+    // --- Why Visit Page Owl ---
+    5: [
+      {
+        src: "assets/images/why-visit/why_visit1.webp",
+        alt: "Carousel 5 - Image 1",
+      },
+      {
+        src: "assets/images/why-visit/why_visit2.webp",
+        alt: "Carousel 5 - Image 2",
+      },
+      {
+        src: "assets/images/why-visit/why_visit3.webp",
+        alt: "Carousel 5 - Image 3",
+      },
+      {
+        src: "assets/images/why-visit/why_visit4.webp",
+        alt: "Carousel 5 - Image 4",
+      },
+      {
+        src: "assets/images/why-visit/why_visit5.webp",
+        alt: "Carousel 5 - Image 5",
+      },
+      {
+        src: "assets/images/why-visit/why_visit6.webp",
+        alt: "Carousel 5 - Image 6",
+      },
+      {
+        src: "assets/images/why-visit/why_visit7.webp",
+        alt: "Carousel 5 - Image 7",
+      },
+      {
+        src: "assets/images/why-visit/why_visit8.webp",
+        alt: "Carousel 5 - Image 8",
+      },
+      {
+        src: "assets/images/why-visit/why_visit9.webp",
+        alt: "Carousel 5 - Image 9",
+      },
+    ],
+    // --- End Why Visit Page Owl ---
   },
 };
 // *** End Home- Index Page ***

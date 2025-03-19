@@ -1,187 +1,10 @@
-/* comman css  */
-.secondary-text {
-  color: var(--primary-color);
-}
-.exhibit-main {
-  /* margin-top: 100px; */
-}
-.comman-text {
-  font-size: 15px;
-  font-weight: 400;
-  font-family: myFont;
-}
-.secondary-text {
-  color: var(--primary-color);
-}
-
-/* here is exhibit section css */
-.exhibit-under-line {
-  position: relative;
-}
-.exhibit-text-line ::after {
-  content: "";
-  left: 0;
-  position: absolute;
-  height: 3px;
-  width: 30%;
-  background-color: var(--primary-color);
-  bottom: 0;
-}
-.exhibit-text-line::before {
-  content: "";
-  left: 30%;
-  position: absolute;
-  height: 2px;
-  width: 30%;
-  background-color: var(--secondary-color);
-  bottom: 0;
-}
+/* here is exhibit section */
 .stall-visit {
   max-width: 200px;
 }
 .stall-visit img {
   width: 100%;
   height: 100%;
-}
-.exhibit-benifit {
-  margin-bottom: 10px;
-}
-.exhibit-benifit-img {
-  max-width: 200px;
-}
-.exhibit-benifit-img img {
-  width: 100%;
-  height: 100%;
-}
-/* visitor section css */
-.visit-under-line {
-  position: relative;
-}
-.visit-text-line ::after {
-  content: "";
-  left: 0;
-  position: absolute;
-  height: 3px;
-  width: 30%;
-  background-color: var(--primary-color);
-  top: 100%;
-}
-.visit-text-line::before {
-  content: "";
-  left: 30%;
-  position: absolute;
-  height: 2px;
-  width: 30%;
-  background-color: var(--secondary-color);
-  top: 99%;
-}
-
-.india-map-img {
-  max-width: 900px;
-}
-.india-map-img img {
-  width: 100%;
-  height: 100%;
-}
-/* exhibit and visit section media query */
-@media (max-width: 600px) {
-  .exhibit-main {
-    margin-top: 70px;
-  }
-  .comman-text {
-    font-size: 15px;
-  }
-  .exhibit-benifit {
-    margin: 0px;
-  }
-  .india-map-img {
-    margin-bottom: 10px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .exhibit-main {
-    margin-top: 90px;
-  }
-  .comman-text {
-    font-size: 15px;
-  }
-  .exhibit-benifit-img {
-    max-width: 200px;
-  }
-  .exhibit-benifit-img img {
-    width: 100%;
-    height: 100%;
-  }
-  .stall-visit-img {
-    max-width: 100%;
-  }
-
-  .exhibit-benifit {
-    margin: 0px;
-  }
-
-  .india-map-img {
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-}
-/* visitor-segmentation section css */
-.visitor-segmentation {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px;
-  text-align: center;
-}
-.visitor-segmentation .visitor-segmentation-title {
-  font-size: 24px;
-  font-weight: bold;
-  font-family: myFont;
-  margin-bottom: 15px;
-  color: #333;
-}
-.visitor-segmentation .visitor-segmentation-segments {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  grid-template-columns: repeat(5, 1fr);
-}
-.visitor-segmentation .visitor-segmentation-segment {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.visitor-segmentation .visitor-segmentation-segment.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.visitor-segmentation .visitor-segmentation-count {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-.visitor-segmentation .visitor-segmentation-text {
-  font-size: 16px;
-  color: #555;
-  margin: 5px 0 0;
-}
-@media screen and (max-width: 1024px) {
-  .visitor-segmentation .visitor-segmentation-segments {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (max-width: 767px) {
-  .visitor-segmentation .visitor-segmentation-segments {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 400px) {
-  .visitor-segmentation .visitor-segmentation-segments {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
 /* img segamrnt */
@@ -193,17 +16,16 @@
 .product-img-box {
   max-width: 150px;
   margin: auto;
-  background-color: #fff;
+  background-color: var(--light-color);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   border-radius: 10px;
   padding: 20px;
 }
 
 /* Ensuring images are fully responsive */
-.product-img-box img {
+.product-img-box .product-img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
   transition: transform 0.3s ease-in-out;
   display: block !important;
 }
@@ -213,8 +35,12 @@
   transform: scale(1.05);
   cursor: pointer;
 }
-
+.hightlight-product-text{
+  font-size: 18px;
+  color: var(--dark-color);
+}
 /* Styling the text */
+
 .product-title {
   font-family: myFont;
   margin-top: 15px;
@@ -225,13 +51,6 @@
 .visitore-product-box {
   background-color: var(--secondary-color);
 }
-
-.visitor-product-heding {
-  font-size: 30px;
-  font-family: myFont;
-  text-align: center;
-}
-
 .visitor-product-heding-2 {
   font-size: 50px;
   font-family: myFont;
@@ -247,19 +66,10 @@
     font-size: 30px;
     margin-bottom: -10px;
   }
-  .visitor-product-heding {
-    font-size: 15px;
-  }
-  .product-title {
-    font-size: 13px;
-  }
+  
 }
-
 /* Exhibition Calendar  satrt */
-.calendar-heading {
-  font-family: myFont;
-  font-size: 30px;
-}
+
 .calendar-card {
   position: relative;
 }
@@ -282,18 +92,6 @@
   height: auto;
   object-fit: cover;
 }
-.event-location {
-  position: relative;
-  color: #000;
-  font-size: 15px;
-  font-weight: 500;
-}
-.event-location::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
 .event-icon {
   font-size: 20px;
   color: var(--primary-color);
@@ -310,5 +108,4 @@
   font-family: myFont;
   color: #000;
 }
-
 /* Exhibition Calendar end */

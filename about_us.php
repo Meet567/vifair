@@ -13,7 +13,7 @@
     <section>
         <div class="about-banner-main-box">
             <div class="about-banner-thumbnail">
-                <div class="banner-img-box">
+                <div class="about-banner-img-box">
                     <picture>
                         <img class="about-banner-img" src="assets/images/about-banner.jpg" alt="">
                     </picture>
@@ -59,7 +59,50 @@
     </section>
     <!-- --- End Welcome Section --- -->
 
-
+    <!-- --- About Company Details --- -->
+    <section class="section-margin">
+        <div class="about-content-back-img">
+            <div class="container">
+                <div class="about-company-details-main-box">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                            <div class="about-company-details-left-part">
+                                <div class="section-text-content">
+                                    At VIES EXHIBITIONS PVT LTD, we specialize in organizing premier B2B kitchenware exhibitions that connect industry leaders, innovators, and businesses from around the globe since 2015. With a keen eye for detail and a commitment to excellence, we create dynamic platforms where new trends are unveiled, partnerships are forged, and the future of kitchenware is shaped.
+                                </div>
+                                <div class="section-text-content">
+                                    Vibrant India brings to you Vibrant India 2025. The 14th annual edition scheduled on  July 5th, 6th, 7th 2025  at Yashobhoomi, Dwarka, Sector-25, New Delhi, India and Aug 1st, 2nd, 3rd 2025 at Chennai trade center, Chennai Tamilnadu India.    
+                                </div>
+                                <div class="section-text-content">
+                                    Founded on the principles of integrity, innovation, and customer satisfaction, our team brings together extensive experience and industry expertise to ensure each event is a success. We handle everything from venue selection and logistics to marketing and attendee engagement, providing a seamless experience for exhibitors and visitors alike. We are passionate about transforming ordinary moments into extraordinary experiences.
+                                </div>
+                                <div class="section-text-content">
+                                    Today, Vibrant India is became the most awaited annual meeting point for the brands & manufacturer with national and international market. Where Resellers, Wholesalers, Retailers, Importer, suppliers, Dealers, Departmental store, Hoteliers restaurant, Exporter, overseas buyers, corporate gift buyers, catering companies, E-Commerce sellers, Supermarkets, Chain store purchasing manager, FMCG companies, Government institute, Manufacturers attending nationally  and internationally.
+                                </div>
+                                <div class="section-text-content">
+                                    Our mission is to elevate the kitchenware industry by providing exceptional event experiences that drive growth, foster collaboration, and inspire innovation. Whether you are looking to showcase your latest products or explore new business opportunities, Vibrant India Event Solution is your trusted partner in making impactful connections and achieving your goals.
+                                </div>
+                                <div class="section-text-content">
+                                    This year more than 800 local and global brand has showcase their product and prompt them at the exhibition and the approximate number of visitor at this exhibition has been around 38,000 to 40,000. Over 90% of visitors 85% of exhibitors were highly satisfied and happy with the event and confirm their participation in the most fascinating event next year.
+                                </div>
+                                <div class="section-text-content">
+                                    So, Join us in shaping the future of COMPLETE HOUSEWARE EXHIBITION 2025 at our next exhibition and discover the possibilities that await.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
+                            <div class="about-company-details-right-part">
+                                <div class="company-details-img-box">
+                                    <img class="company-details-right-img" src="assets/images/about-3-img.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- --- End About Company Details --- -->
     
     <!-- https://keenitsolutions.com/products/html/eventsia/images/about/1.png -->
 

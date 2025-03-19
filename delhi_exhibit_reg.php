@@ -9,7 +9,7 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Vibrant India Fair </title>
+    <title> Exhibitor Registration </title>
     <?php
     include "include/header.php";
     ?>

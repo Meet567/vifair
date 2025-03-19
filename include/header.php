@@ -27,12 +27,14 @@
                     <ul class="menubar-unlist-box">
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Home</a>
                             <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India
-                                            Magazine</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India
-                                            2025</a></li>
-                                </ul>
+                                 <div class="dropdown-subumenu-box">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India
+                                                Magazine</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India
+                                                2025</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="about_us.php">About Us</a>
@@ -52,7 +54,7 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Exhibitors</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Why Exhibit</a>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_exhibit.php">Why Exhibit</a>
                                     </li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibitor_profile.php">Exhibitor
                                             Profile</a></li>
@@ -79,9 +81,9 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Visitors</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="delhi_exhibit_reg.php">Why Visit ?</a>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_visit.php">Why Visit ?</a>
                                     </li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="delhi_visit_reg.php">Visitor
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="visitor_profile.php">Visitor
                                             Profile</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
                                             Registration</a></li>
@@ -145,8 +147,68 @@
                 </div>
                 <div class="header-form-btn-box">
                     <ul class="form-unlist-box">
-                        <li class="form-list-btn"><a class="link-form-btn" href="chennai_visit_reg.php">I WANT TO VISIT</a></li>
-                        <li class="form-list-btn"><a class="link-form-btn" href="chennai_exhibit_reg.php">I WANT TO EXHIBIT</a></li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO VISIT</a>
+                            <div class="visitor-megamenu-main-body">
+                                <div class="visitor-megamenu-sub-box">
+                                    <div class="visitor-primary-heading">VISIT REGISTARION</div>
+                                    <div class="row g-3">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                            <div class="megamenu-content-details-box border-end">
+                                                <div class="megamenu-logo-img-box">
+                                                    <img class="megamenu-logo-img" src="assets/images/VIFair.png" alt="">
+                                                </div>
+                                                <div class="visitor-primary-heading">CHANNAI</div>
+                                                <div class="menubar-registration-btn-box mt-2">
+                                                    <a class="menubar-registration-link" href="chennai_visit_reg.php">REGISTRATION</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                            <div class="megamenu-content-details-box">
+                                                <div class="megamenu-logo-img-box">
+                                                    <img class="megamenu-logo-img" src="assets/images/VIFair.png" alt="">
+                                                </div>
+                                                <div class="visitor-primary-heading">DELHI</div>
+                                                <div class="menubar-registration-btn-box mt-2">
+                                                    <a class="menubar-registration-link" href="delhi_visit_reg.php">REGISTRATION</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO EXHIBIT</a>
+                            <div class="visitor-megamenu-main-body">
+                                <div class="visitor-megamenu-sub-box">
+                                    <div class="visitor-primary-heading">EXHIBIT REGISTRATION</div>
+                                    <div class="row g-3">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                            <div class="megamenu-content-details-box border-end">
+                                                <div class="megamenu-logo-img-box">
+                                                    <img class="megamenu-logo-img" src="assets/images/VIFair.png" alt="">
+                                                </div>
+                                                <div class="visitor-primary-heading">CHANNAI</div>
+                                                <div class="menubar-registration-btn-box mt-2">
+                                                    <a class="menubar-registration-link" href="chennai_exhibit_reg.php">REGISTRATION</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                            <div class="megamenu-content-details-box">
+                                                <div class="megamenu-logo-img-box">
+                                                    <img class="megamenu-logo-img" src="assets/images/VIFair.png" alt="">
+                                                </div>
+                                                <div class="visitor-primary-heading">DELHI</div>
+                                                <div class="menubar-registration-btn-box mt-2">
+                                                    <a class="menubar-registration-link" href="delhi_exhibit_reg.php">REGISTRATION</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>

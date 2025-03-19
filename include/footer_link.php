@@ -47,9 +47,8 @@ ini_set('display_errors', 1);
 
 
 <!-- Main Js Local File -->
-<script src="assets/js/data.js"></script>
-<script src="assets/js/Main.js"></script>
-
+ <script src="assets/Js/Main.js"></script>
+ <script src="assets/Js/data.js"></script>
 <body>
 
 </html>
