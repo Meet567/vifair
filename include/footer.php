@@ -65,10 +65,10 @@
                             <div class="footer-col-box">
                                 <div class="footer-heading-holder">VIBRANT INDIA</div>
                                 <ul class="footer-unlist">
-                                    <li class="footer-list"><a class="footer-list-link" href="#">About Vibrant India</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="about_us.php">About Vibrant India</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">About Organizer</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Post Show Report</a></li>
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Show Highlight</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="about.php">Show Highlight</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Visiting Hours</a></li>
                                 </ul>
                             </div>
@@ -77,8 +77,8 @@
                             <div class="footer-col-box">
                                 <div class="footer-heading-holder">Exhibitor</div>
                                 <ul class="footer-unlist">
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Why Exhibit</a></li>
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Exhibitor Profile</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="why_exhibit.php">Why Exhibit</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="exhibitor_profile.php">Exhibitor Profile</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Visitor Profile</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Participation Charges</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Exhibitor Brochure</a></li>
@@ -89,8 +89,8 @@
                             <div class="footer-col-box">
                                 <div class="footer-heading-holder">Visitors</div>
                                 <ul class="footer-unlist">
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Why Visit</a></li>
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Visitor Profile</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="why_visit.php">Why Visit</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="visitor_profile.php">Visitor Profile</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Visitor Registration</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">Visiting Hours</a></li>
                                     <li class="footer-list"><a class="footer-list-link" href="#">General Facilities</a></li>
@@ -101,8 +101,8 @@
                             <div class="footer-col-box">
                                 <div class="footer-heading-holder">Gallery</div>
                                 <ul class="footer-unlist">
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Photo Gallery</a></li>
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Video Gallery</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="gallery.php">Photo Gallery</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="video.php">Video Gallery</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -110,9 +110,9 @@
                             <div class="footer-col-box">
                                 <div class="footer-heading-holder">Contact</div>
                                 <ul class="footer-unlist">
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Contact Details</a></li>
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Need Team Support</a></li>
-                                    <li class="footer-list"><a class="footer-list-link" href="#">Enquiry Form</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="contact-us.php">Contact Details</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="needTeam.php">Need Team Support</a></li>
+                                    <li class="footer-list"><a class="footer-list-link" href="contact-us.php">Enquiry Form</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                             <div class="col-xl-9 col-lg-9 col-md-7 col-sm-7">
                                 <div class="copyright-center-part">
                                     <p class="copyright-text-content">
-                                        VIBRANT INDIA ©2025 All rights reserved | Designed & Developed by Vibrant India tech.
+                                        VIBRANT INDIA FAIR ©2025 All rights reserved | Designed & Developed by Vibrant India tech.
                                     </p>
                                 </div>
                             </div>

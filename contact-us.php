@@ -3,43 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Contact Us</title>
    <?php
     include "include/header.php";
     ?>
 </head>
  <body>
+
   <main class="contact-us-main">
-   <section class="contact-us section-margin">
+    <!-- --- Banner Section --- -->
+    <section>
+        <div class="contactus-banner-box">
+          <div class="contactus-banner-thumbnail">
+            <div class="contactus-banner-img-box">
+              <div class="contactus-banner-img">
+                <picture>
+                  <img class="contactus-banner-img" src="assets/images/contact-banner.jpg" alt="">
+                </picture>
+              </div>
+              <div class="banner-header-title">CONTACT US</div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- --- End Banner Section --- -->
+
+   <section class="section-margin">
       <div class="container">
-        <h1 class="contact-us-title">Contact Us</h1>
-        <div class="row mt-5 d-flex justify-content-around">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-12 contact-us-card">
-            <h2 class="contact-us-inner-title">VIBRANT INDIA</h2>
-            <h3 class="contact-us-common-title mt-3">
+        <!-- <div class="primary-heading">Contact Us</div> -->
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="primary-title">VIBRANT INDIA</div>
+            <div class="secondary-title mt-3">
               <i class="fa-solid fa-map-pin"></i> Our Location
-            </h3>
-            <p class="contact-us-common-text">
+            </div>
+            <p class="section-text-content">
               H-409, Shreedhar Flora Complex, S. P. Ring Road, Nr. Nikol Police
               Station, Nikol, Ahmedabad- 382350 Gujarat (INDIA)
             </p>
-            <h3 class="contact-us-common-title mt-3">
+            <div class="secondary-title mt-3">
               <i class="fa-solid fa-phone"></i> Phone
-            </h3>
-            <span class="contact-us-common-text">
+            </div>
+            <span class="section-text-content">
               <a href="tel:+919924488938" class="contact-us-inner-text"
                 >+91 992 448 8938</a
               > </span
             ><br />
-            <span class="contact-us-common-text">
+            <span class="section-text-content">
               <a href="tel:+919998885475" class="contact-us-inner-text"
                 >+91 999 888 5475</a
               >
             </span>
-            <h3 class="contact-us-common-title mt-3">
+            <div class="secondary-title mt-3">
               <i class="fa-solid fa-envelope"></i> Email
-            </h3>
-            <span class="contact-us-common-text">
+            </div>
+            <span class="section-text-content">
               <a
                 href="mailto:vibrantindia1@gmail.com"
                 class="contact-us-inner-text"
@@ -47,7 +65,7 @@
               >
             </span>
             <br />
-            <span class="contact-us-common-text">
+            <span class="section-text-content">
               <a
                 href="mailto:info@vibrantindiafair.com"
                 class="contact-us-inner-text"
@@ -56,35 +74,35 @@
             </span>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-12 contact-us-card">
-            <h2 class="contact-us-inner-title mt-2">CHINA</h2>
-            <h3 class="contact-us-common-title mt-3">
+            <div class="primary-title mt-2">CHINA</div>
+            <div class="secondary-title mt-3">
               <i class="fa-solid fa-map-pin"></i> Our Location
-            </h3>
-            <h3 class="contact-us-company-title">
+            </div>
+            <div class="section-text-content">
               Ningbo Sea-Ever International Exhibition Co. Ltd.
-            </h3>
-            <p class="contact-us-common-text">
+            </div>
+            <p class="section-text-content">
               Mr. Sunny (CEO) 1003-15,Bona Building,Taikang Road Ningbo City,
               Zhejiang Province, China
             </p>
-            <h3 class="contact-us-common-title mt-3">
+            <div class="secondary-title mt-3">
               <i class="fa-solid fa-phone"></i> Phone
-            </h3>
-            <span class="contact-us-common-text">
+            </div>
+            <span class="section-text-content">
               <a href="tel:+8657488353717" class="contact-us-inner-text"
                 >+86 574 88353717</a
               >
             </span>
             <br />
-            <span class="contact-us-common-text">
+            <span class="section-text-content">
               <a href="tel:+8615168587137" class="contact-us-inner-text"
                 >+86 15168587137
               </a>
             </span>
-            <h3 class="contact-us-common-title mt-3">
+            <h3 class="secondary-title mt-3">
               <i class="fa-solid fa-envelope"></i> Email
             </h3>
-            <span class="contact-us-common-text">
+            <span class="section-text-content">
               <a href="mailto:2264795080@qq.com" class="contact-us-inner-text"
                 >2264795080@qq.com</a
               >
@@ -111,7 +129,7 @@
               </div>
             </div>
             <div class="col-lg-6 col-md-7 col-sm-6 col-12">
-              <h3 class="contact-us-form-title mt-2">Tell Me Your Message</h3>
+              <div class="secondary-title text-center">Tell Me Your Message</div>
               <form class="mt-4">
                 <div class="row">
                   <div class="mb-3">
@@ -156,8 +174,8 @@
         </div>
       </section>
     </main>
-     <?php
-    include "include/footer.php";
-    ?>
-  </body>
+  <?php
+   include "include/footer.php";
+  ?>
+</body>
 </html>

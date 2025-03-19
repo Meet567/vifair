@@ -29,60 +29,57 @@ $phone = $visitor['phone'];
 // ✅ Generate QR Code (in-memory)
 ob_start();
 QRcode::png("Visitor ID: $visitor_id\nName: $name\nEmail: $email\nPhone: $phone", null, QR_ECLEVEL_L, 4, 2);
-$qrImage = ob_get_contents();
-ob_end_clean();
+$qrImage = ob_get_clean();
 $base64QR = 'data:image/png;base64,' . base64_encode($qrImage);
 
 // ✅ Generate HTML for PDF
 $htmlContent = <<<HTML
 <html>
-        <body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center;">
-        <div style="background: white; padding: 20px; ">
-            
-              <div style="width: 600px; margin: 10px auto; overflow: hidden;">  
-              <div style="float: left; width: 300px;">
-                  <img src="../assets/img/logo2.png" alt="Logo 2" style="max-width: 100%; max-height: 80px; height: auto;" />
-              </div>
-              <div style="float: right; width: 200px;">
-                  <img src="../assets/img/logo1.png" alt="Logo 1" style="max-width: 100%; max-height: 80px; height: auto;" />
-              </div>
-              </div>
+  <body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center;">
+    <div style="background: white; padding: 20px;">
+      <div style="width: 600px; margin: 10px auto; overflow: hidden;">  
+        <div style="float: left; width: 300px;">
+          <img src="../assets/img/logo2.png" alt="Logo 2" style="max-width: 100%; max-height: 80px; height: auto;" />
+        </div>
+        <div style="float: right; width: 200px;">
+          <img src="../assets/img/logo1.png" alt="Logo 1" style="max-width: 100%; max-height: 80px; height: auto;" />
+        </div>
+      </div>
 
-            <div style="font-size: 20px; font-weight: bold; color: #000; margin: 20px;">$name</div>
-            <div style="font-size: 18px; font-weight: 500; color: #000; margin: 10px;">VISITOR</div>
-            
-            <img src="<?php echo $base64QR; ?>" alt="QR Code" style="margin-top: 10px; width: 250px; height: 250px;" />
+      <div style="font-size: 20px; font-weight: bold; color: #000; margin: 20px;">$name</div>
+      <div style="font-size: 18px; font-weight: 500; color: #000; margin: 10px;">VISITOR</div>
+      
+      <img src="$base64QR" alt="QR Code" style="margin-top: 10px; width: 250px; height: 250px;" />
 
-        <table>
+      <table>
         <tr>
-            <td style="font-size: 16px; color: #000; padding: 20px 40px; text-align: left;">
-              <p><strong>Event Date:</strong> 4th-6th July & 1st-3rd August, 2025</p>
-              <p><strong>Event Time:</strong> 10:00 AM to 7:00 PM</p>
-              <p><strong>Event Venue:</strong> Yashobhoomi Dwarka, New Delhi & Chennai Trade Center</p>
-            </td>
-          </tr>
-        </table>
-            
-            <div style="width: 100%; padding: 20px 0px; background-color: #ed930e; font-size: 30px; font-weight: 600; text-align: center;">
-              VISITOR
-            </div>
+          <td style="font-size: 16px; color: #000; padding: 20px 40px; text-align: left;">
+            <p><strong>Event Date:</strong> 4th-6th July & 1st-3rd August, 2025</p>
+            <p><strong>Event Time:</strong> 10:00 AM to 7:00 PM</p>
+            <p><strong>Event Venue:</strong> Yashobhoomi Dwarka, New Delhi & Chennai Trade Center</p>
+          </td>
+        </tr>
+      </table>
+      
+      <div style="width: 100%; padding: 20px 0px; background-color: #ed930e; font-size: 30px; font-weight: 600; text-align: center;">
+        VISITOR
+      </div>
 
-            <div style="font-size: 14px; color: #000; font-weight: bold; text-align: left; margin-top: 20px;">
-              <p>PLEASE NOTE:</p>
-              <ol>
-                <li style="font-weight: 200; font-size: 15px; line-height: 20px;">
-                  Kindly bring a copy of this mail / E-Badge to the Registration Counter on event day.
-                </li>
-                <li style="font-weight: 200; font-size: 15px; line-height: 20px;">
-                  Single entry is allowed only for the person who is allotted the E-badge.
-                </li>
-              </ol>
-              <p>See you soon at <strong>VIBRANT INDIA FAIR 2025</strong>!</p>
-            </div>
-
-          </div>
-        </body>
-      </html>
+      <div style="font-size: 14px; color: #000; font-weight: bold; text-align: left; margin-top: 20px;">
+        <p>PLEASE NOTE:</p>
+        <ol>
+          <li style="font-weight: 200; font-size: 15px; line-height: 20px;">
+            Kindly bring a copy of this mail / E-Badge to the Registration Counter on event day.
+          </li>
+          <li style="font-weight: 200; font-size: 15px; line-height: 20px;">
+            Single entry is allowed only for the person who is allotted the E-badge.
+          </li>
+        </ol>
+        <p>See you soon at <strong>VIBRANT INDIA FAIR 2025</strong>!</p>
+      </div>
+    </div>
+  </body>
+</html>
 HTML;
 
 // ✅ Convert HTML to PDF
@@ -138,7 +135,6 @@ try {
         <p>Best Regards,<br><strong>Vibrant India Fair Team</strong></p>
       </body>
     </html>";
-
 
     $mail->addStringAttachment($pdfAttachment, "Visitor_Badge_$visitor_id.pdf", "base64", "application/pdf");
     $mail->send();

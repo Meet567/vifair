@@ -4,13 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Need Team Support</title>
     <?php
     include "include/header.php";
     ?>
 </head>
 
 <body>
+    <!-- --- Banner Section --- -->
+    <section>
+        <div class="needteam-banner-box">
+            <div class="needteam-banner-thumbnail">
+                <div class="needteam-banner-img-box">
+                    <picture>
+                        <img class="needteam-banner-img" src="assets/images/needteam-banner.jpg" alt="">
+                    </picture>
+                </div>
+                <div class="banner-header-title">
+                    OUR TEAM
+                </div>
+            </div>
+        </div>
+    </section>  
+    <!-- --- End Banner Section --- -->
+
     <section class="section-margin">
         <div class="container">
             <h1 class="primary-heading">Support Teams</h1>
@@ -167,8 +184,8 @@
                         </div>
                         <div class="social">
                             <!-- <li>
-                    <a hre="#"><i class="fa-solid fa-envelope"></i></a>
-                  </li> -->
+                                    <a hre="#"><i class="fa-solid fa-envelope"></i></a>
+                                </li> -->
                             <h3 class="title-2">CHINA</h3>
                         </div>
                     </div>

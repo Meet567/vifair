@@ -53,4 +53,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: ../../delhi_visit_reg.php");
     exit;
 }
+
+// deleted Functionality
+if (isset($_GET['delete_id'])) {
+    $delete_id = intval($_GET['delete_id']); // Ensure the ID is an integer
+    echo "<script>console.log('Delete ID: " . $delete_id . "');</script>"; // Debugging
+
+    if ($delete_id > 0) { // Validate the ID
+        $stmt = $conn->prepare("DELETE FROM delhi_visit_data  WHERE id = ?");
+        $stmt->bind_param("i", $delete_id);
+
+        if ($stmt->execute()) {
+            echo "<script>console.log('Record deleted successfully');</script>";
+            echo "<script>alert('Record deleted successfully');</script>";
+            header("Location: ../tables/delhi_visit_table.php"); // Redirect to the same page
+            exit();
+        } else {
+            echo "<script>console.error('Error deleting record: " . $stmt->error . "');</script>";
+            echo "<script>alert('Error deleting record: " . $stmt->error . "');</script>";
+        }
+        $stmt->close();
+    } else {
+        echo "<script>alert('Invalid record ID');</script>";
+    }
+} else {
+    echo "<script>console.log('Delete ID not set');</script>"; // Debugging
+}
+// Fetch total visitor count
+$query = "SELECT COUNT(*) AS total_visitors FROM delhi_visit_data";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$total_visitors = $row['total_visitors'];
 ?>
+
+

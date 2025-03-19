@@ -3,8 +3,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Load PHPMailer
-require 'vendor/autoload.php'; 
-include 'includes/db.php';
+require '../vendor/autoload.php'; 
+include '../includes/db.php';
 
 // Ensure form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) { 
@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             ";
 
             $mail->send();
-            header("Location: ../index.php?status=success");
+            header("Location: ../../index.php?status=success");
             exit();
         } catch (Exception $e) {
             die("Email sending failed: " . $mail->ErrorInfo);
