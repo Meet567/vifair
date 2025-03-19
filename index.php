@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Vibrant India Fair </title>
+    <title> Index </title>
     <?php
-    include "include/header.php";
+        include "include/header.php";
     ?>
 </head>
 
@@ -29,7 +29,6 @@
         <!-- End Banner Section  -->
 
         <!-- OWL Carousel -->
-         
         <section class="section-margin">
             <div class="primary-heading"> Upcoming Events </div>
             <div class="owl-carousel-box">
@@ -83,11 +82,13 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="owl-nav-box">
-                        <button type="button" class="owl-pre-btn" id="prev1"> Prev </button>
-                        <button type="button" class="owl-next-btn" id="next1"> Next </button>
-                    </div>
+                <div class="owl-nav-box">
+                    <button type="button" class="owl-pre-next-btn" id="prev1"> 
+                    <span><img class="owl-prev-next-btn-icon" src="assets/images/icon/back.png" alt=""></span>    
+                    </button>
+                    <button type="button" class="owl-pre-next-btn" id="next1"> 
+                    <span><img class="owl-prev-next-btn-icon" src="assets/images/icon/next.png" alt=""></span> 
+                    </button>
                 </div>
             </div>
         </section>
@@ -368,5 +369,4 @@
         include "include/footer.php";
     ?>
 </body>
-
-    </html>
+</html>

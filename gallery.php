@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Vibrant India Fair </title>
+    <title> Gallery </title>
     <?php
     include "include/header.php";
     ?>

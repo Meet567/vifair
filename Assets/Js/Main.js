@@ -315,6 +315,100 @@ buttons.forEach((button) => {
         }
     });
     // --- End Supported Company Logo ---
+
+    // --- Why Exhibit Page --- 
+    // --- Exhibition Stall Design Section --- 
+    $(".exhibition-stall-design").each(function () {
+        let carouselId = $(this).data("carousel");
+        let exhibitionStalls = data.carousels[carouselId];
+
+        if (exhibitionStalls) {
+            console.log(`Adding images for Carousel ${carouselId}`);
+            let $carousel4 = $(this);
+            $carousel4.empty();
+
+            exhibitionStalls.forEach(exhibitionStall => {
+              $carousel4.append(`
+                  <div class="item">
+                    <div class="exhibition-carousel-stall-img-box">
+                      <img class="exhibition-carousel-stall-img" src="${exhibitionStall.src}" alt="${exhibitionStall.alt}">
+                    </div>
+                  </div>`);
+            });
+
+            // Different settings for the second carousel
+            $carousel4.owlCarousel({
+                // stagePadding: 10,
+                loop: true,
+                margin: 10,
+                nav: true, // Enable navigation buttons for the second carousel
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                smartSpeed: 2000,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 2 },
+                },
+            });
+             $("#exhi-stall-prev").click(function () {
+                $carousel4.trigger("prev.owl.carousel");
+            });
+
+            $("#exhi-stall-next").click(function () {
+                $carousel4.trigger("next.owl.carousel");
+            });
+        }
+    });
+    // --- End Exhibition Stall Design Section ---
+    // --- End Why Exhibit Page --- 
+
+    // --- Why Visit Page OWL Section ---
+    $(".why-visit-main-owl").each(function () {
+        let carouselId = $(this).data("carousel");
+        let whyVisits = data.carousels[carouselId];
+
+        if (whyVisits) {
+            console.log(`Adding images for Carousel ${carouselId}`);
+            let $carousel5 = $(this);
+            $carousel5.empty();
+
+            whyVisits.forEach(whyVisit => {
+              $carousel5.append(`
+                  <div class="item">
+                    <div class="why-visit-owl-img-box">
+                      <img class="why-visit-owl-img" src="${whyVisit.src}" alt="${whyVisit.alt}">
+                    </div>
+                  </div>`);
+            });
+
+            // Different settings for the second carousel
+            $carousel5.owlCarousel({
+                // stagePadding: 10,
+                loop: true,
+                margin: 10,
+                nav: true, // Enable navigation buttons for the second carousel
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                smartSpeed: 2000,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 1 },
+                    1000: { items: 2 },
+                },
+            });
+             $("#why-visit-prev").click(function () {
+                $carousel5.trigger("prev.owl.carousel");
+            });
+
+            $("#why-visit-next").click(function () {
+                $carousel5.trigger("next.owl.carousel");
+            });
+        }
+    });
+    // --- End Why Visit Page OWL Section ---
 }
 $(document).ready(function () {
   initializeCarousel(carouselData1);
@@ -374,8 +468,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// --- End FAQ Section ---
     // *** End Exhibitor Page ***
   
+    
 // --- Footer Back to Top Button ---
     document.addEventListener("DOMContentLoaded", function () {
 			const backToTopBtn = document.getElementById("backToTop");
@@ -474,13 +571,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
           <div class="product-box" data-aos="zoom-in" data-aos-duration="1000">
             <div class="product-img-box">
-              <img
+              <img class="product-img"
                 src="${product.src}"
                 alt="${product.title}"
                 class="img-fluid"
               />
             </div>
-            <div class="product-title">${product.title}</div>
+            <div class="hightlight-product-text">${product.title}</div>
           </div>
         </div>
         `
