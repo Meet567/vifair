@@ -211,11 +211,6 @@
                         <span class="sub-item">Datatables</span>
                       </a>
                     </li>
-                     <li>
-                      <a href="../tables/visitor_table.php">
-                        <span class="sub-item">VisitorTable</span>
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </li>
@@ -704,7 +699,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../../admin_logout.php">Logout</a>
+                        <a class="dropdown-item" href="#">Logout</a>
                       </li>
                     </div>
                   </ul>
@@ -849,31 +844,57 @@
                         class="display table table-striped table-hover"
                       >
                         <thead>
-                          <tr> 
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Company</th>
+                          <tr>
+                            <th>id</th>
+                            <th>Participation</th>
+                            <th>Comany Name</th>
+                            <th>Booth Area</th>
+                            <th>Booth Type</th>
+                            <th>Opening</th>
+                            <th>Brand Name</th>
+                            <th>Productdetail</th>
+                            <th>Title</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Designation</th>
-                            <th>Phone</th>
-                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
                             <th>City</th>
+                            <th>state</th>
+                            <th>PostalCode</th>
+                            <th>Country</th>
+                            <th>Resource</th>
+                            <th>Email</th>
                           </tr>
                         </thead>
                         <tfoot>
-                          <tr> 
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Company</th>
+                          <tr>
+                          <th>id</th>
+                            <th>Participation</th>
+                            <th>Comany Name</th>
+                            <th>Booth Area</th>
+                            <th>Booth Type</th>
+                            <th>Opening</th>
+                            <th>Brand Name</th>
+                            <th>Productdetail</th>
+                            <th>Title</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Designation</th>
-                            <th>Phone</th>
-                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
                             <th>City</th>
+                            <th>state</th>
+                            <th>PostalCode</th>
+                            <th>Country</th>
+                            <th>Resource</th>
+                            <th>Email</th>
                           </tr>
                         </tfoot>
                       <tbody>
                         <?php  
                           include '../includes/db.php';
-                          $sql = "SELECT * FROM visitor_data";
+                          $sql = "SELECT * FROM chennai_exhibit_data";
                           $result = $conn->query($sql);
                           ?>
 
@@ -882,12 +903,25 @@
                               while ($row = $result->fetch_assoc()) {  
                                   echo '<tr>
                                       <td>' . $row['id'] . '</td>
-                                      <td>' . $row['name'] . '</td>
-                                      <td>' . $row['company'] . '</td>
+                                      <td>' . $row['participation_type'] . '</td>
+                                      <td>' . $row['company_name'] . '</td>
+                                      <td>' . $row['booth_area'] . '</td>
+                                      <td>' . $row['booth_type'] . '</td>
+                                      <td>' . $row['opening_type'] . '</td>
+                                      <td>' . $row['brand_name'] . '</td>
+                                      <td>' . $row['product_detail'] . '</td>
+                                      <td>' . $row['title'] . '</td>
+                                      <td>' . $row['first_name'] . '</td>
+                                      <td>' . $row['last_name'] . '</td>
                                       <td>' . $row['designation'] . '</td>
-                                      <td>' . $row['phone'] . '</td>
-                                      <td>' . $row['email'] . '</td>
+                                      <td>' . $row['mobile'] . '</td>
+                                      <td>' . $row['address_line1'] . '</td>
                                       <td>' . $row['city'] . '</td>
+                                      <td>' . $row['region'] . '</td>
+                                      <td>' . $row['postal_code'] . '</td>
+                                      <td>' . $row['country'] . '</td>
+                                      <td>' . $row['source'] . '</td>
+                                      <td>' . $row['email'] . '</td>
                                       <td>
                                         <div class="form-button-action">
                                           <button

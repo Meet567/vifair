@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     $_SESSION['error'] = "You must be logged in to access this page";
     header("Location: auth/admin_login.php");
-    exit();
+    exit();
 }
 
 ?>
@@ -183,13 +183,21 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="tables/datatables.php">
-                        <span class="sub-item">Datatables</span>
+                      <a href="tables/chennai_exhibit_table.php">
+                        <span class="sub-item">Chennai Exhibit Data</span>
+                      </a>
+                    </li><li>
+                      <a href="tables/chennai_visit_table.php">
+                        <span class="sub-item">Chennai visit Data</span>
+                      </a>
+                    </li><li>
+                      <a href="tables/delhi_exhibit_table.php">
+                        <span class="sub-item">Delhi Exhibit Data</span>
                       </a>
                     </li>
                      <li>
-                      <a href="tables/visitor_table.php">
-                        <span class="sub-item">VisitorTable</span>
+                      <a href="tables/delhi_visit_table.php">
+                        <span class="sub-item">Delhi visit Data</span>
                       </a>
                     </li>
                   </ul>

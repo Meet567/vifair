@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Exhibitor Registration </title>
+    <title> Vibrant India Fair </title>
     <?php
     include "include/header.php";
     ?>
@@ -12,7 +12,7 @@
 <body class="exibitor-body">
     <section class="form-section">
         <div class="container form-container">
-            <form action="admin/exhibitreg_data.php" method="POST">
+            <form action="admin/chennai_exhibit_data.php" method="POST">
                 <h1 class="mb-4">Chennai Registration</h1>
                 <span class="form-title">
                     We are interested in participating in the Vibrant India 2024
@@ -22,12 +22,12 @@
                 <div class="d-flex gap-3 mb-3">
                     <div class="exhibition-form-check">
                         <input class="exhibition-form-check-input inputForm-border" type="radio"
-                            name="participation_type" value="domestic"  required />
+                            name="participation_type" value="domestic"   />
                         <label class="exhibition-form-check-label radio-title" for="Domestic">Domestic</label>
                     </div>
                     <div class="exhibition-form-check">
                         <input class="exhibition-form-check-input inputForm-border" type="radio"
-                            name="participation_type" value="international"  required />
+                            name="participation_type" value="international"   />
                         <label class="exhibition-form-check-label radio-title"
                             for="International">International</label>
                     </div>  
@@ -35,25 +35,25 @@
 
                 <label for="Companyname" class="form-label form-title">Company Name *</label>
                 <input type="text" class="form-control inputForm-border mb-3" name="Companyname" 
-                    placeholder="Enter Company Name" required />
+                    placeholder="Enter Company Name"  />
 
                 <label for="exampleFormControlInput1" class="form-label form-title">Approximate booth area
-                    required *</label>
+                     *</label>
                 <input type="text" class="form-control inputForm-border mb-3" name="areaname" 
-                    placeholder="sq.mtrs." required />
+                    placeholder="sq.mtrs."  />
 
-                <h1 class="form-title">Please Tick : Type of booth required *</h1>
+                <h1 class="form-title">Please Tick : Type of booth  *</h1>
 
                 <div class="form-check">
                     <input class="form-check-input inputForm-border" type="radio" name="booth_type"
-                        value="Built-up Booth"  required />
+                        value="Built-up Booth"   />
                     <label class="form-check-label radio-title" for="bothtype">
                         Built-up Booth (Min. 9 sq. mtrs.) (Ready Booth)
                     </label>
                 </div>
                 <div class="form-check mb-3">
                     <input class="form-check-input inputForm-border" type="radio" name="booth_type" value="Raw Space"
-                         required />
+                          />
                     <label class="form-check-label radio-title" for="rowspace">
                         Raw Space (Min. 18 sq. mtrs.)
                     </label>
@@ -62,38 +62,38 @@
                 <h1 class="form-title">Opening *</h1>
                 <div class="form-check">
                     <input class="form-check-input inputForm-border" type="radio" name="opening_type"
-                        value="Single Slide Open"  required />
+                        value="Single Slide Open"   />
                     <label class="form-check-label radio-title" for="Opening">Single Slide Open</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input inputForm-border" type="radio" name="opening_type"
-                        value="Two Side Open"  required />
+                        value="Two Side Open"   />
                     <label class="form-check-label radio-title" for="SlideOpening">Two Side Open (Min. 36 sq. mtrs)</label>
                 </div>
                 <div class="form-check mb-3">
                     <input class="form-check-input inputForm-border" type="radio" name="opening_type"
-                        value="Three Side Open"  required />
+                        value="Three Side Open"   />
                     <label class="form-check-label radio-title" for="TwoSlideOpening">Three Side Open (Min. 54 sq. mtrs)</label>
                 </div>
 
 
                 <h3>Brand Details</h3>
-                <div class="d-flex justify-content-center gap-2">
-                    <div class="col-6 mb-3">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 mb-3">
                         <label for="exampleFormControlInput1" class="form-label form-title">Brand Name *</label>
                         <input type="text" class="form-control inputForm-border"  name="brandname"
-                            placeholder="Enter Brand Name" required />
+                            placeholder="Brand Name"  />
                     </div>
-                    <div class="col-6 mb-3">
+                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 mb-3">
                         <label for="exampleFormControlInput1" class="form-label form-title">Product Detail *</label>
                         <input type="text" class="form-control inputForm-border" id="Productdetail"  name="Productdetail"
-                             placeholder="Enter Product Detail" required />
+                             placeholder="Product Detail"  />
                     </div>
                 </div>
                 <h2>Detail</h2>
-                <div class="detail-gender mb-3 d-flex gap-2">
-                <div class="select-gender col-4">
-                    <select class="form-select form-select-lg mb-3 inputForm-border" name="title" required>
+                <div class="detail-gender mb-3 row justify-content-center">
+                <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 text-center">
+                    <select class="form-select form-select-lg mb-3 inputForm-border" name="title" >
                         <option value="">-Select-</option>
                         <option value="Mr.">Mr.</option>
                         <option value="Ms.">Ms.</option>
@@ -101,14 +101,14 @@
                         <option value="Dr.">Dr.</option>
                     </select>
                 </div>
-                    <div class="select-gender col-4">
+                    <div class="select-gender col-lg-4 col-md-4 col-sm-6 col-6 mb-2">
                         <input type="text" class="form-control inputForm-border" name="firstname"
-                            placeholder="Enter First Name" required />
+                            placeholder="First Name"  />
                         <label for="exampleFormControlInput1" class="form-label">First</label>
                     </div>
-                    <div class="select-gender col-4">
+                    <div class="select-gender col-lg-4 col-md-4 col-sm-6 col-6 mb-2 mb-2">
                         <input type="text" class="form-control inputForm-border"  name="lastname"
-                            placeholder="Enter Last Name" required />
+                            placeholder="Last Name"  />
                         <label for="exampleFormControlTextarea1" class="form-label">
                             Last</label>
                     </div>
@@ -117,24 +117,24 @@
                     <div class="col-6">
                         <label class="form-title">Mobile No. *</label>
                         <input type="text" class="form-control inputForm-border" 
-                            name="exhibitionnumber" placeholder="Enter Mobile Number" required />
+                            name="exhibitionnumber" placeholder="Mobile No"  />
                     </div>
                     <div class="col-6">
                         <label class="form-title">Email *</label>
                         <input type="email" class="form-control inputForm-border"  name="email"
-                            placeholder="Enter Email Id" required />
+                            placeholder="Email Id"  />
                     </div>
                 </div>
                 <div class="d-flex gap-2 mb-3">
                     <div class="col-6">
                         <label class="form-title">Designation *</label>
                         <input type="text" class="form-control inputForm-border"  name="Designation"
-                            placeholder="Enter Designation" required />
+                            placeholder="Designation"  />
                     </div>
                     <div class="col-6">
                         <label class="form-title">Address *</label>
                         <input type="text" class="form-control inputForm-border"  name="Addresstype"
-                            placeholder="Enter Address" required />
+                            placeholder="Address"  />
                         <label for="exampleFormControlInput1" class="form-label">
                             Address Line 1</label>
                     </div>
@@ -142,13 +142,13 @@
                 <div class="d-flex gap-2 mb-3">
                     <div class="col-6">
                         <input type="text" class="form-control inputForm-border"  name="city"
-                            placeholder="Enter City" required />
+                            placeholder="City"  />
                         <label for="exampleFormControlInput1" class="form-label">
                             City</label>
                     </div>
                     <div class="col-6">
                         <input type="text" class="form-control inputForm-border"  name="Region"
-                            placeholder="Enter Region" required />
+                            placeholder="Region"  />
                         <label for="exampleFormControlTextarea1" class="form-label">
                             State / Province / Region</label>
                     </div>
@@ -156,12 +156,12 @@
                 <div class="d-flex mb-3 gap-2">
                     <div class="col-6">
                         <input type="text" class="form-control inputForm-border"  name="postalcode"
-                            placeholder="Enter PostalCode " required />
+                            placeholder="PostalCode "  />
                         <label for="exampleFormControlTextarea1" class="form-label">
                             Postal Code</label>
                     </div>
                     <div class="col-6">
-                    <select class="form-select form-select-sm inputForm-border" name="country" required>
+                    <select class="form-select form-select-sm inputForm-border" name="country" >
                         <option value="">-Select-</option>
                         <option value="India">India</option>
                         <option value="USA">USA</option>

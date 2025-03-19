@@ -24,7 +24,7 @@ $country = $_POST['country'] ?? '';
 $source = $_POST['source'] ?? '';
 $email = $_POST['email'] ?? '';
 
-$sql = "INSERT INTO exhibit_data (participation_type, company_name, booth_area, booth_type, opening_type, brand_name, product_detail, title, first_name, last_name, designation, mobile,  address_line1, city, region, postal_code, country, source,email)
+$sql = "INSERT INTO delhi_exhibit_data (participation_type, company_name, booth_area, booth_type, opening_type, brand_name, product_detail, title, first_name, last_name, designation, mobile,  address_line1, city, region, postal_code, country, source,email)
         VALUES ('$participation_type', '$company_name', '$booth_area', '$booth_type', '$opening_type', '$brand_name', '$product_detail', '$title', '$first_name', '$last_name', '$designation', '$mobile',  '$address_line1', '$city', '$region', '$postal_code', '$country', '$source','$email')";
 
 if ($conn->query($sql) === TRUE) {

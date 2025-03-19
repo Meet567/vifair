@@ -81,9 +81,15 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Visitors</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
+<<<<<<< HEAD
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_visit.php">Why Visit ?</a>
                                     </li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="visitor_profile.php">Visitor
+=======
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="delhi_exhibit_reg.php">Why Visit ?</a>
+                                    </li>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="delhi_visit_reg.php">Visitor
+>>>>>>> 0dd018ca6f7644c0786e1116a0911601847935a3
                                             Profile</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
                                             Registration</a></li>
@@ -147,6 +153,7 @@
                 </div>
                 <div class="header-form-btn-box">
                     <ul class="form-unlist-box">
+<<<<<<< HEAD
                         <li class="form-list-btn"><a class="link-form-btn" href="visitor_reg.php">I WANT TO VISIT</a>
                             <div class="visitor-megamenu-main-body">
                                 <div class="visitor-megamenu-sub-box">
@@ -209,6 +216,10 @@
                                 </div>
                             </div>
                         </li>
+=======
+                        <li class="form-list-btn"><a class="link-form-btn" href="chennai_visit_reg.php">I WANT TO VISIT</a></li>
+                        <li class="form-list-btn"><a class="link-form-btn" href="chennai_exhibit_reg.php">I WANT TO EXHIBIT</a></li>
+>>>>>>> 0dd018ca6f7644c0786e1116a0911601847935a3
                     </ul>
                 </div>
                 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
