@@ -47,7 +47,8 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/plugins.min.css" />
     <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
-
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="assets/css/demo.css" />
   </head>
@@ -326,7 +327,7 @@ if (!isset($_SESSION['user_id'])) {
                   src="assets/img/VIFair.png"
                   alt="navbar brand"
                   class="navbar-brand"
-                  height="20"
+                  height="50"
                 />
               </a>
               <div class="nav-toggle">
@@ -366,6 +367,11 @@ if (!isset($_SESSION['user_id'])) {
               </nav>
 
               <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li class="nav-item">
+                <button id="clearCacheBtn" class="btn btn-danger btn-round">
+                    <i class="fas fa-trash"></i> Clear Cache
+                </button>
+            </li>
                 <li
                   class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
                 >
@@ -714,6 +720,15 @@ if (!isset($_SESSION['user_id'])) {
               </div>
             </div>
             <div class="row">
+                                    <?php
+require 'includes/db.php'; // Database connection
+
+// Fetch total visitor count
+$query = "SELECT COUNT(*) AS total_visitors FROM delhi_visit_data";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$total_visitors = $row['total_visitors'];
+?>
               <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">
                   <div class="card-body">
@@ -727,8 +742,91 @@ if (!isset($_SESSION['user_id'])) {
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Visitors</p>
-                          <h4 class="card-title">1,294</h4>
+                          <p class="card-category">Visitors Delhi</p>
+                          <h4 class="card-title"><?php echo number_format($total_visitors); ?></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+       <?php         // Fetch total visitor count
+$query = "SELECT COUNT(*) AS total_visitors FROM chennai_visit_data";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$total_visitors = $row['total_visitors'];
+?>
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-primary bubble-shadow-small"
+                        >
+                          <i class="fas fa-users"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Visitors Chennai</p>
+                          <h4 class="card-title"><?php echo number_format($total_visitors); ?></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <?php
+                // Fetch total visitor count
+$query = "SELECT COUNT(*) AS total_visitors FROM delhi_exhibit_data";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$total_visitors = $row['total_visitors'];
+?>
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-primary bubble-shadow-small"
+                        >
+                          <i class="fas fa-users"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Exhibit Delhi</p>
+                          <h4 class="card-title"><?php echo number_format($total_visitors); ?></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                                <?php
+                // Fetch total visitor count
+$query = "SELECT COUNT(*) AS total_visitors FROM chennai_exhibit_data";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$total_visitors = $row['total_visitors'];
+?>
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-primary bubble-shadow-small"
+                        >
+                          <i class="fas fa-users"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Exhibit Delhi</p>
+                          <h4 class="card-title"><?php echo number_format($total_visitors); ?></h4>
                         </div>
                       </div>
                     </div>
@@ -804,31 +902,28 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row">
-                      <div class="card-title">User Statistics</div>
-                      <div class="card-tools">
-                        <a
-                          href="#"
-                          class="btn btn-label-success btn-round btn-sm me-2"
-                        >
-                          <span class="btn-label">
-                            <i class="fa fa-pencil"></i>
-                          </span>
-                          Export
-                        </a>
-                        <a href="#" class="btn btn-label-info btn-round btn-sm">
-                          <span class="btn-label">
-                            <i class="fa fa-print"></i>
-                          </span>
-                          Print
-                        </a>
-                      </div>
+                      <div class="card-title">Visitor BarChart</div>
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="chart-container" style="min-height: 375px">
-                      <canvas id="statisticsChart"></canvas>
+                    <div class="chart-container">
+                      <canvas id="barChart"></canvas>
                     </div>
-                    <div id="myChartLegend"></div>
+                    <?php
+                      require 'includes/db.php';
+
+                      // Fetch Chennai visitor count
+                      $query_chennai = "SELECT COUNT(*) AS total_visitors FROM chennai_visit_data";
+                      $result_chennai = mysqli_query($conn, $query_chennai);
+                      $total_visitors_chennai = ($result_chennai) ? mysqli_fetch_assoc($result_chennai)['total_visitors'] : 0;
+
+                      // Fetch Delhi visitor count
+                      $query_delhi = "SELECT COUNT(*) AS total_visitors FROM delhi_visit_data";
+                      $result_delhi = mysqli_query($conn, $query_delhi);
+                      $total_visitors_delhi = ($result_delhi) ? mysqli_fetch_assoc($result_delhi)['total_visitors'] : 0;
+
+                      mysqli_close($conn);
+                    ?>
                   </div>
                 </div>
               </div>
@@ -1381,7 +1476,8 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- Sweet Alert -->
     <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Kaiadmin JS -->
     <script src="assets/js/kaiadmin.min.js"></script>
 
@@ -1389,32 +1485,129 @@ if (!isset($_SESSION['user_id'])) {
     <script src="assets/js/setting-demo.js"></script>
     <script src="assets/js/demo.js"></script>
     <script>
-      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#177dff",
-        fillColor: "rgba(23, 125, 255, 0.14)",
-      });
+    document.addEventListener("DOMContentLoaded", function () {
+        var ctx = document.getElementById("barChart").getContext("2d");
+        var barChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["Chennai", "Delhi"],
+                datasets: [{
+                    label: "Visitor Count",
+                    data: [<?php echo $total_visitors_chennai; ?>, <?php echo $total_visitors_delhi; ?>],
+                    backgroundColor: ["#3498db", "#e74c3c"], // Bar colors
+                    borderColor: ["#2980b9", "#c0392b"],      // Border colors
+                    borderWidth: 2,            // Thicker borders
+                    borderRadius: 5,           // Rounded bar edges
+                    hoverBackgroundColor: ["#2980b9", "#c0392c"] // Hover effect
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,    // Allow chart to resize freely
+                plugins: {
+                    title: {                   // Add a chart title
+                        display: true,
+                        text: "Visitor Statistics",
+                        fontSize: 16,
+                        padding: 20
+                    },
+                    legend: {                 // Customize legend
+                        position: "top",      // Position at top
+                        labels: {
+                            fontColor: "#333", // Legend text color
+                            fontSize: 12
+                        }
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor: "#666",  // Y-axis text color
+                            callback: function(value) {
+                                return value.toLocaleString(); // Add commas (e.g., 1,000)
+                            }
+                        },
+                        gridLines: {
+                            color: "#eee",     // Y-axis grid lines
+                            drawBorder: false  // Hide Y-axis border
+                        },
+                        scaleLabel: {          // Y-axis label
+                            display: true,
+                            labelString: "Number of Visitors",
+                            fontColor: "#666"
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "#666"  // X-axis text color
+                        },
+                        gridLines: {
+                            display: false     // Hide X-axis grid lines
+                        },
+                        barThickness: 40,      // Fixed bar width
+                        categoryPercentage: 0.5 // Control spacing between bars
+                    }]
+                },
+                tooltips: {                   // Customize tooltips
+                    backgroundColor: "#333",
+                    titleFontSize: 14,
+                    bodyFontSize: 12,
+                    bodyFontColor: "#fff",
+                    borderColor: "#666",
+                    borderWidth: 1,
+                    caretSize: 8,
+                    displayColors: false      // Hide color box in tooltip
+                },
+                animation: {                  // Add animations
+                    duration: 1500,           // Animation duration
+                    easing: "easeInOutQuart"   // Smooth easing effect
+                }
+            }
+        });
+    });
 
-      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#f3545d",
-        fillColor: "rgba(243, 84, 93, .14)",
-      });
-
-      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#ffa534",
-        fillColor: "rgba(255, 165, 52, .14)",
-      });
+    
+</script>
+<!-- clear chach buuton js -->
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("clearCacheBtn").addEventListener("click", function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This will clear all cached data. This action cannot be undone!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, clear cache!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch("clear_cache.php", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            Swal.fire({
+                                title: data.status === "success" ? "Success!" : "Error!",
+                                text: data.message,
+                                icon: data.status === "success" ? "success" : "error"
+                            });
+                        })
+                        .catch(() => {
+                            Swal.fire({
+                                title: "Error!",
+                                text: "An error occurred while clearing the cache.",
+                                icon: "error"
+                            });
+                        });
+                    }
+                });
+            });
+        });
     </script>
   </body>
 </html>

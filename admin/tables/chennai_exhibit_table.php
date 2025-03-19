@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Datatables - Kaiadmin Bootstrap 5 Admin Dashboard</title>
+    <title>Vibrant India Fair</title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
     />
     <link
       rel="icon"
-      href="../assets/img/kaiadmin/favicon.ico"
+      href="../assets/img/VIFabicon.png"
       type="image/x-icon"
     />
 
@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+    <!-- Bootstrap Notify -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.css">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="../assets/css/demo.css" />
@@ -48,12 +50,12 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            <a href="../index.html" class="logo">
+            <a href="../admin_dashboard.php" class="logo">
               <img
-                src="../assets/img/kaiadmin/logo_light.svg"
+                src="../assets/img/VIFair.png"
                 alt="navbar brand"
                 class="navbar-brand"
-                height="20"
+                height="50"
               />
             </a>
             <div class="nav-toggle">
@@ -201,14 +203,24 @@
                 </a>
                 <div class="collapse show" id="tables">
                   <ul class="nav nav-collapse">
-                    <li>
-                      <a href="../tables/tables.html">
-                        <span class="sub-item">Basic Table</span>
+                    <li class="active">
+                      <a href="../tables/chennai_exhibit_table.php">
+                        <span class="sub-item">Chennai Exhibit Data</span>
                       </a>
                     </li>
-                    <li class="active">
-                      <a href="../tables/datatables.php">
-                        <span class="sub-item">Datatables</span>
+                    <li>
+                      <a href="../tables/chennai_visit_table.php">
+                        <span class="sub-item">Chennai Visit Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../tables/delhi_exhibit_table.php">
+                        <span class="sub-item">Delhi Exhibit Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../tables/delhi_visit_table.php">
+                        <span class="sub-item">Delhi Visit Data</span>
                       </a>
                     </li>
                   </ul>
@@ -332,12 +344,12 @@
           <div class="main-header-logo">
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="dark">
-              <a href="../index.html" class="logo">
+              <a href="../admin_dashboard.php" class="logo">
                 <img
-                  src="../assets/img/kaiadmin/logo_light.svg"
+                  src="../assets/img/VIFair.png"
                   alt="navbar brand"
                   class="navbar-brand"
-                  height="20"
+                  height="50"
                 />
               </a>
               <div class="nav-toggle">
@@ -699,7 +711,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="../auth/admin_logout.php">Logout</a>
                       </li>
                     </div>
                   </ul>
@@ -713,10 +725,10 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">DataTables.Net</h3>
+              <h3 class="fw-bold mb-3">chennai_exhibit_data</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
-                  <a href="#">
+                  <a href="../admin_dashboard.php">
                     <i class="icon-home"></i>
                   </a>
                 </li>
@@ -730,7 +742,7 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Datatables</a>
+                  <a href="#">chennai_exhibit_data</a>
                 </li>
               </ul>
             </div>
@@ -739,220 +751,100 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="d-flex align-items-center">
-                      <h4 class="card-title">Add Row</h4>
-                      <button
+                      <h4 class="card-title">chennai_exhibit_data</h4>
+                    <a
                         class="btn btn-primary btn-round ms-auto"
-                        data-bs-toggle="modal"
-                        data-bs-target="#addRowModal"
-                      >
-                        <i class="fa fa-plus"></i>
-                        Add Row
-                      </button>
+                       href="../data_csv/delhi_visit_csv.php"  onclick="event.preventDefault();
+                $.notify({
+                    message: 'Exporting CSV...'
+                },{
+                    type: 'success',
+                    placement: {
+                        from: 'top',
+                        align: 'center'
+                    },
+                    delay: 2000
+                });
+                setTimeout(() => {
+                 window.location.href = this.href; }, 1000);" 
+                      ><i class="fa fa-download me-2"></i> 
+                       Export to CSV
+                      </a>
                     </div>
                   </div>
                   <div class="card-body">
-                    <!-- Modal -->
-                    <div
-                      class="modal fade"
-                      id="addRowModal"
-                      tabindex="-1"
-                      role="dialog"
-                      aria-hidden="true"
-                    >
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header border-0">
-                            <h5 class="modal-title">
-                              <span class="fw-mediumbold"> New</span>
-                              <span class="fw-light"> Row </span>
-                            </h5>
-                            <button
-                              type="button"
-                              class="close"
-                              data-dismiss="modal"
-                              aria-label="Close"
-                            >
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <p class="small">
-                              Create a new row using this form, make sure you
-                              fill them all
-                            </p>
-                            <form>
-                              <div class="row">
-                                <div class="col-sm-12">
-                                  <div class="form-group form-group-default">
-                                    <label>Name</label>
-                                    <input
-                                      id="addName"
-                                      type="text"
-                                      class="form-control"
-                                      placeholder="fill name"
-                                    />
-                                  </div>
-                                </div>
-                                <div class="col-md-6 pe-0">
-                                  <div class="form-group form-group-default">
-                                    <label>Position</label>
-                                    <input
-                                      id="addPosition"
-                                      type="text"
-                                      class="form-control"
-                                      placeholder="fill position"
-                                    />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group form-group-default">
-                                    <label>Office</label>
-                                    <input
-                                      id="addOffice"
-                                      type="text"
-                                      class="form-control"
-                                      placeholder="fill office"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
-                          <div class="modal-footer border-0">
-                            <button
-                              type="button"
-                              id="addRowButton"
-                              class="btn btn-primary"
-                            >
-                              Add
-                            </button>
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-dismiss="modal"
-                            >
-                              Close
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                   <div class="table-responsive">
+                      <table id="exhibitTable" class="display table table-striped table-hover">
+                          <thead>
+                              <tr>
+                                  <th>Id</th>
+                                  <th>Participation</th>
+                                  <th>Company Name</th>
+                                  <th>Booth Area</th>
+                                  <th>Booth Type</th>
+                                  <th>Opening</th>
+                                  <th>Brand Name</th>
+                                  <th>Product Detail</th>
+                                  <th>Title</th>
+                                  <th>First Name</th>
+                                  <th>Last Name</th>
+                                  <th>Designation</th>
+                                  <th>Mobile</th>
+                                  <th>Address</th>
+                                  <th>City</th>
+                                  <th>State</th>
+                                  <th>Postal Code</th>
+                                  <th>Country</th>
+                                  <th>Resource</th>
+                                  <th>Email</th>
+                                  <th>Actions</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <?php  
+                              include '../includes/db.php';
+                              $sql = "SELECT * FROM chennai_exhibit_data";
+                              $result = $conn->query($sql);
 
-                    <div class="table-responsive">
-                      <table
-                        id="add-row"
-                        class="display table table-striped table-hover"
-                      >
-                        <thead>
-                          <tr>
-                            <th>id</th>
-                            <th>Participation</th>
-                            <th>Comany Name</th>
-                            <th>Booth Area</th>
-                            <th>Booth Type</th>
-                            <th>Opening</th>
-                            <th>Brand Name</th>
-                            <th>Productdetail</th>
-                            <th>Title</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Designation</th>
-                            <th>Mobile</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>state</th>
-                            <th>PostalCode</th>
-                            <th>Country</th>
-                            <th>Resource</th>
-                            <th>Email</th>
-                          </tr>
-                        </thead>
-                        <tfoot>
-                          <tr>
-                          <th>id</th>
-                            <th>Participation</th>
-                            <th>Comany Name</th>
-                            <th>Booth Area</th>
-                            <th>Booth Type</th>
-                            <th>Opening</th>
-                            <th>Brand Name</th>
-                            <th>Productdetail</th>
-                            <th>Title</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Designation</th>
-                            <th>Mobile</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>state</th>
-                            <th>PostalCode</th>
-                            <th>Country</th>
-                            <th>Resource</th>
-                            <th>Email</th>
-                          </tr>
-                        </tfoot>
-                      <tbody>
-                        <?php  
-                          include '../includes/db.php';
-                          $sql = "SELECT * FROM chennai_exhibit_data";
-                          $result = $conn->query($sql);
-                          ?>
-
-                          <?php
-                          if ($result->num_rows > 0) {
-                              while ($row = $result->fetch_assoc()) {  
-                                  echo '<tr>
-                                      <td>' . $row['id'] . '</td>
-                                      <td>' . $row['participation_type'] . '</td>
-                                      <td>' . $row['company_name'] . '</td>
-                                      <td>' . $row['booth_area'] . '</td>
-                                      <td>' . $row['booth_type'] . '</td>
-                                      <td>' . $row['opening_type'] . '</td>
-                                      <td>' . $row['brand_name'] . '</td>
-                                      <td>' . $row['product_detail'] . '</td>
-                                      <td>' . $row['title'] . '</td>
-                                      <td>' . $row['first_name'] . '</td>
-                                      <td>' . $row['last_name'] . '</td>
-                                      <td>' . $row['designation'] . '</td>
-                                      <td>' . $row['mobile'] . '</td>
-                                      <td>' . $row['address_line1'] . '</td>
-                                      <td>' . $row['city'] . '</td>
-                                      <td>' . $row['region'] . '</td>
-                                      <td>' . $row['postal_code'] . '</td>
-                                      <td>' . $row['country'] . '</td>
-                                      <td>' . $row['source'] . '</td>
-                                      <td>' . $row['email'] . '</td>
-                                      <td>
-                                        <div class="form-button-action">
-                                          <button
-                                            type="button"
-                                            data-bs-toggle="tooltip"
-                                            title=""
-                                            class="btn btn-link btn-primary btn-lg"
-                                            data-original-title="Edit Task"
-                                          >
-                                            <i class="fa fa-edit"></i>
-                                          </button>
-                                          <button
-                                            type="button"
-                                            data-bs-toggle="tooltip"
-                                            title=""
-                                            class="btn btn-link btn-danger"
-                                            data-original-title="Remove"
-                                          >
-                                            <i class="fa fa-times"></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                  </tr>';
+                              if ($result->num_rows > 0) {
+                                  while ($row = $result->fetch_assoc()) {  
+                                      echo '<tr>
+                                          <td>' . $row['id'] . '</td>
+                                          <td>' . $row['participation_type'] . '</td>
+                                          <td>' . $row['company_name'] . '</td>
+                                          <td>' . $row['booth_area'] . '</td>
+                                          <td>' . $row['booth_type'] . '</td>
+                                          <td>' . $row['opening_type'] . '</td>
+                                          <td>' . $row['brand_name'] . '</td>
+                                          <td>' . $row['product_detail'] . '</td>
+                                          <td>' . $row['title'] . '</td>
+                                          <td>' . $row['first_name'] . '</td>
+                                          <td>' . $row['last_name'] . '</td>
+                                          <td>' . $row['designation'] . '</td>
+                                          <td>' . $row['mobile'] . '</td>
+                                          <td>' . $row['address_line1'] . '</td>
+                                          <td>' . $row['city'] . '</td>
+                                          <td>' . $row['region'] . '</td>
+                                          <td>' . $row['postal_code'] . '</td>
+                                          <td>' . $row['country'] . '</td>
+                                          <td>' . $row['source'] . '</td>
+                                          <td>' . $row['email'] . '</td>
+                                          <td>
+                                              <div class="form-button-action">
+                                                <a href="../exhibit/chennai_exhibit_data.php?delete_id=' . $row['id'] . '" class="btn btn-link btn-danger" onclick="return confirm(\'Are you sure you want to delete this record?\');">
+                                                      <i class="fa fa-times"></i>
+                                                  </a>
+                                              </div>
+                                          </td>
+                                      </tr>';
+                                  }
+                              } else {
+                                  echo '<tr><td colspan="21">No data found</td></tr>';
                               }
-                          } else {
-                              echo '<tr><td colspan="15">No data found</td></tr>';
-                          }
-                          ?>                 
-                        </tbody>
+                            ?>
+                          </tbody>
                       </table>
-                    </div>
+                   </div>
                   </div>
                 </div>
               </div>
@@ -1002,6 +894,7 @@
     <script src="../assets/js/kaiadmin.min.js"></script>
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="../assets/js/setting-demo2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
     <script>
       $(document).ready(function () {
         $("#basic-datatables").DataTable({});
@@ -1058,6 +951,22 @@
           $("#addRowModal").modal("hide");
         });
       });
+
+      $(document).ready(function () {
+          $('#exhibitTable').DataTable({
+              "paging": true,       // Enable pagination
+              "searching": true,    // Enable search box
+              "ordering": true,     // Enable sorting
+              "info": true,         // Show table info
+              "lengthMenu": [5, 10, 25, 50, 100], // Rows per page options
+              "language": {
+                  "search": "Search records:", // Custom search box text
+                  "lengthMenu": "Show _MENU_ records per page",
+                  "info": "Showing _START_ to _END_ of _TOTAL_ records",
+              }
+          });
+      });
+
     </script>
   </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 require '../includes/db.php'; // Database connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    session_start();
+ 
     $name = $_POST['name'] ?? '';
     $company = $_POST['company'] ?? '';
     $designation = $_POST['designation'] ?? '';
@@ -49,6 +49,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../../chennai_visit_reg.php");
         exit;
       }
+}
+// deleted Functionality
+if (isset($_GET['delete_id'])) {
+    $delete_id = intval($_GET['delete_id']); // Ensure the ID is an integer
+    echo "<script>console.log('Delete ID: " . $delete_id . "');</script>"; // Debugging
+
+    if ($delete_id > 0) { // Validate the ID
+        $stmt = $conn->prepare("DELETE FROM chennai_visit_data  WHERE id = ?");
+        $stmt->bind_param("i", $delete_id);
+
+        if ($stmt->execute()) {
+            echo "<script>console.log('Record deleted successfully');</script>";
+            echo "<script>alert('Record deleted successfully');</script>";
+            header("Location: ../tables/chennai_visit_table.php"); // Redirect to the same page
+            exit();
+        } else {
+            echo "<script>console.error('Error deleting record: " . $stmt->error . "');</script>";
+            echo "<script>alert('Error deleting record: " . $stmt->error . "');</script>";
+        }
+        $stmt->close();
+    } else {
+        echo "<script>alert('Invalid record ID');</script>";
+    }
+} else {
+    echo "<script>console.log('Delete ID not set');</script>"; // Debugging
 }
 
 ?>

@@ -8,7 +8,7 @@
     include "include/header.php";
     ?>
 </head>
- <body>
+<body>
   <main class="contact-us-main">
    <section class="contact-us section-margin">
       <div class="container">
@@ -156,8 +156,8 @@
         </div>
       </section>
     </main>
-     <?php
-    include "include/footer.php";
-    ?>
-  </body>
+  <?php
+   include "include/footer.php";
+  ?>
+</body>
 </html>

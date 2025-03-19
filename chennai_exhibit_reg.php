@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+$old_input = $_SESSION['old_input'] ?? [];
+$errors = $_SESSION['errors'] ?? [];
+unset($_SESSION['old_input'], $_SESSION['errors']);
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +17,7 @@
 <body class="exibitor-body">
     <section class="form-section">
         <div class="container form-container">
-            <form action="admin/chennai_exhibit_data.php" method="POST">
+            <form action="admin/exhibit/chennai_exhibit_data.php" method="POST">
                 <h1 class="mb-4">Chennai Registration</h1>
                 <span class="form-title">
                     We are interested in participating in the Vibrant India 2024
@@ -114,15 +119,19 @@
                     </div>
                 </div>
                 <div class="d-flex gap-2 mb-3">
-                    <div class="col-6">
-                        <label class="form-title">Mobile No. *</label>
-                        <input type="text" class="form-control inputForm-border" 
-                            name="exhibitionnumber" placeholder="Mobile No"  />
+                  <div class="col-6">
+                    <label class="form-title">Mobile No. *</label>
+                    <input type="text" class="form-control inputForm-border" 
+                        name="exhibitionnumber" placeholder="Mobile No"
+                        value="<?= htmlspecialchars($old_input['exhibitionnumber'] ?? '') ?>" required />
+                    <small class="text-danger"><?= $errors['phone'] ?? '' ?></small>
                     </div>
                     <div class="col-6">
                         <label class="form-title">Email *</label>
-                        <input type="email" class="form-control inputForm-border"  name="email"
-                            placeholder="Email Id"  />
+                        <input type="email" class="form-control inputForm-border" 
+                            name="email" placeholder="Email Id"
+                            value="<?= htmlspecialchars($old_input['email'] ?? '') ?>" required />
+                        <small class="text-danger"><?= $errors['email'] ?? '' ?></small>
                     </div>
                 </div>
                 <div class="d-flex gap-2 mb-3">

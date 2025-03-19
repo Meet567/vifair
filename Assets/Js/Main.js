@@ -14,27 +14,25 @@ function toggleMenu() {
 }
 // --- End Header Toggle Button ---
 // --- Header Screen Scroll Sticki ---
-  document.addEventListener("DOMContentLoaded", () => {
-    const headerHeight = document.querySelector("header").offsetHeight + 10;
-    
-    document.querySelectorAll(".link-menubar").forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute("href"));
-            if (target) {
-                window.scrollTo({ 
-                    top: target.offsetTop - headerHeight, 
-                    behavior: "smooth" 
-                });
-            }
-        });
-    });
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const headerHeight = document.querySelector("header").offsetHeight + 10;
 
+  document.querySelectorAll(".link-menubar").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - headerHeight,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
 
 // --- End Header Screen Scroll Sticki ---
 // *** --- End Header --- ***
-
 
 // --- OWL Carousel ---
 $(document).ready(function () {
@@ -62,13 +60,13 @@ $(document).ready(function () {
       },
     },
   });
-  
-  $('#prev1').click(function () {
-    owl1.trigger('prev.owl.carousel');
+
+  $("#prev1").click(function () {
+    owl1.trigger("prev.owl.carousel");
   });
-  $('#next1').click(function () {
-    owl1.trigger('next.owl.carousel');
-  })
+  $("#next1").click(function () {
+    owl1.trigger("next.owl.carousel");
+  });
 });
 // --- End OWL Carousel ---
 
@@ -136,47 +134,45 @@ $(document).ready(function () {
 });
 // --- End OWL Carousel ---
 
-
 // --- Primary Btn ---
 let buttons = document.querySelectorAll(".primary-btn");
 
 buttons.forEach((button) => {
-    let pink = button.querySelector(".primary-btn-color");
+  let pink = button.querySelector(".primary-btn-color");
 
-    button.addEventListener("mouseenter", () => {
-        pink.style.width = "100%";
-        pink.style.height = "100%";
-        pink.style.left = "0";
-        pink.style.borderRadius = "25px";
-    });
+  button.addEventListener("mouseenter", () => {
+    pink.style.width = "100%";
+    pink.style.height = "100%";
+    pink.style.left = "0";
+    pink.style.borderRadius = "25px";
+  });
 
-    button.addEventListener("mouseleave", () => {
-        pink.style.width = "33px";
-        pink.style.height = "33px";
-        pink.style.left = "0";
-        pink.style.borderRadius = "20px";
-    });
+  button.addEventListener("mouseleave", () => {
+    pink.style.width = "33px";
+    pink.style.height = "33px";
+    pink.style.left = "0";
+    pink.style.borderRadius = "20px";
+  });
 });
 // --- End Primary Btn ---
 
-
 // --- Data Fetch image Map Function  ---
-  function initializeCarousel(data) {
-    console.log("Initializing carousel with data:", data);
+function initializeCarousel(data) {
+  console.log("Initializing carousel with data:", data);
 
   // --- OWL Carousel Event Gallery Section ---
-    // event-gallery-owl   @@@@@ Section 1 @@@@@
-    $(".event-gallery-owl").each(function () {
-        let carouselId = $(this).data("carousel");
-        let images = data.carousels[carouselId];
+  // event-gallery-owl   @@@@@ Section 1 @@@@@
+  $(".event-gallery-owl").each(function () {
+    let carouselId = $(this).data("carousel");
+    let images = data.carousels[carouselId];
 
     if (images) {
       console.log(`Adding images for Carousel ${carouselId}`);
       let $carousel1 = $(this);
       $carousel1.empty(); // Clear previous images to prevent duplication
 
-            images.forEach(image => {
-              $carousel1.append(` 
+      images.forEach((image) => {
+        $carousel1.append(` 
                   <div class="item event-gallery-box">
                     <a href="${image.src}" class="popup-link">
                       <img class="event-gallery-img" src="${image.src}" alt="${image.alt}">
@@ -185,46 +181,45 @@ buttons.forEach((button) => {
                       </div>
                     </a>
                 </div>`);
-            });
+      });
 
-            // Initialize Owl Carousel for this specific container
-          $carousel1.owlCarousel({      
-                // stagePadding: 40,
-                loop: true,
-                margin: 10,
-                nav: false,
-                autoplay: true,
-                autoplayTimeout: 6000,
-                autoplayHoverPause: true,
-                smartSpeed: 3000,
-                responsive: {
-                    0: { items: 1, stagePadding: false },
-                    600: { items: 4 },
-                    1000: { items: 4 },
-                },
-            });
-              // Initialize Magnific Popup for image popups
-            $carousel1.find('.popup-link').magnificPopup({
-                type: 'image',
-                gallery: { enabled: true }
-            });
-        }
-    });
-    // --- End OWL Carousel Event Gallery Section ---
-    
+      // Initialize Owl Carousel for this specific container
+      $carousel1.owlCarousel({
+        // stagePadding: 40,
+        loop: true,
+        margin: 10,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        smartSpeed: 3000,
+        responsive: {
+          0: { items: 1, stagePadding: false },
+          600: { items: 4 },
+          1000: { items: 4 },
+        },
+      });
+      // Initialize Magnific Popup for image popups
+      $carousel1.find(".popup-link").magnificPopup({
+        type: "image",
+        gallery: { enabled: true },
+      });
+    }
+  });
+  // --- End OWL Carousel Event Gallery Section ---
 
-    // --- Remarks of Exhibitors --- @@@@@ Section 2 @@@@@
-    $(".remarks-exhibitors").each(function () {
-        let carouselId = $(this).data("carousel");
-        let remarksimgs = data.carousels[carouselId];
+  // --- Remarks of Exhibitors --- @@@@@ Section 2 @@@@@
+  $(".remarks-exhibitors").each(function () {
+    let carouselId = $(this).data("carousel");
+    let remarksimgs = data.carousels[carouselId];
 
-        if (remarksimgs) {
-            console.log(`Adding images for Carousel ${carouselId}`);
-            let $carousel2 = $(this);
-            $carousel2.empty();
+    if (remarksimgs) {
+      console.log(`Adding images for Carousel ${carouselId}`);
+      let $carousel2 = $(this);
+      $carousel2.empty();
 
-            remarksimgs.forEach(remarksimage => {
-              $carousel2.append(`
+      remarksimgs.forEach((remarksimage) => {
+        $carousel2.append(`
                   <div class="item remarks-main-box">
                    <div class="testimonial-details-box">
                       <div class="testimonial-background-color"></div>
@@ -238,83 +233,89 @@ buttons.forEach((button) => {
                     </div> 
                     <div class="section-text-content">${remarksimage.alt3}</div>
                   </div>`);
-            });
+      });
 
-            // Different settings for the second carousel
-            $carousel2.owlCarousel({
-                // stagePadding: 10,
-                loop: true,
-                margin: 10,
-                nav: true, // Enable navigation buttons for the second carousel
-                autoplay: true,
-                autoplayTimeout: 4000,
-                autoplayHoverPause: true,
-                smartSpeed: 2000,
-                responsive: {
-                    0: { items: 1 },
-                    600: { items: 1 },
-                    1000: { items: 1 },
-                },
-            });
-             $("#remarks-prev2").click(function () {
-                $carousel2.trigger("prev.owl.carousel");
-            });
+      // Different settings for the second carousel
+      $carousel2.owlCarousel({
+        // stagePadding: 10,
+        loop: true,
+        margin: 10,
+        nav: true, // Enable navigation buttons for the second carousel
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 2000,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 1 },
+          1000: { items: 1 },
+        },
+      });
+      $("#remarks-prev2").click(function () {
+        $carousel2.trigger("prev.owl.carousel");
+      });
 
-            $("#remarks-next2").click(function () {
-                $carousel2.trigger("next.owl.carousel");
-            });
-        }
-    });
-    // --- End Remarks of Exhibitors ---
+      $("#remarks-next2").click(function () {
+        $carousel2.trigger("next.owl.carousel");
+      });
+    }
+  });
+  // --- End Remarks of Exhibitors ---
 
-     // --- Supported Company Logo --- @@@@@ Section 2 @@@@@
-    $(".supported-company").each(function () {
-        let carouselId = $(this).data("carousel");
-        let supportedimgs = data.carousels[carouselId];
+  // --- Supported Company Logo --- @@@@@ Section 2 @@@@@
+  $(".supported-company").each(function () {
+    let carouselId = $(this).data("carousel");
+    let supportedimgs = data.carousels[carouselId];
 
-        if (supportedimgs) {
-            console.log(`Adding images for Carousel ${carouselId}`);
-            let $carousel3 = $(this);
-            $carousel3.empty();
+    if (supportedimgs) {
+      console.log(`Adding images for Carousel ${carouselId}`);
+      let $carousel3 = $(this);
+      $carousel3.empty();
 
-          for (let i = 0; i < supportedimgs.length; i += 2) {
-                let supportedimage1 = supportedimgs[i];
-            let supportedimage2 = supportedimgs[i + 1];
-            
-            // supportedimgs.forEach(supportedimage => {
-              $carousel3.append(`
+      for (let i = 0; i < supportedimgs.length; i += 2) {
+        let supportedimage1 = supportedimgs[i];
+        let supportedimage2 = supportedimgs[i + 1];
+
+        // supportedimgs.forEach(supportedimage => {
+        $carousel3.append(`
                 <div class="item">
                   <div class="supported-img-box">
-                    <img class="supported-company-logo" src="${supportedimage1.src}" alt="${supportedimage1.alt}">
+                    <img class="supported-company-logo" src="${
+                      supportedimage1.src
+                    }" alt="${supportedimage1.alt}">
                   </div>
-                  ${supportedimage2 ? `
+                  ${
+                    supportedimage2
+                      ? `
                   <div class="supported-img-box">
                     <img class="supported-company-logo" src="${supportedimage2.src}" alt="${supportedimage2.alt}">
-                  </div> ` : ''}
+                  </div> `
+                      : ""
+                  }
                 </div>`);
-            }
+      }
 
-            // Different settings for the second carousel
-            $carousel3.owlCarousel({
-                // stagePadding: 10,
-                loop: true,
-                margin: 10,
-                nav: true, // Enable navigation buttons for the second carousel
-                autoplay: true,
-                autoplayHoverPause: true,
-                autoplayTimeout: 2000,
-                smartSpeed: 3000,
-                autoplaySpeed: 3000,
-                slideTransition: "linear",
-                responsive: {
-                    0: { items: 3 },
-                    600: { items: 4 },
-                    1000: { items: 4 },
-                },
-            });
-        }
-    });
-    // --- End Supported Company Logo ---
+      // Different settings for the second carousel
+      $carousel3.owlCarousel({
+        // stagePadding: 10,
+        loop: true,
+        margin: 10,
+        nav: true, // Enable navigation buttons for the second carousel
+        autoplay: true,
+        autoplayHoverPause: true,
+        autoplayTimeout: 2000,
+        smartSpeed: 3000,
+        autoplaySpeed: 3000,
+        slideTransition: "linear",
+        responsive: {
+          0: { items: 3 },
+          600: { items: 4 },
+          1000: { items: 4 },
+        },
+      });
+    }
+  });
+  // --- End Supported Company Logo ---
 }
 $(document).ready(function () {
   initializeCarousel(carouselData1);
@@ -368,33 +369,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       this.classList.toggle("active");
-      this.nextElementSibling.style.maxHeight = this.classList.contains("active")
+      this.nextElementSibling.style.maxHeight = this.classList.contains(
+        "active"
+      )
         ? this.nextElementSibling.scrollHeight + "px"
         : "0";
     });
   });
 });
-    // *** End Exhibitor Page ***
-  
+// *** End Exhibitor Page ***
+
 // --- Footer Back to Top Button ---
-    document.addEventListener("DOMContentLoaded", function () {
-			const backToTopBtn = document.getElementById("backToTop");
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopBtn = document.getElementById("backToTop");
 
-			window.addEventListener("scroll", function () {
-				if (window.scrollY > 400) { // Show after scrolling 200px
-					backToTopBtn.classList.add("show");
-				} else {
-					backToTopBtn.classList.remove("show");
-				}
-			});
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 400) {
+      // Show after scrolling 200px
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
 
-			backToTopBtn.addEventListener("click", function () {
-				window.scrollTo({
-					top: 0,
-					behavior: "smooth"
-				});
-			});
-		});
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
 // --- End Footer Back to Top Button ---
 // about segment js  ends
 document.addEventListener("DOMContentLoaded", function () {
@@ -403,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!container || !Array.isArray(data) || data.length === 0) return;
 
     // Append instead of overwriting to prevent data loss
-    data.forEach(item => {
+    data.forEach((item) => {
       const segment = document.createElement("div");
       segment.classList.add("visitor-segmentation-segment");
       segment.setAttribute("data-aos", "zoom-in");
@@ -419,10 +423,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Ensure `businessProfileData` and `jobProfileData` exist before calling
-  if (typeof businessProfileData !== "undefined" && document.getElementById("businessProfile")) {
+  if (
+    typeof businessProfileData !== "undefined" &&
+    document.getElementById("businessProfile")
+  ) {
     generateSegments(businessProfileData, "businessProfile");
   }
-  if (typeof jobProfileData !== "undefined" && document.getElementById("jobProfile")) {
+  if (
+    typeof jobProfileData !== "undefined" &&
+    document.getElementById("jobProfile")
+  ) {
     generateSegments(jobProfileData, "jobProfile");
   }
 
@@ -442,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.4 }
   );
 
-  counters.forEach(counter => observer.observe(counter));
+  counters.forEach((counter) => observer.observe(counter));
 
   function animateCount(element, targetValue) {
     let start = 0;
@@ -516,103 +526,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Off-canvas Gallery Section tab end js
 
-// ✅ Populate Galleries
-function populateGallery(data, galleryId) {
-  const galleryList = document.getElementById(galleryId);
-  if (!galleryList || !data) return;
-
-  galleryList.innerHTML = data
-    .map(
-      (item) => `
-      <div class="mix ${item.category} col-xl-3 col-md-4 col-6 col-sm-6 pd">
-        <img src="${item.img}" class="img-thumbnail-gallery"/>
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <a data-fancybox="item" title="click to zoom-in" href="${item.link}">
-              <div class="gallery-magnify-icon">
-                <span><i class="fa-solid fa-magnifying-glass-plus magnify-icon"></i></span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>`
-    )
-    .join("");
-}
-
-// ✅ Populate multiple galleries dynamically
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof delhi23 !== "undefined")
-    populateGallery(delhi23, "galleryList-delhi23");
-  if (typeof mumbai23 !== "undefined")
-    populateGallery(mumbai23, "galleryList-mumbai23");
-  if (typeof delhi22 !== "undefined")
-    populateGallery(delhi22, "galleryList-delhi22");
-  if (typeof delhi19 !== "undefined")
-    populateGallery(delhi19, "galleryList-delhi19");
-  if (typeof delhi18 !== "undefined")
-    populateGallery(delhi18, "galleryList-delhi18");
-
-  // MixItUp Filtering
-  const mixers = {};
-  document.querySelectorAll(".gallery-item").forEach((containerEl) => {
-    const galleryId = containerEl.getAttribute("id");
-    if (galleryId) {
-      mixers[galleryId] = mixitup(containerEl, {
-        animation: {
-          effects: "fade scale(0.5)",
-          easing: "ease-in-out",
-        },
-      });
-    }
-  });
-
-  document.querySelectorAll(".gallery-menu nav").forEach((menu) => {
-    const galleryId = menu.getAttribute("data-gallery");
-    const mixer = mixers[galleryId];
-
-    if (mixer) {
-      menu.querySelectorAll(".gallery-tab-control").forEach((button) => {
-        button.addEventListener("click", function () {
-          mixer.filter(this.getAttribute("data-filter"));
-        });
-      });
-    }
-  });
-});
-
-// dropdown js
-document.addEventListener("DOMContentLoaded", function () {
-  // Select all dropdown items
-  document.querySelectorAll(".gallery-dropdown-btn").forEach((item) => {
-    item.addEventListener("click", function () {
-      // Get the button
-      let dropdownButton = document.querySelector(".gallery-dropdown-show-btn");
-      // Change button text to clicked item's text
-      dropdownButton.textContent = this.textContent;
-    });
-  });
-});
-
-//drop ddown fliter
-document.addEventListener("DOMContentLoaded", function () {
-  const dropdown = document.querySelector(".gallery-dropdown");
-
-  dropdown.addEventListener("change", function () {
-    const filterValue = this.value;
-    const mixer = mixitup(".gallery-item"); // Make sure MixItUp is initialized
-    mixer.filter(filterValue);
-  });
-});
-
-// Initialize Fancybox
-$("[data-fancybox]").fancybox({
-  loop: true,
-  hash: true,
-  transitionEffect: "slide",
-  clickContent: (current) => (current.type === "image" ? "next" : false),
-});
-
 // video js start
 document.addEventListener("DOMContentLoaded", () => {
   // Wait until the element is available
@@ -681,8 +594,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 //video js end
 // ✅ Initialize AOS
 AOS.init();
-
