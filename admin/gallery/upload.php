@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Vibrant India Fair</title>
+    <title>Vibrant Indai Fair</title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
@@ -37,11 +37,17 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
-    <!-- Bootstrap Notify -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.css">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="../assets/css/demo.css" />
+     <style>
+        .toast {
+            position: fixed;
+            top: 20%;
+            left: 40%;
+            z-index: 9999;
+        }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -195,32 +201,30 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item active submenu">
+               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#tables">
                   <i class="fas fa-table"></i>
                   <p>Tables</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse show" id="tables">
-                   <ul class="nav nav-collapse">
+                <div class="collapse" id="tables">
+                  <ul class="nav nav-collapse">
                     <li>
                       <a href="../tables/chennai_exhibit_table.php">
                         <span class="sub-item">Chennai Exhibit Data</span>
                       </a>
-                    </li>
-                    <li>
+                    </li><li>
                       <a href="../tables/chennai_visit_table.php">
-                        <span class="sub-item">Chennai Visit Data</span>
+                        <span class="sub-item">Chennai visit Data</span>
                       </a>
-                    </li>
-                    <li class="active">
+                    </li><li>
                       <a href="../tables/delhi_exhibit_table.php">
                         <span class="sub-item">Delhi Exhibit Data</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="../tables/delhi_visit_table.php">
-                        <span class="sub-item">Delhi Visit Data</span>
+                     <li>
+                      <a href="tables/delhi_visit_table.php">
+                        <span class="sub-item">Delhi visit Data</span>
                       </a>
                     </li>
                   </ul>
@@ -235,12 +239,12 @@
                   <div class="collapse" id="gallery">
                       <ul class="nav nav-collapse">
                           <li>
-                              <a href="../gallery/showimg.php">
+                              <a href="showImg.php">
                                   <span class="sub-item">ShowImgGallery</span>
                               </a>
                           </li>
-                          <li>
-                              <a href="../gallery/upload.php">
+                          <li class="active">
+                              <a href="upload.php">
                                   <span class="sub-item">GalleryImgUpload</span>
                               </a>
                           </li>
@@ -732,7 +736,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="../auth/admin_logout.php">Logout</a>
                       </li>
                     </div>
                   </ul>
@@ -746,7 +750,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">DataTables.Net</h3>
+              <h3 class="fw-bold mb-3">Tables</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="#">
@@ -763,115 +767,94 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Datatables</a>
+                  <a href="#">Basic Tables</a>
                 </li>
               </ul>
             </div>
             <div class="row">
+              <?php
+// Database connection
+include("../includes/db.php");
+
+// Handle Image Upload
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
+    // $imageName = basename($_FILES["image"]["name"]);
+      $imageExt = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+    $imageName = uniqid("img_", true) . '.' . $imageExt; // Unique filename
+    $targetDir = "../../assets/images/gallery/";
+    $targetFile = $targetDir . $imageName;
+    $category_id = $conn->real_escape_string($_POST["category"]);
+    $subcategory_id = $conn->real_escape_string($_POST["subcategory"]);
+
+    // Ensure the uploads directory exists
+    if (!file_exists($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
+
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+        $sql = "INSERT INTO gallery (img, category_id, subcategory_id) VALUES ('$targetFile', '$category_id', '$subcategory_id')";
+                if ($conn->query($sql)) {
+            $notificationMessage = "Image Uploaded Successfully!";
+            $notificationType = "success";
+        } else {
+            $notificationMessage = "Error: " . $conn->error;
+            $notificationType = "danger";
+        }
+    } else {
+        $notificationMessage = "Error uploading file.";
+        $notificationType = "danger";
+    }
+
+}?>
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <div class="d-flex align-items-center">
-                      <h4 class="card-title">delhi_exhibit_data</h4>
-                     <a
-                        class="btn btn-primary btn-round ms-auto"
-                       href="../data_csv/delhi_visit_csv.php"  onclick="event.preventDefault();
-                $.notify({
-                    message: 'Exporting CSV...'
-                },{
-                    type: 'success',
-                    placement: {
-                        from: 'top',
-                        align: 'center'
-                    },
-                    delay: 2000
-                });
-                setTimeout(() => {
-                 window.location.href = this.href; }, 1000);" 
-                      ><i class="fa fa-download me-2"></i> 
-                       Export to CSV
-                      </a>
-                    </div>
+                    <div class="card-title">Basic Table</div>
                   </div>
                   <div class="card-body">
-                    <div class="table-responsive">
-                      <table id="exhibitTable" class="display table table-striped table-hover">
-                          <thead>
-                              <tr>
-                                  <th>Id</th>
-                                  <th>Participation</th>
-                                  <th>Company Name</th>
-                                  <th>Booth Area</th>
-                                  <th>Booth Type</th>
-                                  <th>Opening</th>
-                                  <th>Brand Name</th>
-                                  <th>Product Detail</th>
-                                  <th>Title</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Designation</th>
-                                  <th>Mobile</th>
-                                  <th>Address</th>
-                                  <th>City</th>
-                                  <th>State</th>
-                                  <th>Postal Code</th>
-                                  <th>Country</th>
-                                  <th>Resource</th>
-                                  <th>Email</th>
-                                  <th>Actions</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                            <?php  
-                              include '../includes/db.php';
-                              $sql = "SELECT * FROM delhi_exhibit_data";
-                              $result = $conn->query($sql);
-
-                              if ($result->num_rows > 0) {
-                                  while ($row = $result->fetch_assoc()) {  
-                                      echo '<tr>
-                                          <td>' . $row['id'] . '</td>
-                                          <td>' . $row['participation_type'] . '</td>
-                                          <td>' . $row['company_name'] . '</td>
-                                          <td>' . $row['booth_area'] . '</td>
-                                          <td>' . $row['booth_type'] . '</td>
-                                          <td>' . $row['opening_type'] . '</td>
-                                          <td>' . $row['brand_name'] . '</td>
-                                          <td>' . $row['product_detail'] . '</td>
-                                          <td>' . $row['title'] . '</td>
-                                          <td>' . $row['first_name'] . '</td>
-                                          <td>' . $row['last_name'] . '</td>
-                                          <td>' . $row['designation'] . '</td>
-                                          <td>' . $row['mobile'] . '</td>
-                                          <td>' . $row['address_line1'] . '</td>
-                                          <td>' . $row['city'] . '</td>
-                                          <td>' . $row['region'] . '</td>
-                                          <td>' . $row['postal_code'] . '</td>
-                                          <td>' . $row['country'] . '</td>
-                                          <td>' . $row['source'] . '</td>
-                                          <td>' . $row['email'] . '</td>
-                                          <td>
-                                              <div class="form-button-action">
-                                                  <a href="../exhibit/delhi_exhibit_data.php?delete_id=' . $row['id'] . '" class="btn btn-link btn-danger" onclick="return confirm(\'Are you sure you want to delete this record?\');">
-                                                      <i class="fa fa-times"></i>
-                                                  </a>
-                                              </div>
-                                          </td>
-                                      </tr>';
-                                  }
-                              } else {
-                                  echo '<tr><td colspan="21">No data found</td></tr>';
-                              }
-                            ?>
-                          </tbody>
-                        </table>
-                      </div> 
-                   </div>
-                 </div>
-               </div>
+                    <form method="POST" enctype="multipart/form-data" class="mb-4">
+        <div class="mb-3">
+            <label class="form-label">Choose Image</label>
+            <input type="file" name="image" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Select Category</label>
+            <select name="category" class="form-select" required>
+                <?php
+                $catResult = $conn->query("SELECT * FROM categories");
+                while ($cat = $catResult->fetch_assoc()) {
+                    echo "<option value='" . $cat['id'] . "'>" . $cat['name'] . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Select Subcategory</label>
+            <select name="subcategory" class="form-select" required>
+                <?php
+                $subcatResult = $conn->query("SELECT * FROM subcategories");
+                while ($subcat = $subcatResult->fetch_assoc()) {
+                    echo "<option value='" . $subcat['id'] . "'>" . $subcat['name'] . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+    <div class="toast align-items-center text-white  bg-<?php echo $notificationType ?? 'primary'; ?> " role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div class="d-flex">
+        <div class="toast-body">
+            <?php echo $notificationMessage ?? ''; ?>
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
+                  </div>
+                </div> 
               </div>
             </div>
           </div>
+        </div>
 
         <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
@@ -901,6 +884,201 @@
           </div>
         </footer>
       </div>
+
+      <!-- Custom template | don't include it in your project! -->
+      <div class="custom-template">
+        <div class="title">Settings</div>
+        <div class="custom-content">
+          <div class="switcher">
+            <div class="switch-block">
+              <h4>Logo Header</h4>
+              <div class="btnSwitch">
+                <button
+                  type="button"
+                  class="selected changeLogoHeaderColor"
+                  data-color="dark"
+                ></button>
+                <button
+                  type="button"
+                  class="selected changeLogoHeaderColor"
+                  data-color="blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="purple"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="light-blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="green"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="orange"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="red"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="white"
+                ></button>
+                <br />
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="dark2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="purple2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="light-blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="green2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="orange2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="red2"
+                ></button>
+              </div>
+            </div>
+            <div class="switch-block">
+              <h4>Navbar Header</h4>
+              <div class="btnSwitch">
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="dark"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="purple"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="light-blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="green"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="orange"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="red"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="white"
+                ></button>
+                <br />
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="dark2"
+                ></button>
+                <button
+                  type="button"
+                  class="selected changeTopBarColor"
+                  data-color="blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="purple2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="light-blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="green2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="orange2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="red2"
+                ></button>
+              </div>
+            </div>
+            <div class="switch-block">
+              <h4>Sidebar</h4>
+              <div class="btnSwitch">
+                <button
+                  type="button"
+                  class="selected changeSideBarColor"
+                  data-color="white"
+                ></button>
+                <button
+                  type="button"
+                  class="changeSideBarColor"
+                  data-color="dark"
+                ></button>
+                <button
+                  type="button"
+                  class="changeSideBarColor"
+                  data-color="dark2"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="custom-toggle">
+          <i class="icon-settings"></i>
+        </div>
+      </div>
+      <!-- End Custom template -->
     </div>
     <!--   Core JS Files   -->
     <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
@@ -909,85 +1087,46 @@
 
     <!-- jQuery Scrollbar -->
     <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-    <!-- Datatables -->
-    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
     <!-- Kaiadmin JS -->
     <script src="../assets/js/kaiadmin.min.js"></script>
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="../assets/js/setting-demo2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $("#basic-datatables").DataTable({});
+      $("#displayNotif").on("click", function () {
+        var placementFrom = $("#notify_placement_from option:selected").val();
+        var placementAlign = $("#notify_placement_align option:selected").val();
+        var state = $("#notify_state option:selected").val();
+        var style = $("#notify_style option:selected").val();
+        var content = {};
 
-        $("#multi-filter-select").DataTable({
-          pageLength: 5,
-          initComplete: function () {
-            this.api()
-              .columns()
-              .every(function () {
-                var column = this;
-                var select = $(
-                  '<select class="form-select"><option value=""></option></select>'
-                )
-                  .appendTo($(column.footer()).empty())
-                  .on("change", function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
+        content.message =
+          'Turning standard Bootstrap alerts into "notify" like notifications';
+        content.title = "Bootstrap notify";
+        if (style == "withicon") {
+          content.icon = "fa fa-bell";
+        } else {
+          content.icon = "none";
+        }
+        content.url = "index.html";
+        content.target = "_blank";
 
-                    column
-                      .search(val ? "^" + val + "$" : "", true, false)
-                      .draw();
-                  });
-
-                column
-                  .data()
-                  .unique()
-                  .sort()
-                  .each(function (d, j) {
-                    select.append(
-                      '<option value="' + d + '">' + d + "</option>"
-                    );
-                  });
-              });
+        $.notify(content, {
+          type: state,
+          placement: {
+            from: placementFrom,
+            align: placementAlign,
           },
-        });
-
-        // Add Row
-        $("#add-row").DataTable({
-          pageLength: 5,
-        });
-
-        var action =
-          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-        $("#addRowButton").click(function () {
-          $("#add-row")
-            .dataTable()
-            .fnAddData([
-              $("#addName").val(),
-              $("#addPosition").val(),
-              $("#addOffice").val(),
-              action,
-            ]);
-          $("#addRowModal").modal("hide");
+          time: 1000,
         });
       });
-
-      $(document).ready(function () {
-          $('#exhibitTable').DataTable({
-              "paging": true,       // Enable pagination
-              "searching": true,    // Enable search box
-              "ordering": true,     // Enable sorting
-              "info": true,         // Show table info
-              "lengthMenu": [5, 10, 25, 50, 100], // Rows per page options
-              "language": {
-                  "search": "Search records:", // Custom search box text
-                  "lengthMenu": "Show _MENU_ records per page",
-                  "info": "Showing _START_ to _END_ of _TOTAL_ records",
-              }
-          });
-      });
-
+        // Show toast notification if there's a message
+    document.addEventListener("DOMContentLoaded", function () {
+        const toastEl = document.querySelector('.toast');
+        if (toastEl && toastEl.textContent.trim() !== "") {
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    });
     </script>
   </body>
 </html>

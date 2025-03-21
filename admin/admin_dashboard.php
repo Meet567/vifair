@@ -205,6 +205,27 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
               </li>
               <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#gallery">
+                      <i class="fas fa-images"></i>
+                      <p>Gallery</p>
+                      <span class="caret"></span>
+                  </a>
+                  <div class="collapse" id="gallery">
+                      <ul class="nav nav-collapse">
+                          <li>
+                              <a href="gallery/showImg.php">
+                                  <span class="sub-item">ShowImgGallery</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="gallery/upload.php">
+                                  <span class="sub-item">GalleryImgUpload</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#maps">
                   <i class="fas fa-map-marker-alt"></i>
                   <p>Maps</p>
@@ -825,7 +846,7 @@ $total_visitors = $row['total_visitors'];
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Exhibit Delhi</p>
+                          <p class="card-category">Exhibit Chennai</p>
                           <h4 class="card-title"><?php echo number_format($total_visitors); ?></h4>
                         </div>
                       </div>

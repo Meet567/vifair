@@ -169,7 +169,6 @@
 .gallery-menu {
   text-align: center; /* Center the buttons */
   padding: 5px;
-  
 }
 
 .gallery-menu .controls {
@@ -177,7 +176,6 @@
   flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
   justify-content: center; /* Center buttons */
   gap: 10px; /* Add space between buttons */
-
 }
 
 .gallery-menu .gallery-tab-control {
@@ -190,7 +188,6 @@
   margin: 5px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-
 }
 
 .gallery-menu .gallery-tab-control:hover {
@@ -315,7 +312,7 @@
   display: inline-block;
   transition: all 0.25s;
   font-size: 15px;
-  color: var(--dark-color);
+  color: var(--primary-color);
   line-height: 40px;
   cursor: pointer;
   position: relative;

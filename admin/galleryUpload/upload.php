@@ -4,7 +4,9 @@ include("../includes/db.php");
 
 // Handle Image Upload
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
-    $imageName = basename($_FILES["image"]["name"]);
+    // $imageName = basename($_FILES["image"]["name"]);
+      $imageExt = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+    $imageName = uniqid("img_", true) . '.' . $imageExt; // Unique filename
     $targetDir = "../../assets/images/gallery/";
     $targetFile = $targetDir . $imageName;
     $category_id = $conn->real_escape_string($_POST["category"]);
@@ -18,25 +20,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
         $sql = "INSERT INTO gallery (img, category_id, subcategory_id) VALUES ('$targetFile', '$category_id', '$subcategory_id')";
         if ($conn->query($sql)) {
-            echo "<script>alert('✅ Image uploaded successfully!');</script>";
+            echo "<script>alert('Image uploaded successfully!');</script>";
         } else {
-            echo "<script>alert('❌ Error: " . $conn->error . "');</script>";
+            echo "<script>alert('Error: " . $conn->error . "');</script>";
         }
     } else {
-        echo "<script>alert('❌ Failed to upload image.');</script>";
+        echo "<script>alert('Failed to upload image.');</script>";
     }
 }
 
 // Handle Image Deletion
-if (isset($_GET["delete"])) {
-    $id = $_GET["delete"];
-    $sql = "DELETE FROM gallery WHERE id='$id'";
-    if ($conn->query($sql)) {
-        echo "<script>alert('✅ Image deleted successfully!');</script>";
-    } else {
-        echo "<script>alert('❌ Error deleting image: " . $conn->error . "');</script>";
-    }
-}
+// if (isset($_GET["delete"])) {
+//     $id = $_GET["delete"];
+//     $sql = "DELETE FROM gallery WHERE id='$id'";
+//     if ($conn->query($sql)) {
+//         echo "<script>alert('Image deleted successfully!');</script>";
+//     } else {
+//         echo "<script>alert('Error deleting image: " . $conn->error . "');</script>";
+//     }
+// }
 
 // Fetch images
 $filterCategory = isset($_GET['filter_category']) ? $_GET['filter_category'] : "";

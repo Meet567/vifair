@@ -9,7 +9,7 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Exhibitor Registration </title>
+    <title> Vibrant India Fair </title>
     <?php
     include "include/header.php";
     ?>
@@ -17,12 +17,12 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
 <body class="exibitor-body">
     <section class="form-section">
         <div class="form-container">
-            <form action="admin/exhibit/delhi_exhibit_data.php" method="POST">
-                <h1 class="mb-4">Delhi Registration</h1>
-                <span class="form-title">
+           <form action="admin/exhibit/delhi_exhibit_data.php" method="POST">
+                <h1 class="mb-4 primary-heading">Delhi Registration</h1>
+                <span class="secondary-title">
                     We are interested in participating in the Vibrant India 2024
                     exhibition, which will be held in New Delhi from July 19-20-21,
-                    2024. Below is information about our organisation. 
+                    2024. Below is information about our organisation.
                 </span>
                 <div class="d-flex gap-3 mb-3">
                     <div class="exhibition-form-check">
@@ -38,17 +38,17 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                     </div>  
                 </div>
 
-                <label for="Companyname" class="form-label form-title">Company Name</label>
+                <label for="Companyname" class="form-label form-title primary-title">Company Name :</label>
                 <input type="text" class="form-control inputForm-border mb-3" name="Companyname" 
                     placeholder="Enter Company Name" required />
 
-                <label for="exampleFormControlInput1" class="form-label form-title">Approximate booth area
-                    required</label>
+                <label for="exampleFormControlInput1" class="form-label form-title primary-title">Approximate booth area
+                    required :</label>
                 <input type="text" class="form-control inputForm-border mb-3" name="areaname" 
                     placeholder="sq.mtrs." required />
                          <div class="row">
                            <div class="col-12 col-lg-6 col-md-6 col-sm-12"> 
-                           <h1 class="form-title">Please Tick : Type of booth required</h1>
+                           <h1 class="form-label form-title primary-title">Please Tick : Type of booth required :</h1>
                            <div class="form-check">
                     <input class="form-check-input inputForm-border" type="radio" name="booth_type"
                         value="Built-up Booth"  required />
@@ -65,7 +65,7 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                            </div>
                           </div>
                           <div class="col-12 col-lg-6 col-md-6 col-sm-12">
-                          <h1 class="form-title">Opening</h1>
+                          <h1 class="form-label form-title primary-title">Opening :</h1>
                           <div class="form-check">
                     <input class="form-check-input inputForm-border" type="radio" name="opening_type"
                         value="Single Slide Open"  required />
@@ -84,28 +84,28 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                          </div>
                         </div>
 
-                <h3>Brand Details</h3>
-               <div id="inputContainer">
-            <div class="row d-flex justify-content-center input-group">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
-            <label for="brandname" class="form-label form-title">Brand Name</label>
-            <input type="text" class="form-control inputForm-border" name="brandname[]" placeholder="Brand Name" required />
-          </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
-            <label for="Productdetail" class="form-label form-title">Product Detail</label>
-            <input type="text" class="form-control inputForm-border" name="Productdetail[]" placeholder="Product Detail" required />
-  
-         </div>
-         <div class="col-lg-1 col-md-1 col-sm-1 col-1">
-                <button type="button" id="addMore" class="btn btn-primary">+</button>
+            <h3 class="form-label form-title primary-title">Brand Details :</h3>
+            <div id="inputContainer">
+                <div class="row d-flex justify-content-center input-group">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
+                        <label for="brandname" class="form-label form-title-sub primary-title">Brand Name</label>
+                        <input type="text" class="form-control inputForm-border" name="brandname[]" placeholder="Brand Name" required />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
+                        <label for="Productdetail" class="form-label form-title-sub primary-title">Product Detail</label>
+                        <input type="text" class="form-control inputForm-border" name="Productdetail[]" placeholder="Product Detail" required />
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-1">
+                        <button type="button" id="addMore" class="btn btn-primary">+</button>
+                    </div>
+                 </div>
             </div>
-           </div>
-   </div>
            
         
-                <h2>Detail</h2>
+                <h2 class="form-label form-title primary-title mb-3">Detail :</h2>
                 <div class="detail-gender mb-3 row justify-content-center">
-                <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 text-center">
+                <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 ">
+                    <label for="exampleFormControlInput1" class="form-title-sub primary-title">Gender</label>
                     <select class="form-select form-select-lg mb-3 inputForm-border" name="title" required>
                         <option value="">-Select-</option>
                         <option value="Mr.">Mr.</option>
@@ -115,65 +115,57 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                     </select>
                 </div>
                     <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2">
-                        <input type="text" class="form-control inputForm-border" name="firstname"
-                            placeholder="First Name" required />
-                        <label for="exampleFormControlInput1" class="form-label">First</label>
+                         <label for="exampleFormControlInput1" class="form-title-sub primary-title">First</label>
+                        <input type="text" class="form-control inputForm-border" name="firstname" placeholder="First Name" required />
                     </div>
-                    <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 mb-2">
-                        <input type="text" class="form-control inputForm-border"  name="lastname"
-                            placeholder="Last Name" required />
-                        <label for="exampleFormControlTextarea1" class="form-label">
+                    <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 mb-2"> 
+                        <label for="exampleFormControlTextarea1" class="form-title-sub primary-title">
                             Last</label>
+                        <input type="text" class="form-control inputForm-border"  name="lastname" placeholder="Last Name" required />
                     </div>
                 </div>
                 <div class="d-flex gap-2 mb-3">
                     <div class="col-6">
-                        <label class="form-title">Mobile No.</label>
+                        <label class="form-title-sub primary-title">Mobile No.</label>
                         <input type="text" class="form-control inputForm-border" 
                             name="exhibitionnumber" placeholder="Mobile No" required />
                     </div>
                     <div class="col-6">
-                        <label class="form-title">Email</label>
+                        <label class="form-title-sub primary-title">Email</label>
                         <input type="email" class="form-control inputForm-border"  name="email"
                             placeholder="Email Id" required />
                     </div>
                 </div>
                 <div class="d-flex gap-2 mb-3">
                     <div class="col-6">
-                        <label class="form-title">Designation</label>
+                        <label class="form-title-sub primary-title">Designation</label>
                         <input type="text" class="form-control inputForm-border"  name="Designation"
                             placeholder="Designation" required />
                     </div>
                     <div class="col-6">
-                        <label class="form-title">Address</label>
-                        <input type="text" class="form-control inputForm-border"  name="Addresstype"
-                            placeholder="Address" required />
-                        <label for="exampleFormControlInput1" class="form-label">
-                            Address Line 1</label>
+                        <label class="form-title-sub primary-title">Address</label>
+                        <input type="text" class="form-control inputForm-border"  name="Addresstype" placeholder="Address" required />
                     </div>
                 </div>
                 <div class="d-flex gap-2 mb-3">
                     <div class="col-6">
-                        <input type="text" class="form-control inputForm-border"  name="city"
-                            placeholder="City" required />
-                        <label for="exampleFormControlInput1" class="form-label">
-                            City</label>
+                        <label for="exampleFormControlInput1" class="form-title-sub primary-title">City</label>
+                        <input type="text" class="form-control inputForm-border"  name="city" placeholder="City" required />
                     </div>
                     <div class="col-6">
-                        <input type="text" class="form-control inputForm-border"  name="Region"
-                            placeholder="Region" required />
-                        <label for="exampleFormControlTextarea1" class="form-label">
-                            State / Province / Region</label>
+                        <label for="exampleFormControlTextarea1" class="form-title-sub primary-title">State/Region</label>
+                        <input type="text" class="form-control inputForm-border"  name="Region" placeholder="Region" required />
                     </div>
                 </div>
                 <div class="d-flex mb-3 gap-2">
                     <div class="col-6">
-                        <input type="text" class="form-control inputForm-border"  name="postalcode"
-                            placeholder="PostalCode " required />
-                        <label for="exampleFormControlTextarea1" class="form-label">
-                            Postal Code</label>
+                        <label for="exampleFormControlTextarea1" class="form-title-sub primary-title">
+                            PostalCode</label>
+                        <input type="text" class="form-control inputForm-border"  name="postalcode"placeholder="PostalCode " required />
                     </div>
                     <div class="col-6">
+                        <label for="exampleFormControlTextarea1" class="form-title-sub primary-title">
+                            Country</label>
                     <select class="form-select form-select-sm inputForm-border" name="country" required>
                         <option value="">-Select-</option>
                         <option value="India">India</option>
@@ -181,12 +173,9 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                         <option value="Japan">Japan</option>
                         <option value="Brazil">Brazil</option>
                     </select>
-
-                        <label for="exampleFormControlTextarea1" class="form-label">
-                            Country</label>
                     </div>
                 </div>
-                <h1 class="form-title">How did you hear about us?</h1>
+                <h1 class="form-label form-title primary-title">How did you hear about us?</h1>
                 
               <div class="form-check">
                 <input
@@ -196,7 +185,7 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                   value="Whatsapp"
                   id="Whatsapp"
                 />
-                <label class="form-check-label" for="Whatsapp">Whatsapp</label>
+                <label class="form-check-label radio-title" for="Whatsapp">Whatsapp</label>
               </div>
 
               <div class="form-check">
@@ -265,34 +254,35 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
               </div>
 
 
-                <h5>Please accept our request and allocate space accordingly</h5>
-                <h4>Important Note:</h4>
-                <span class="form-title mt-3">
-                    * These fields are compulsory to fill.
+                  <h5 class="form-label form-title primary-title">Please accept our request and allocate space accordingly</h5>
+                <h4 class="secondary-title">Important Note:</h4>
+                <span class="section-text-title impo mt-3">
+                    These fields are compulsory to fill.
                 </span>
-                <p>† Please note that this is only an Exhibitor Request Form and not Exhibitor Contract Form. Our team will contact you immediately with further details once you fill in this request form. You become an Exhibitor only after your Exhibitor Contract Form, along with payment is accepted by us.</p>
-                <p>If you find any difficulty in filling Exhibitor Request Form, for assistance or queries, please contact:</p>
-             <div class="row">
+                <p class="section-text-title impo">Please note that this is only an Exhibitor Request Form and not Exhibitor Contract Form. Our team will contact you immediately with further details once you fill in this request form. You become an Exhibitor only after your Exhibitor Contract Form, along with payment is accepted by us.</p>
+                <p class="section-text-title impo">If you find any difficulty in filling Exhibitor Request Form, for assistance or queries, please contact:</p>
+                <div class="row">
                      <!-- Mumbai Contact -->
                      <div class="col-md-6 contact-box">
-            <h5>Mumbai:</h5>
-            <p><strong>Mr. Yash Menghani</strong></p>
-            <p><strong>Tel. No:</strong> <a href="tel:+91-11-2571 411">+91-11-2571 411</a></p>
-            <p><strong>Mob. No:</strong> <a href="Mob:+91 93 119 60399">+91 93 119 60399</a></p>
-            <p><strong>Email:</strong> <a href="mailto:yash.menghani@hghindia.com" class="email-link">yash.menghani@hghindia.com</a></p>
-                     </div>
+            <h5 class="secondary-title">Delhi:</h5>
+            <span class="section-text-title impo"><strong>Mr. Yash Menghani</strong></span><br>
+            <span class="section-text-title impo"><strong>Tel. No:</strong> <a href="tel:+91-11-2571 411">+91-11-2571 411</a></span><br>
+            <span class="section-text-title impo"><strong>Mob. No:</strong> <a href="Mob:+91 93 119 60399">+91 93 119 60399</a></span><br>
+            <span class="section-text-title impo"><strong>Email:</strong> <a href="mailto:yash.menghani@hghindia.com" class="email-link">yash.menghani@hghindia.com</a></span>
+                    </div>
 
                     <!-- Delhi Contact -->
-                    <div class="col-md-6 contact-box">
-            <h5>Delhi:</h5>
-            <p><strong>Mr. Yash Menghani</strong></p>
-            <p><strong>Tel. No:</strong> <a href="tel:+91-11-2571 411">+91-11-2571 411</a></p>
-            <p><strong>Mob. No:</strong> <a href="Mob:+91 93 119 60399">+91 93 119 60399</a></p>
-            <p><strong>Email:</strong> <a href="mailto:yash.menghani@hghindia.com" class="email-link">yash.menghani@hghindia.com</a></p>
+                    <div class="col-md-6 mt-2 contact-box">
+            <h5 class="secondary-title">Delhi:</h5>
+            <span class="section-text-title impo"><strong>Mr. Yash Menghani</strong></span><br>
+            <span class="section-text-title impo"><strong>Tel. No:</strong> <a href="tel:+91-11-2571 411">+91-11-2571 411</a></span><br>
+            <span class="section-text-title impo"><strong>Mob. No:</strong> <a href="Mob:+91 93 119 60399">+91 93 119 60399</a></span><br>
+            <span class="section-text-title impo"><strong>Email:</strong> <a href="mailto:yash.menghani@hghindia.com" class="email-link">yash.menghani@hghindia.com</a></span>
                     </div>
-               </div>     
+               </div>   
+
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="visitor-btn" name="submit">Registration</button>
+                    <button type="submit" class="exhibit-btn" name="submit">Registration</button>
                 </div>
             </form>
         </div>

@@ -8,20 +8,20 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vibrant India Fair</title>
-    
-
     <?php
     include "include/header.php";
     ?>
 </head>
 
 <body>
-    <section class="visitor_main section-margin">
-        <div class="visitor-form">
-            <h1 class="visitor-txt">
-                Visitor <span class="visitor-txt-span">Registration</span>
+    <section class="section-margin">
+        <div class="container-fluid">
+            <h1 class="primary-heading">
+                Delhi <span class="visitor-txt-span">Visitor</span> Registration
             </h1>
-            <form action="admin/visitor/delhi_visit_data.php" method="post">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                 <form action="admin/visitor/delhi_visit_data.php" method="post">
                 
                 <div class="visitor-div">
                     <label for="name" class="visitor-field-label">Name</label>
@@ -38,7 +38,7 @@ session_start();
                 <div class="visitor-div">
                     <label for="designation" class="visitor-field-label">Designation</label>
                     <input type="text" class="visitor-input-box" name="designation" id="designation" />
-                    <span><i class="fa-solid fa-location-dot input-icon"></i></span>
+                    <span><i class="fa-solid fa-user-tie input-icon"></i></span>
                 </div>
 
                 <div class="visitor-div">
@@ -69,6 +69,30 @@ session_start();
 
                 <button type="submit" class="visitor-btn">Registration</button>
             </form>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                        <div class="right-part-message-box">
+                            <div class="right-part-sub-box">
+                                <div class="right-part-title">Say Hello!</div>
+                                <p class="right-part-paragraph">Join us in shaping the future of COMPLETE HOUSEWARE EXHIBITION 2025 at our next exhibition and discover the possibilities that await.</p>
+                            </div> 
+                            <div class="right-main-img-box">
+                                <div class="right-img-box">
+                                    <img class="right-part-img" src="assets/images/Rectangle.webp" alt="">
+                                    <div class="right-message-link-box">
+                                        <div class="right-message-icon-box">
+                                            <img class="right-message-icon" src="assets/images/icon/chat.png" alt="">
+                                        </div>
+                                        <div class="right-email-box">
+                                            <div class="right-message-heading">VIBRANT INDIA FAIR</div>
+                                           <a class="right-part-email-link" href="#">info@vibrantindiafair.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+            </div>
+            </div>
         </div>
     </section>
 
