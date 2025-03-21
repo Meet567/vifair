@@ -105,8 +105,8 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
         
                 <h2>Detail</h2>
                 <div class="detail-gender mb-3 row justify-content-center">
-                <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 text-center">
-                    <select class="form-select form-select-lg mb-3 inputForm-border" name="title" required>
+                <div class="select-gender col-lg-2 col-md-2 col-sm-12 col-12 mb-2 text-center">
+                    <select class="form-select form-select-lg mb-3 inputForm-border titlname" name="title" required>
                         <option value="">-Select-</option>
                         <option value="Mr.">Mr.</option>
                         <option value="Ms.">Ms.</option>
@@ -114,12 +114,12 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                         <option value="Dr.">Dr.</option>
                     </select>
                 </div>
-                    <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2">
+                    <div class="select-gender col-lg-5 col-md-5 col-sm-12 col-12 ">
                         <input type="text" class="form-control inputForm-border" name="firstname"
                             placeholder="First Name" required />
                         <label for="exampleFormControlInput1" class="form-label">First</label>
                     </div>
-                    <div class="select-gender col-lg-4 col-md-4 col-sm-12 col-12 mb-2 mb-2">
+                    <div class="select-gender col-lg-5 col-md-5 col-sm-12 col-12 ">
                         <input type="text" class="form-control inputForm-border"  name="lastname"
                             placeholder="Last Name" required />
                         <label for="exampleFormControlTextarea1" class="form-label">

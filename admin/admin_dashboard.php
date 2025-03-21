@@ -168,7 +168,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="collapse" id="forms">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="upload_pdf.php">
+                      <a href="#">
                         <span class="sub-item">Basic Form</span>
                       </a>
                     </li>
