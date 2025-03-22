@@ -762,7 +762,7 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">chennai_exhibit_data</a>
+                  <a href="delhi_exhibit_table.php">delhi_exhibit_data</a>
                 </li>
               </ul>
             </div>

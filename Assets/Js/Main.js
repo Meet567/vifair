@@ -571,7 +571,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, stepTime);
   }
 });
-
 // Visitor Business proflie js and job proflie end js
 
 // 16 segments js data fech start js

@@ -750,10 +750,10 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">DataTables.Net</h3>
+              <h3 class="fw-bold mb-3">chennai_visit_data</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
-                  <a href="#">
+                  <a href="../admin_dashboard.php">
                     <i class="icon-home"></i>
                   </a>
                 </li>
@@ -767,7 +767,7 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Datatables</a>
+                  <a href="delhi_visit_data.php">delhi_visit_data</a>
                 </li>
               </ul>
             </div>

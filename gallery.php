@@ -632,7 +632,6 @@
             
             // ✅ Populate Gallery for Delhi 2023
             populateGallery(galleryData.filter(item => item.category_name === "delhi23"), "galleryList-delhi23");
-
             // ✅ Populate Gallery for Mumbai 2023
             populateGallery(galleryData.filter(item => item.category_name === "mumbai23"), "galleryList-mumbai23");
             // ✅ Populate Gallery for Delhi 2022
