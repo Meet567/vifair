@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
     <!--Fab Icon -->
     <link rel="icon" type="image/png" href="assets/images/icon/VIFabicon.png" />
     <!-- Common CSS Links -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css"/>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <!-- OWL Carousel -->

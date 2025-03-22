@@ -7,7 +7,7 @@
             FROM gallery g
             JOIN categories c ON g.category_id = c.id
             JOIN subcategories s ON g.subcategory_id = s.id
-            WHERE c.name IN ('delhi23', 'mumbai23')";
+            WHERE c.name IN ('delhi23', 'mumbai23','delhi22','delhi19','delhi18')";
 
     $result = $conn->query($sql);
 
@@ -635,17 +635,29 @@
 
             // ✅ Populate Gallery for Mumbai 2023
             populateGallery(galleryData.filter(item => item.category_name === "mumbai23"), "galleryList-mumbai23");
+            // ✅ Populate Gallery for Delhi 2022
+            populateGallery(galleryData.filter(item => item.category_name === "delhi22"), "galleryList-delhi22");
+            // ✅ Populate Gallery for Delhi 2019
+            populateGallery(galleryData.filter(item => item.category_name === "delhi19"), "galleryList-delhi19");
+            // ✅ Populate Gallery for Delhi 2018
+            populateGallery(galleryData.filter(item => item.category_name === "delhi18"), "galleryList-delhi18");
 
             // ✅ Initialize MixItUp
-            let mixerDelhi = mixitup("#galleryList-delhi23");
-            let mixerMumbai = mixitup("#galleryList-mumbai23");
+            let mixerDelhi23 = mixitup("#galleryList-delhi23");
+            let mixerMumbai23 = mixitup("#galleryList-mumbai23");
+            let mixerDelhi22 = mixitup("#galleryList-delhi22");
+            let mixerDelhi19 = mixitup("#galleryList-delhi19");
+            let mixerDelhi18 = mixitup("#galleryList-delhi18");
 
             // ✅ Filter Buttons - Handle Filtering
             document.querySelectorAll(".gallery-tab-control").forEach(button => {
                 button.addEventListener("click", function () {
                     let filter = this.getAttribute("data-filter");
-                    mixerDelhi.filter(filter);
-                    mixerMumbai.filter(filter);
+                    mixerDelhi23.filter(filter);
+                    mixerMumbai23.filter(filter);
+                    mixerDelhi22.filter(filter);
+                    mixerDelhi19.filter(filter);
+                    mixerDelhi18.filter(filter);
                 });
             });
 
@@ -654,8 +666,11 @@
                 item.addEventListener("click", function () {
                     document.querySelector(".gallery-dropdown-show-btn").textContent = this.textContent;
                     let filter = this.getAttribute("data-filter");
-                    mixerDelhi.filter(filter);
-                    mixerMumbai.filter(filter);
+                    mixerDelhi23.filter(filter);
+                    mixerMumbai23.filter(filter);
+                    mixerDelhi22.filter(filter);
+                    mixerDelhi19.filter(filter);
+                    mixerDelhi18.filter(filter);
                 });
             });
         });
@@ -674,7 +689,7 @@
                             <div class="gallery-overlay-content">
                                 <a data-fancybox="gallery" href="${item.img}">
                                     <div class="gallery-magnify-icon">
-                                        <span><i class="fa-solid fa-magnifying-glass-plus magnify-icon"></i></span>
+                                        <span><i class="fa-solid fa-eye magnify-icon"></i></span>
                                     </div>
                                 </a>
                             </div>
