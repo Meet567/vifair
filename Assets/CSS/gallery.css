@@ -1,7 +1,47 @@
+/* --- Banner Section ---  */
+.gallery-banner-box .gallery-banner-thumbnail {
+  width: 100%;
+  padding-bottom: 25%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.gallery--banner-thumbnail .gallery--banner-img-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.gallery-banner-img-box .gallery-banner-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.gallery-banner-box .gallery-banner-thumbnail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #00000090;
+  z-index: 1;
+}
+/* --- End Banner Section ---  */
 /* heding responsive start   */
-@media (min-width: 480px) and (max-width: 663px) {
-  /* Your styles here */
-  .gallery-tab-content .primary-heading {
+/* @media (min-width: 480px) and (max-width: 663px) { */
+/* Your styles here */
+/* .gallery-tab-content .primary-heading {
     margin-top: 80px;
   }
 }
@@ -9,9 +49,9 @@
   .gallery-tab-content .primary-heading {
     font-size: 25px;
   }
-}
+} */
 /* heding responsive end  */
-
+s
 /* off canvas  tab css start */
 .section_tab {
   display: none;
@@ -19,15 +59,13 @@
 .section_tab.active {
   display: block;
 }
-.gallery-tab-content {
-  margin-top: 60px;
-}
+
 /* off canvas tab css end */
 
 /* gallery show  btn css start */
 .gallery-show-btn {
   position: relative;
-  top: 115px;
+  top: 50px;
   left: 5px;
   padding: 8px 12px; /* Adjusted padding for responsiveness */
   width: 100%; /* Adjust width to be flexible */

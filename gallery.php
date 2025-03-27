@@ -36,7 +36,17 @@
     </head>
 
     <body>
-        <section class=".section-margin">
+          <section>
+        <div class="gallery-banner-box">
+            <div class="gallery-banner-thumbnail">
+                <div class="gallery-banner-img-box">
+                    <img class="gallery-banner-img" src="assets/images/gallery2.jpg" alt="">
+                </div>
+                <div class="banner-header-title">Gallery</div>
+            </div>
+        </div>
+    </section>
+        <section>
             <!-- show gallery btn start -->
             <button
                 class="gallery-show-btn"
@@ -101,7 +111,7 @@
             <!--show gallery img start -->
             <div id="section1" class="section_tab active gallery-tab-content">
                 <div class="container">
-                    <h2 class="primary-heading">July New Delhi-2023</h2>
+                    <h2 class=" primary-heading">July New Delhi-2023</h2>
                     <div class="btn-group gallery-dropdown">
                         <button
                             class="gallery-dropdown-show-btn dropdown-toggle"

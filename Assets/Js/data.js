@@ -317,37 +317,50 @@ const carouselData = {
 };
 
 // video gallery data
+
 const videos = [
-  {
-    id: "sBnldxPLZdo",
-    title: "Vibrant India Fair Abu Dhabi(Dhabi)-2024 ",
-  },
-  { id: "uVH3ZqgBlWk", title: "Vibrant India Fair New Delhi July-2024" },
-  { id: "HYk_icYXQIY", title: "Vibrant India Fair Nesco Mumbai-2023" },
-  { id: "kJdSsaK4NGI", title: "Vibrant India Fair Patna-2023" },
-  { id: "V1XZ0PQ6hxE", title: "Vibrant India Fair Pragati Maidan Delhi-2023" },
-  {
-    id: "pPXLBiAsUsM",
-    title: "Vibrant India Fair Pragati Maidan New Delhi-2022",
-  },
-  {
-    id: "Qs6iMpmK1Zg",
-    title: "Vibrant India Fair Pragati Maidan New Delhi-2018",
-  },
-  {
-    id: "viB5mYtJJ_g",
-    title: "Vibrant India Fair Pragati Maidan New Delhi-2018",
-  },
-  {
-    id: "JpkIm6jEFxw",
-    title: "Vibrant India Fair Pragati Maidan New Delhi-2017",
-  },
-  {
-    id: "vC4eAtlBVeQ",
-    title: "Vibrant India Fair Pragati Maidan New Delhi-2016",
-  },
-  {
-    id: "IjWagYvOc1o",
-    title: "Vibrant India Fair Pragati Maidan New Delhi-2016",
-  },
+  { id: "sBnldxPLZdo", title: "video 1" },
+  { id: "uVH3ZqgBlWk", title: "video 2" },
+  { id: "HYk_icYXQIY", title: "video 3" },
+  { id: "kJdSsaK4NGI", title: "video 4" },
+  { id: "V1XZ0PQ6hxE", title: "video 5" },
+  { id: "pPXLBiAsUsM", title: "video 6" },
+  { id: "Qs6iMpmK1Zg", title: "video 7" },
+  { id: "viB5mYtJJ_g", title: "video 8" },
+  { id: "JpkIm6jEFxw", title: "video 9" },
+  { id: "vC4eAtlBVeQ", title: "video 10" },
+  { id: "IjWagYvOc1o", title: "video 11" },
+  { id: "i2ZNKch49eM", title: "video 12" },
+  { id: "-VPNxo5xQLI", title: "video 13" },
+  { id: "NmMQB9ybDSQ", title: "video 14" },
+  { id: "WbYbRv4WN7k", title: "video 15" },
+  { id: "G_NF3RtpyVo", title: "video 16" },
+  { id: "ai-B0zVhJHc", title: "video 17" },
+  { id: "Qs6iMpmK1Zg", title: "video 18" },
+  { id: "f4QpEALPfHY", title: "video 19" },
+  { id: "wqmYtywg5OM", title: "video 20" },
+  { id: "641Nj9loF3M", title: "video 21" },
+];
+const videos2 = [
+  { id: "VMrBm8Uez6w", title: "video 1" },
+  { id: "yq9UHsB3lWc", title: "video 2" },
+  { id: "br0kboXrvn8", title: "video 3" },
+  { id: "4v8KIS6AUh4", title: "video 4" },
+  { id: "2gzBscBK7a8", title: "video 5" },
+  { id: "9EkdJwbpDOA", title: "video 6" },
+  { id: "7h42jqiyNXg", title: "video 7" },
+  { id: "pbG6FUO-hZ4", title: "video 8" },
+  { id: "JZH0txneE54", title: "video 9" },
+  { id: "26SP1lMZJx8", title: "video 10" },
+  { id: "OQ9S7Dl3PE0", title: "video 11" },
+  { id: "9x3UAmNa5EM", title: "video 12" },
+  { id: "1C5IM0xWlxo", title: "video 13" },
+  { id: "zyafmQ84H-w", title: "video 14" },
+  { id: "lVbP7k4NOe4", title: "video 15" },
+  { id: "cALD8Kt94Ug", title: "video 16" },
+  { id: "CkTDxIA_Wew", title: "video 17" },
+  { id: "fE1PHdDCxwI", title: "video 18" },
+  { id: "i8U-JfQGxM4", title: "video 19" },
+  { id: "CRf_RK7PWCI", title: "video 20" },
+  { id: "vwspB3kQN1k", title: "video 21" },
 ];

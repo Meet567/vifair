@@ -422,13 +422,13 @@ $(document).ready(function () {
 document.addEventListener("DOMContentLoaded", () => {
   const faqContainer = document.querySelector(".faq-accordion");
 
-  // ✅ Check if .faq-accordion element exists
+  // Check if .faq-accordion element exists
   if (!faqContainer) {
     console.error("Error: .faq-accordion element not found.");
     return;
   }
 
-  // ✅ Check if faqData exists and is an array
+  // Check if faqData exists and is an array
   if (
     typeof faqData === "undefined" ||
     !Array.isArray(faqData) ||
@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // ✅ Populate FAQ dynamically
+  // Populate FAQ dynamically
   faqContainer.innerHTML = faqData
     .map(
       (faq, index) => `
@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
     )
     .join("");
 
-  // ✅ Attach event listeners safely
+  //Attach event listeners safely
   document.querySelectorAll(".faq-accordion-item-header").forEach((header) => {
     header.addEventListener("click", function () {
       const body = this.nextElementSibling;
@@ -541,7 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
     generateSegments(jobProfileData, "jobProfile");
   }
 
-  // ✅ Animate Counting Numbers
+  // Animate Counting Numbers
   let counters = document.querySelectorAll(".visitor-segmentation-count");
   let observer = new IntersectionObserver(
     (entries) => {
@@ -632,72 +632,134 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // video js start
 document.addEventListener("DOMContentLoaded", () => {
-  // Wait until the element is available
-  const waitForElement = (selector, callback, interval = 100) => {
-    const checkElement = setInterval(() => {
-      const element = document.getElementById(selector);
-      if (element) {
-        clearInterval(checkElement);
-        callback(element);
-      }
-    }, interval);
-  };
+  const carousel = document.getElementById("video-carousel");
 
-  // Ensure "videos" is defined and an array
-  if (typeof videos === "undefined" || !Array.isArray(videos)) {
-    console.error("Error: videos is not defined or not an array.");
-    return;
-  }
+  // Generate video thumbnails dynamically
+  for (let i = 0; i < videos.length; i++) {
+    const videoItem = document.createElement("div");
+    videoItem.classList.add("item");
 
-  // Load the video container only when it's available
-  waitForElement("video-container", (container) => {
-    const modal = document.getElementById("videoModal");
-    const iframe = document.getElementById("videoFrame");
-    const closeButton = document.querySelector(".close-btn");
+    // Get the first and second video (if available)
+    const video1 = videos[i];
+    const video2 = videos2[i];
 
-    videos.forEach((video) => {
-      const videoCard = document.createElement("div");
-      videoCard.classList.add("video-card");
+    videoItem.innerHTML = `
+      <div class="video-pair">
+        <!-- First Video -->
+        <div class="video-item" data-video-id="${video1.id}">
+          <div class="video-card">
+            <div class="video-thumbnail-container video-thumbnail-hover">
+              <img src="assets/images/video-thumbnil.webp" class="video-thumbnail" alt="${
+                video1.title
+              }" />
+              <div class="video-play-btn">
+                <img src="assets/images/play-button.png" alt="Play" width="60"/>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      videoCard.innerHTML = `
-        <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="Thumbnail">
-        <div class="video-title">${video.title}</div>
-      `;
+        <!-- Second Video (if available) -->
+        ${
+          video2
+            ? `
+        <div class="video-item mt-3" data-video-id="${video2.id}">
+          <div class="video-card">
+            <div class="video-thumbnail-container video-thumbnail-hover">
+              <img src="assets/images/video-thumbnil.webp" class="video-thumbnail" alt="${video2.title}" />
+              <div class="video-play-btn">
+                <img src="assets/images/play-button.png" alt="Play" width="60"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        `
+            : ""
+        }
+      </div>
+    `;
 
-      videoCard.addEventListener("click", () => openModal(video.id));
-      container.appendChild(videoCard);
+    // Attach event listeners for opening the modal
+    const videoElements = videoItem.querySelectorAll(".video-item");
+
+    videoElements.forEach((videoElement) => {
+      const videoId = videoElement.getAttribute("data-video-id");
+
+      videoElement.addEventListener("click", () => openVideoModal(videoId));
+
+      // Also make sure clicking on the play button triggers the modal
+      const playButton = videoElement.querySelector(".video-play-btn");
+      playButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent click bubbling
+        openVideoModal(videoId);
+      });
     });
 
-    window.openModal = function (videoId) {
-      if (modal && iframe) {
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        modal.style.display = "flex";
-      } else {
-        console.error("Error: Modal or iframe not found.");
-      }
-    };
+    carousel.appendChild(videoItem);
+  }
 
-    window.closeModal = function () {
-      if (modal && iframe) {
-        iframe.removeAttribute("src"); // Prevents unnecessary reloads
-        modal.style.display = "none";
-      }
-    };
+  // Initialize Owl Carousel
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: true,
+    dots: false,
+    responsive: {
+      0: { items: 1 },
+      576: { items: 2 },
+      768: { items: 2 },
+      992: { items: 3 },
+    },
+  });
 
-    if (closeButton) {
-      closeButton.addEventListener("click", closeModal);
+  // Custom navigation handlers
+  $("#video-carousel-prev").click(function () {
+    $(".owl-carousel").trigger("prev.owl.carousel");
+  });
+
+  $("#video-carousel-next").click(function () {
+    $(".owl-carousel").trigger("next.owl.carousel");
+  });
+
+  // Open modal function
+  window.openVideoModal = function (videoId) {
+    const modal = document.getElementById("videoModal");
+    const player = document.getElementById("videoPlayer");
+    if (modal && player) {
+      player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1`;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
     } else {
-      console.error("Error: Close button not found.");
+      console.error("Error: Modal or video player not found.");
     }
+  };
 
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
+  // Close modal function
+  window.closeVideoModal = function () {
+    const modal = document.getElementById("videoModal");
+    const player = document.getElementById("videoPlayer");
+    if (modal && player) {
+      player.src = "";
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  // Close modal when clicking outside
+  window.onclick = function (event) {
+    if (event.target === document.getElementById("videoModal")) {
+      closeVideoModal();
+    }
+  };
+
+  // Close modal with ESC key
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeVideoModal();
+    }
   });
 });
 
 //video js end
-// ✅ Initialize AOS
+//Initialize AOS
 AOS.init();

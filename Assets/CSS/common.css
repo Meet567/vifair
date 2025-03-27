@@ -11,6 +11,7 @@
 }
 body {
   font-family: myFont !important;
+  overflow-x: hidden;
 }
 .section-margin {
   margin: 40px 0px 0px 0px;
