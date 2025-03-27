@@ -246,6 +246,38 @@ if (!isset($_SESSION['user_id'])) {
                       </ul>
                   </div>
               </li>
+               <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#contact">
+                      <i class="fas fa-images"></i>
+                      <p>contact</p>
+                      <span class="caret"></span>
+                  </a>
+                  <div class="collapse" id="contact">
+                      <ul class="nav nav-collapse">
+                          <li>
+                              <a href="contactData/Contact_table.php">
+                                  <span class="sub-item">Contact data</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#vendor">
+                      <i class="fas fa-images"></i>
+                      <p>vendor</p>
+                      <span class="caret"></span>
+                  </a>
+                  <div class="collapse" id="vendor">
+                      <ul class="nav nav-collapse">
+                          <li>
+                              <a href="vendorData/vendor_table.php">
+                                  <span class="sub-item">Vendor data</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#maps">
                   <i class="fas fa-map-marker-alt"></i>

@@ -120,7 +120,7 @@ echo ($result->num_rows > 0) ?
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Information</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibition
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibition_venue.php">Exhibition
                                             Venue</a></li>
 
                                    <?php 
@@ -151,6 +151,7 @@ echo ($result->num_rows > 0) ?
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Registration</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="vendor_reg.php">Vendor Registration
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
                                             Registration</a></li>
                                     <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor

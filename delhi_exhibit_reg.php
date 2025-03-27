@@ -166,12 +166,7 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                     <div class="col-6">
                         <label for="exampleFormControlTextarea1" class="form-title-sub primary-title">
                             Country</label>
-                    <select class="form-select form-select-sm inputForm-border" name="country" required>
-                        <option value="">-Select-</option>
-                        <option value="India">India</option>
-                        <option value="USA">USA</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Brazil">Brazil</option>
+                    <select id="countryDropdown"  class="form-select form-select-sm inputForm-border" name="country" required>
                     </select>
                     </div>
                 </div>
@@ -261,25 +256,21 @@ unset($_SESSION['old_input'], $_SESSION['errors']);
                 </span>
                 <p class="section-text-title impo">Please note that this is only an Exhibitor Request Form and not Exhibitor Contract Form. Our team will contact you immediately with further details once you fill in this request form. You become an Exhibitor only after your Exhibitor Contract Form, along with payment is accepted by us.</p>
                 <p class="section-text-title impo">If you find any difficulty in filling Exhibitor Request Form, for assistance or queries, please contact:</p>
-                <div class="row">
-                     <!-- Mumbai Contact -->
+               <div class="row">
                      <div class="col-md-6 contact-box">
-            <h5 class="secondary-title">Delhi:</h5>
-            <span class="section-text-title impo"><strong>Mr. Yash Menghani</strong></span><br>
-            <span class="section-text-title impo"><strong>Tel. No:</strong> <a href="tel:+91-11-2571 411">+91-11-2571 411</a></span><br>
-            <span class="section-text-title impo"><strong>Mob. No:</strong> <a href="Mob:+91 93 119 60399">+91 93 119 60399</a></span><br>
-            <span class="section-text-title impo"><strong>Email:</strong> <a href="mailto:yash.menghani@hghindia.com" class="email-link">yash.menghani@hghindia.com</a></span>
+            <h5 class="secondary-title">Ahmedabad</h5>
+            <span class="section-text-title impo"><strong>Ms. Jyoti Bharadwaj</strong></span><br>
+            <span class="section-text-title impo"><strong>Mob. No:</strong> <a href="Mob:+91 85116 84938">+91 85116 84938</a></span><br>
+            <span class="section-text-title impo"><strong>Email:</strong> <a href="mailto:info@vibrantindiafair.com" class="email-link">info@vibrantindiafair.com</a></span>
                     </div>
 
-                    <!-- Delhi Contact -->
                     <div class="col-md-6 mt-2 contact-box">
-            <h5 class="secondary-title">Delhi:</h5>
-            <span class="section-text-title impo"><strong>Mr. Yash Menghani</strong></span><br>
-            <span class="section-text-title impo"><strong>Tel. No:</strong> <a href="tel:+91-11-2571 411">+91-11-2571 411</a></span><br>
-            <span class="section-text-title impo"><strong>Mob. No:</strong> <a href="Mob:+91 93 119 60399">+91 93 119 60399</a></span><br>
-            <span class="section-text-title impo"><strong>Email:</strong> <a href="mailto:yash.menghani@hghindia.com" class="email-link">yash.menghani@hghindia.com</a></span>
+            <h5 class="secondary-title">Ahmedabad</h5>
+            <span class="section-text-title impo"><strong>Mr. Naveen Chaturvedi</strong></span><br>
+            <span class="section-text-title impo"><strong>Mob. No:</strong> <a href="Mob:+91 74339 30669">+91 74339 30669</a></span><br>
+            <span class="section-text-title impo"><strong>Email:</strong> <a href="mailto:info@vibrantindiafair.com" class="email-link">info@vibrantindiafair.com</a></span>
                     </div>
-               </div>   
+               </div>    
 
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="exhibit-btn" name="submit">Registration</button>
