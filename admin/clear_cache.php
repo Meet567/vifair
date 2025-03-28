@@ -1,18 +1,20 @@
 <?php
-// clear_cache.php
 session_start();
+header("Content-Type: application/json"); // Ensure JSON response
 
-// Check if the user is logged in and has admin privileges
+// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    die("Unauthorized access.");
+    echo json_encode(["status" => "error", "message" => "Unauthorized access."]);
+    exit;
 }
 
 // Define the cache directory
-$cacheDir = __DIR__ . '/cache/'; // Adjust the path to your cache directory
+$cacheDir = __DIR__ . '/cache/';
 
 // Check if the cache directory exists
 if (!is_dir($cacheDir)) {
-    die("Cache directory not found.");
+    echo json_encode(["status" => "error", "message" => "Cache directory not found."]);
+    exit;
 }
 
 // Delete all files in the cache directory
@@ -23,15 +25,7 @@ foreach ($files as $file) {
     }
 }
 
-// Optionally, you can also clear specific cache files or directories
-// Example: Clear a specific cache file
-// $specificCacheFile = __DIR__ . '/cache/specific_file.cache';
-// if (file_exists($specificCacheFile)) {
-//     unlink($specificCacheFile);
-// }
-
-// Return a success message
-echo json_encode(['status' => 'success', 'message' => 'Cache cleared successfully.']);
+// Return success message
+echo json_encode(["status" => "success", "message" => "Cache cleared successfully."]);
 exit;
-
 ?>

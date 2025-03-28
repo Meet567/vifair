@@ -169,6 +169,37 @@
                       </ul>
                   </div>
               </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#contact">
+                  <i class="fas fa-address-book"></i>
+                  <p>contact</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="contact">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="../contactData/contact_table.php">
+                        <span class="sub-item">Contact Data</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#vendor">
+                  <i class="fas fa-briefcase"></i>
+                  <p>vendor</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="vendor">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="../vendorData/vendor_table.php">
+                        <span class="sub-item">Vendor Data</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

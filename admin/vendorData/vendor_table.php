@@ -12,6 +12,11 @@
       href="../assets/img/VIFabicon.png"
       type="image/x-icon"
     />
+   <!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<!-- jQuery & DataTables JS -->
+
 
     <!-- Fonts and icons -->
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
@@ -37,7 +42,6 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
-    <!-- Bootstrap Notify -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.css">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -75,7 +79,7 @@
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
-               <li class="nav-item">
+              <li class="nav-item">
                 <a
                   data-bs-toggle="collapse"
                   href="#dashboard"
@@ -96,15 +100,15 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item active submenu">
+              <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#tables">
                   <i class="fas fa-table"></i>
                   <p>Tables</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse show" id="tables">
-                  <ul class="nav nav-collapse">
-                    <li class="active">
+                <div class="collapse " id="tables">
+                   <ul class="nav nav-collapse">
+                    <li>
                       <a href="../tables/chennai_exhibit_table.php">
                         <span class="sub-item">Chennai Exhibit Data</span>
                       </a>
@@ -127,7 +131,7 @@
                   </ul>
                 </div>
               </li>
-               <li class="nav-item">
+              <li class="nav-item">
                   <a data-bs-toggle="collapse" href="#gallery">
                       <i class="fas fa-images"></i>
                       <p>Gallery</p>
@@ -148,13 +152,13 @@
                       </ul>
                   </div>
               </li>
-               <li class="nav-item">
-                  <a data-bs-toggle="collapse" href="#pdfs">
+              <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#Pdfs">
                       <i class="far fa-file-pdf"></i>
                       <p>Pdfs</p>
                       <span class="caret"></span>
                   </a>
-                  <div class="collapse" id="pdfs">
+                  <div class="collapse" id="Pdfs">
                       <ul class="nav nav-collapse">
                           <li>
                               <a href="../pdfs/showpdfs.php">
@@ -168,7 +172,7 @@
                           </li>
                       </ul>
                   </div>
-              </li>
+              </li>  
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#contact">
                   <i class="fas fa-address-book"></i>
@@ -185,17 +189,18 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active submenu">
                 <a data-bs-toggle="collapse" href="#vendor">
                   <i class="fas fa-briefcase"></i>
                   <p>vendor</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="vendor">
+                <div class="collapse show" id="vendor">
                   <ul class="nav nav-collapse">
-                    <li>
+                    <li class="active">
                       <a href="../vendorData/vendor_table.php">
                         <span class="sub-item">Vendor Data</span>
+                       </a>
                     </li>
                   </ul>
                 </div>
@@ -288,7 +293,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">chennai_exhibit_data</h3>
+              <h3 class="fw-bold mb-3">Vendor</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="../admin_dashboard.php">
@@ -299,13 +304,13 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Tables</a>
+                  <a href="#">Vendor</a>
                 </li>
                 <li class="separator">
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="delhi_exhibit_table.php">delhi_exhibit_data</a>
+                  <a href="#">VendorData</a>
                 </li>
               </ul>
             </div>
@@ -314,133 +319,81 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="d-flex align-items-center">
-                      <h4 class="card-title">chennai_exhibit_data</h4>
-                    <a
-                        class="btn btn-primary btn-round ms-auto"
-                       href="../data_csv/delhi_visit_csv.php"  onclick="event.preventDefault();
-                $.notify({
-                    message: 'Exporting CSV...'
-                },{
-                    type: 'success',
-                    placement: {
-                        from: 'top',
-                        align: 'center'
-                    },
-                    delay: 2000
-                });
-                setTimeout(() => {
-                 window.location.href = this.href; }, 1000);" 
-                      ><i class="fa fa-download me-2"></i> 
-                       Export to CSV
-                      </a>
+                      <h4 class="card-title">Vendor_data</h4>
                     </div>
                   </div>
                   <div class="card-body">
-                   <div class="table-responsive">
-                      <table id="exhibitTable" class="display table table-striped table-hover">
+                    <div class="table-responsive">
+                      <table id="visitorTable" class="display table table-striped table-hover">
                           <thead>
-                              <tr>
+                              <tr> 
                                   <th>Id</th>
-                                  <th>Participation</th>
-                                  <th>Company Name</th>
-                                  <th>Booth Area</th>
-                                  <th>Booth Type</th>
-                                  <th>Opening</th>
-                                  <th>Brand Name</th>
-                                  <th>Product Detail</th>
-                                  <th>Title</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Designation</th>
-                                  <th>Mobile</th>
-                                  <th>Address</th>
-                                  <th>City</th>
-                                  <th>State</th>
-                                  <th>Postal Code</th>
-                                  <th>Country</th>
-                                  <th>Resource</th>
+                                  <th>FirstName</th>
+                                  <th>LastName</th>
+                                  <th>CompanyName</th>
                                   <th>Email</th>
+                                  <th>Phone</th>
+                                  <th>message</th>
                                   <th>Actions</th>
                               </tr>
                           </thead>
                           <tfoot>
-                            <tr>
-                              <th>Id</th>
-                              <th>Participation</th>
-                              <th>Company Name</th>
-                              <th>Booth Area</th>
-                              <th>Booth Type</th>
-                              <th>Opening</th>
-                              <th>Brand Name</th>
-                              <th>Product Detail</th>
-                              <th>Title</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Designation</th>
-                              <th>Mobile</th>
-                              <th>Address</th>
-                              <th>City</th>
-                              <th>State</th>
-                              <th>Postal Code</th>
-                              <th>Country</th>
-                              <th>Resource</th>
-                              <th>Email</th>
-                              <th>Actions</th>
-                            </tr>
+                              <tr> 
+                                  <th>Id</th>
+                                  <th>FirstName</th>
+                                  <th>LastName</th>
+                                  <th>CompanyName</th>
+                                  <th>Email</th>
+                                  <th>Phone</th>
+                                  <th>message</th>
+                                  <th>Actions</th>
+                              </tr>
                           </tfoot>
                           <tbody>
-                            <?php  
-                              include '../includes/db.php';
-                              $sql = "SELECT * FROM chennai_exhibit_data";
-                              $result = $conn->query($sql);
+    <?php  
+        include '../includes/db.php';
+        $sql = "SELECT * FROM vendors";
+        $result = $conn->query($sql);
 
-                              if ($result->num_rows > 0) {
-                                  while ($row = $result->fetch_assoc()) {  
-                                      echo '<tr>
-                                          <td>' . $row['id'] . '</td>
-                                          <td>' . $row['participation_type'] . '</td>
-                                          <td>' . $row['company_name'] . '</td>
-                                          <td>' . $row['booth_area'] . '</td>
-                                          <td>' . $row['booth_type'] . '</td>
-                                          <td>' . $row['opening_type'] . '</td>
-                                          <td>' . $row['brand_name'] . '</td>
-                                          <td>' . $row['product_detail'] . '</td>
-                                          <td>' . $row['title'] . '</td>
-                                          <td>' . $row['first_name'] . '</td>
-                                          <td>' . $row['last_name'] . '</td>
-                                          <td>' . $row['designation'] . '</td>
-                                          <td>' . $row['mobile'] . '</td>
-                                          <td>' . $row['address_line1'] . '</td>
-                                          <td>' . $row['city'] . '</td>
-                                          <td>' . $row['region'] . '</td>
-                                          <td>' . $row['postal_code'] . '</td>
-                                          <td>' . $row['country'] . '</td>
-                                          <td>' . $row['source'] . '</td>
-                                          <td>' . $row['email'] . '</td>
-                                          <td>
-                                              <div class="form-button-action">
-                                                <a href="../exhibit/chennai_exhibit_data.php?delete_id=' . $row['id'] . '" class="btn btn btn-danger btn-sm" onclick="return confirm(\'Are you sure you want to delete this record?\');">
-                                                      <i class="far fa-trash-alt"></i>
-                                                  </a>
-                                              </div>
-                                          </td>
-                                      </tr>';
-                                  }
-                              } else {
-                                  echo '<tr><td colspan="21">No data found</td></tr>';
-                              }
-                            ?>
-                          </tbody>
-                      </table>
-                   </div>
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {  
+                echo '<tr>
+                    <td>' . $row['id'] . '</td>
+                    <td>' . $row['first_name'] . '</td>
+                    <td>' . $row['last_name'] . '</td>
+                    <td>' . $row['company_name'] . '</td>
+                    <td>' . $row['email'] . '</td>
+                    <td>' . $row['phone'] . '</td>
+                    <td>' . $row['message'] . '</td>
+                    <td>
+                        <form method="POST" action="publish.php">
+                            <input type="hidden" name="vendor_id" value="' . $row['id'] . '">
+                            <select name="subclass">
+                                <option value="">Select</option>
+                                <option value="Fabrications">Fabrications</option>
+                                <option value="Logistics">Logistics</option>
+                            </select>
+                            <button type="submit" class="btn btn-success btn-sm">Publish</button>
+                        </form>
+                    </td>
+                </tr>';
+            }
+        } else {
+            echo '<tr><td colspan="8">No data found</td></tr>';
+        }
+    ?>
+</tbody>
+
+                        </table>
+                      </div>
+                    </div>
                   </div>
-                </div>
               </div>
             </div>
-          </div>
+           </div>
         </div>
 
-         <footer class="footer">
+        <footer class="footer">
           <div class="container-fluid d-flex justify-content-around">
             <div class="copyright">
               ©2025 All rights reserved <i class="fa fa-heart heart text-danger"></i> by
@@ -465,9 +418,9 @@
     <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
     <!-- Kaiadmin JS -->
     <script src="../assets/js/kaiadmin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="../assets/js/setting-demo2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
     <script>
       $(document).ready(function () {
         $("#basic-datatables").DataTable({});
@@ -525,21 +478,21 @@
         });
       });
 
-      $(document).ready(function () {
-          $('#exhibitTable').DataTable({
-              "paging": true,       // Enable pagination
-              "searching": true,    // Enable search box
-              "ordering": true,     // Enable sorting
-              "info": true,         // Show table info
-              "lengthMenu": [5, 10, 25, 50, 100], // Rows per page options
-              "language": {
-                  "search": "Search records:", // Custom search box text
-                  "lengthMenu": "Show _MENU_ records per page",
-                  "info": "Showing _START_ to _END_ of _TOTAL_ records",
-              }
-          });
-      });
+    $(document).ready(function () {
+        $('#visitorTable').DataTable({
+            "paging": true,       // Enable pagination
+            "searching": true,    // Enable search box
+            "ordering": true,     // Enable sorting
+            "info": true,         // Show table info
+            "lengthMenu": [5, 10, 25, 50, 100], // Rows per page options
+            "language": {
+                "search": "Search records:", // Custom search box text
+                "lengthMenu": "Show _MENU_ records per page",
+                "info": "Showing _START_ to _END_ of _TOTAL_ records",
+            }
+        });
+    });
+</script>
 
-    </script>
   </body>
 </html>

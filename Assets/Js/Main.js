@@ -763,3 +763,111 @@ document.addEventListener("DOMContentLoaded", () => {
 //video js end
 //Initialize AOS
 AOS.init();
+
+// exhibition venue
+function showCustomEvent(day) {
+  // Remove active class from all buttons
+  document
+    .querySelectorAll(".venue-event-buttons .event-btn")
+    .forEach((button) => button.classList.remove("active"));
+
+  // Add active class to clicked button
+  document
+    .querySelector(`.venue-event-buttons .event-btn:nth-child(${day})`)
+    .classList.add("active");
+
+  // Hide all event content
+  document
+    .querySelectorAll(".venue-event-content, .venue-event-content-2")
+    .forEach((content) => {
+      content.style.opacity = "0";
+      setTimeout(() => {
+        content.classList.remove("active");
+      }, 300); // Delay to match transition
+    });
+
+  // Show selected event content with animation
+  setTimeout(() => {
+    document.getElementById(`venue-event-${day}-map`).classList.add("active");
+    document
+      .getElementById(`venue-event-${day}-details`)
+      .classList.add("active");
+
+    // Ensure opacity change happens after display change
+    setTimeout(() => {
+      document.getElementById(`venue-event-${day}-map`).style.opacity = "1";
+      document.getElementById(`venue-event-${day}-details`).style.opacity = "1";
+    }, 50);
+  }, 300);
+}
+
+// Define the countries array globally
+const countries = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Argentina",
+  "Australia",
+  "Austria",
+  "Bangladesh",
+  "Belgium",
+  "Brazil",
+  "Canada",
+  "China",
+  "Denmark",
+  "Egypt",
+  "France",
+  "Germany",
+  "India",
+  "Indonesia",
+  "Italy",
+  "Japan",
+  "Malaysia",
+  "Mexico",
+  "Nepal",
+  "Netherlands",
+  "Pakistan",
+  "Philippines",
+  "Russia",
+  "Saudi Arabia",
+  "South Africa",
+  "Spain",
+  "Sri Lanka",
+  "Sweden",
+  "Thailand",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Vietnam",
+  "Zimbabwe",
+];
+
+// Function to populate the dropdown
+function loadCountries() {
+  let countrySelect = document.getElementById("countryDropdown");
+
+  // Ensure the element exists before proceeding
+  if (!countrySelect) {
+    console.error("Dropdown element not found!");
+    return;
+  }
+
+  // Add default option
+  let defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "-Select-";
+  countrySelect.appendChild(defaultOption);
+
+  // Add countries dynamically
+  countries.forEach((country) => {
+    let option = document.createElement("option");
+    option.value = country;
+    option.textContent = country;
+    countrySelect.appendChild(option);
+  });
+}
+
+// Run function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", loadCountries);

@@ -27,7 +27,7 @@
   left: 0;
   margin: auto;
 }
-.why-exhibit-banner-box .why-exhibit-banner-thumbnail::before {
+.hotel-banner-box .hotel-banner-thumbnail::before {
   content: "";
   position: absolute;
   top: 0;

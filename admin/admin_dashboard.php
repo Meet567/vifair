@@ -166,6 +166,38 @@ if (!isset($_SESSION['user_id'])) {
                       </ul>
                   </div>
               </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#contact">
+                  <i class="fas fa-address-book"></i>
+                  <p>contact</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="contact">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="../contactData/contact_table.php">
+                        <span class="sub-item">Contact Data</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#vendor">
+                      <i class="fas fa-briefcase"></i>
+                      <p>vendor</p>
+                      <span class="caret"></span>
+                  </a>
+                  <div class="collapse" id="vendor">
+                      <ul class="nav nav-collapse">
+                          <li>
+                              <a href="vendorData/vendor_table.php">
+                                  <span class="sub-item">Vendor data</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -204,9 +236,6 @@ if (!isset($_SESSION['user_id'])) {
             class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
           >
             <div class="container-fluid">
-              <div>
-                <h3 class="fw-bold mb-3">Vibrant India Fair-Dashboard</h3>
-              </div>
               <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
                 <li class="nav-item topbar-user dropdown hidden-caret">
                   <a
@@ -460,9 +489,9 @@ if (!isset($_SESSION['user_id'])) {
     <script src="assets/js/plugin/jsvectormap/world.js"></script>
 
     <!-- Sweet Alert -->
-    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-<!-- SweetAlert2 JS -->
+    <!-- <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Kaiadmin JS -->
     <script src="assets/js/kaiadmin.min.js"></script>
 
@@ -556,43 +585,45 @@ if (!isset($_SESSION['user_id'])) {
 </script>
 <!-- clear chach buuton js -->
 <script>
- document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("clearCacheBtn").addEventListener("click", function () {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "This will clear all cached data. This action cannot be undone!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, clear cache!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        fetch("clear_cache.php", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            }
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            Swal.fire({
-                                title: data.status === "success" ? "Success!" : "Error!",
-                                text: data.message,
-                                icon: data.status === "success" ? "success" : "error"
-                            });
-                        })
-                        .catch(() => {
-                            Swal.fire({
-                                title: "Error!",
-                                text: "An error occurred while clearing the cache.",
-                                icon: "error"
-                            });
-                        });
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("clearCacheBtn").addEventListener("click", function () {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This will clear all cached data. This action cannot be undone!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, clear cache!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch("clear_cache.php", {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json"
                     }
+                })
+                .then(response => response.json()) // Ensure JSON response is properly handled
+                .then(data => {
+                    Swal.fire({
+                        title: data.status === "success" ? "Success!" : "Error!",
+                        text: data.message,
+                        icon: data.status === "success" ? "success" : "error"
+                    });
+                })
+                .catch(error => {
+                    console.error("Fetch Error:", error);
+                    Swal.fire({
+                        title: "Error!",
+                        text: "An error occurred while clearing the cache.",
+                        icon: "error"
+                    });
                 });
-            });
+            }
         });
-    </script>
+    });
+});
+</script>
+
   </body>
 </html>

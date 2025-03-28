@@ -130,45 +130,27 @@
             </div>
             <div class="col-lg-6 col-md-7 col-sm-6 col-12">
               <div class="secondary-title text-center">Tell Me Your Message</div>
-              <form class="mt-4">
-                <div class="row">
-                  <div class="mb-3">
-                    <input
-                      type="name"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      placeholder="First name"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      placeholder="Last name"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <input
-                      type="subject"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <textarea
-                      class="form-control"
-                      rows="3"
-                      id="validationTextarea"
-                      placeholder="Message"
-                    ></textarea>
-                  </div>
-                  <div class="d-grid gap-2">
-                    <a href="#" class="contact-us-submit">SEND MESSAGE</a>
-                  </div>
-                </div>
-              </form>
+             <form action="admin/contactData/contact_data.php" method="POST" class="mt-4">
+    <div class="row">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="first_name" placeholder="First Name" required />
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required />
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Email" required />
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" name="message" rows="3" placeholder="Message" required></textarea>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="contact-us-submit">SEND MESSAGE</button>
+        </div>
+    </div>
+</form>
+
+
             </div>
           </div>
         </div>

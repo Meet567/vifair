@@ -1,0 +1,48 @@
+/* show registration form vendor css start */
+.vendor-form-container {
+  max-width: 400px;
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 50px auto;
+}
+.vendor-form-group {
+  margin-bottom: 15px;
+}
+.vendor-form-control {
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--light-color);
+}
+.vendor-btn-submit {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+.vendor-btn-submit:hover {
+  background-color: var(--primary-color);
+}
+/* show registration form vendor css end */
+
+/* show registration vendor css start */
+.accordion-button {
+  background-color: var(--primary-color) !important;
+  color: var(--light-color) !important;
+  border: none;
+}
+
+.accordion-button:hover {
+  background-color: var(--primary-color);
+}
+/* .accordion-collapse {
+  background-color: var(--primary-color);
+} */
+/* .accordion-body {
+  background-color: #e0f2f1;
+} */
+/* show registration vendor css end */

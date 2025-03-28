@@ -113,18 +113,44 @@
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Information</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibition Venue</a></li>
-                                    <?php echo generatePdfLinks($conn, 'pressrelease', 'Press Release'); ?>
-                                    <?php echo generatePdfLinks($conn, 'newsletter', 'Newsletter'); ?>
-                                </ul>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibition_venue.php">Exhibition
+                                            Venue</a></li>
+
+                                   <?php 
+$sql = "SELECT file_path FROM pdf_files WHERE category = 'pressrelease'";
+$result = $conn->query($sql) or die("SQL Error: " . $conn->error);
+
+echo ($result->num_rows > 0) ? 
+    implode('', array_map(fn($row) => "<li class='submenu-list-menu'>
+        <a class='drop-link-menubar' href='http://localhost/vifair/{$row['file_path']}' target='_blank'>
+            Press Release
+        </a></li>", $result->fetch_all(MYSQLI_ASSOC))) 
+    : "<li class='list-group-item text-danger'>No PDFs found in Press Release category.</li>";
+?>
+                                       <?php 
+$sql = "SELECT file_path FROM pdf_files WHERE category = 'newsletter'";
+$result = $conn->query($sql) or die("SQL Error: " . $conn->error);
+
+echo ($result->num_rows > 0) ? 
+    implode('', array_map(fn($row) => "<li class='submenu-list-menu'>
+        <a class='drop-link-menubar' href='http://localhost/vifair/{$row['file_path']}' target='_blank'>
+            Newsletter
+        </a></li>", $result->fetch_all(MYSQLI_ASSOC))) 
+    : "<li class='list-group-item text-danger'>No PDFs found in Newsletter category.</li>";
+?>
+                                    </ul>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Registration</a>
                             <div class="dropdown-submenu">
                                 <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor Registration</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor Registration</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Registered Vendor</a></li>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="vendor_reg.php">Vendor Registration
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
+                                            Registration</a></li>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
+                                            Registration</a></li>
+                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="registration_vendor.php">Registered
+                                            Vendor</a></li>
                                 </ul>
                             </div>
                         </li>

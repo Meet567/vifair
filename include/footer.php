@@ -168,7 +168,8 @@
                 <div class="footer-whatsapp-body">
                     <div class="footer-whatsapp-box">
                         <picture>
-                            <a class="footer-whatsapp-icon-link" href="#">
+                            <a class="footer-whatsapp-icon-link"  href="https://api.whatsapp.com/send?phone=919924488938&text=Hello%20Vibrant%20India%20Fair%20Like%20to%20know%20more%20information%20about%20Exhibition%20Venue,%20https://vibrantindiafair.com/exhibition-venue/"
+        target="_blank">
                                 <img class="footer-whatsapp-img" src="assets/images/icon/whatsapp-icon.png" alt="">
                             </a>
                         </picture>
