@@ -24,9 +24,14 @@ header {
 .dropdown-submenu {
   display: none;
 }
+.menubar-list-menu .drop-down-submenu-main-box {
+  position: absolute;
+  padding: 27px 0px 0px 0px;
+  background-color: transparent;
+}
 .menubar-unlist-box .menubar-list-menu:hover .dropdown-submenu {
   display: block;
-  position: absolute;
+  /* position: absolute; */
   background-color: var(--primary-color);
   margin-top: 7px;
   z-index: 2;
@@ -40,8 +45,13 @@ header {
 .dropdown-submenu .submenu-unlist .submenu-list-menu {
   display: block;
   padding: 5px;
+  position: relative;
 }
-
+.submenu-unlist .submenu-list-menu.header-active {
+  background-color: #cce9e942 !important;
+  color: var(--light-color) !important;
+  border-radius: 5px;
+}
 .menubar-unlist-box
   .menubar-list-menu
   .dropdown-submenu
@@ -173,6 +183,32 @@ header {
   bottom: 0;
   left: 0;
 }
+
+.visitor-megamenu-main-body .exhibit-megamenu-sub-box {
+  /* background-color: var(--secondary-color); */
+  background-image: url("../images/exhibit-registration.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  padding: 20px 0px;
+  position: relative;
+}
+.visitor-megamenu-main-body .exhibit-megamenu-sub-box::before {
+  content: "";
+  position: absolute;
+  background-image: url("../images/icon/content-marketing-cta-bg.webp");
+  background-color: #277474b0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .visitor-primary-heading {
   font-size: 20px;
   font-weight: 600;
@@ -261,11 +297,16 @@ header {
   .menu-toggle {
     font-size: 14px !important;
   }
+
+  .menubar-list-menu .drop-down-submenu-main-box {
+    position: relative;
+    padding: 0px;
+  }
   .menubar-unlist-box .menubar-list-menu:hover .dropdown-submenu {
     display: block;
-    position: relative;
+    /* position: relative; */
     background-color: var(--primary-color);
-    margin-top: 7px;
+    /* margin-top: 7px; */
     z-index: 2;
     padding: 10px;
   }
@@ -304,6 +345,8 @@ header {
     background: var(--secondary-color);
     text-align: left;
     z-index: 2;
+    max-height: 100vh;
+    overflow-y: auto;
   }
   .menubar-unlist-box .menubar-list-menu .link-menubar {
     color: var(--primary-color);
@@ -331,11 +374,16 @@ header {
     border: none;
     font-size: 22px;
   }
+
+  .menubar-list-menu .drop-down-submenu-main-box {
+    position: relative;
+    padding: 0px;
+  }
   .menubar-unlist-box .menubar-list-menu:hover .dropdown-submenu {
     display: block;
-    position: relative;
+    /* position: relative; */
     background-color: var(--primary-color);
-    margin-top: 7px;
+    /* margin-top: 7px; */
     z-index: 2;
     padding: 10px;
   }
@@ -348,6 +396,22 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
   /* --- End Mega Menu ---  */
+  .submenu-drop-down-icon {
+    width: 10px;
+    left: 190px;
+    position: absolute;
+    top: 12px;
+  }
+  .submenu-list-menu:hover .dropdown-side-submenu-main-box {
+    display: block;
+    position: relative !important;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding: 0px 0px 0px 15px;
+    width: 100%;
+  }
 }
 
 /* Large Devices (993px to 1200px) */
@@ -367,3 +431,29 @@ header {
 }
 
 /* ----- End Header ------ */
+
+.submenu-drop-down-icon {
+  width: 10px;
+  right: -3px;
+  position: absolute;
+  top: 12px;
+}
+.submenu-list-menu .dropdown-side-submenu-main-box {
+  display: none;
+}
+.dropdown-side-submenu {
+  background-color: var(--primary-color);
+  padding: 5px;
+  width: max-content;
+  margin-left: 2px;
+}
+.submenu-list-menu:hover .dropdown-side-submenu-main-box {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  right: -176px;
+  top: 0;
+  width: 100%;
+  padding: 5px 5px 5px 15px;
+  z-index: 2;
+}

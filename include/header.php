@@ -56,97 +56,158 @@
                 <div class="header-menubar-box" id="navLinks">
                     <ul class="menubar-unlist-box">
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Home</a>
-                            <div class="dropdown-submenu">
-                                 <div class="dropdown-subumenu-box">
-                                    <ul class="submenu-unlist">
-                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India Magazine</a></li>
-                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India 2025</a></li>
-                                    </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <div class="dropdown-subumenu-box">
+                                        <ul class="submenu-unlist">
+                                            <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India Magazine</a></li>
+                                            <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Vibrant India 2025</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="about_us.php">About Us</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="about_us.php">About Vibrant India</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About Organizer</a></li>
-                                    <?php echo generatePdfLinks($conn, 'report', 'Post Show Report'); ?>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="about.php">Show Highlights</a></li>
-                                </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="about_us.php">About Vibrant India</a></li>
+                                        <!-- <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">About Organizer</a></li> -->
+                                        <?php echo generatePdfLinks($conn, 'report', 'Post Show Report'); ?>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="about.php">Show Highlights</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Exhibitors</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_exhibit.php">Why Exhibit</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibitor_profile.php">Exhibitor Profile</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Brochure</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor Profile</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Sponsorship Opportunity</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Participation Charges</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor Registration</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Floor Plan</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Directory Advertisement</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor inquiry</a></li>
-                                </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_exhibit.php">Why Exhibit</a>
+                                        </li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibitor_profile.php">Exhibitor
+                                                Profile</a></li>
+                                        <!-- <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Brochure</a>
+                                        </li> -->
+                                        <!-- <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
+                                                Profile</a></li> -->
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="sponsorship_opportunity.php">Sponsorship
+                                                Opportunity</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="participation_charges.php">Participation
+                                                Charges</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
+                                                Registration</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Floor Plan</a>
+                                            <img class="submenu-drop-down-icon" src="assets/images/icon/next.png" alt="">
+                                            <div class="dropdown-side-submenu-main-box">
+                                                <div class="dropdown-side-submenu">
+                                                    <ul class="submenu-unlist">
+                                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Yashobhoomi Dwarka, Delhi Floor Plan</a></li>
+                                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Channai Trade Center, Channai tamilnadu India</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Directory Advertisement</a>
+                                            <img class="submenu-drop-down-icon" src="assets/images/icon/next.png" alt="">
+                                            <div class="dropdown-side-submenu-main-box">
+                                                <div class="dropdown-side-submenu">
+                                                    <ul class="submenu-unlist">
+                                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Indian Advertisement</a></li>
+                                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Overseas Advertisement</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
+                                                inquiry</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Visitors</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_visit.php">Why Visit ?</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="visitor_profile.php">Visitor Profile</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor Registration</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visiting Hours</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">General Facilities</a></li>
-                                </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="why_visit.php">Why Visit ?</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="visitor_profile.php">Visitor Profile</a></li>
+                                        <!-- <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor Registration</a></li> -->
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="visiting_hours.php">Visiting Hours</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="general_facilities.php">General Facilities</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Gallery</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="gallery.php">Photo Gallery</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="video.php">Video Gallery</a></li>
-                                </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="gallery.php">Photo Gallery</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="video.php">Video Gallery</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Information</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibition_venue.php">Exhibition
-                                            Venue</a></li>
-                                            <?php echo generatePdfLinks($conn, 'pressrelease', 'Press Release'); ?>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="exhibition_venue.php">Exhibition
+                                                Venue</a></li>
+                                                <?php echo generatePdfLinks($conn, 'pressrelease', 'Press Release'); ?>
                                        <?php echo generatePdfLinks($conn, 'newsletter', 'Newsletter'); ?>
-                                    </ul>
+                                        </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Registration</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="vendor_reg.php">Vendor Registration
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
-                                            Registration</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
-                                            Registration</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="registration_vendor.php">Registered
-                                            Vendor</a></li>
-                                </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="vendor_reg.php">Vendor Registration
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Visitor
+                                                Registration</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="#">Exhibitor
+                                                Registration</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="registration_vendor.php">Registered
+                                                Vendor</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="menubar-list-menu"><a class="link-menubar" href="#">Contact</a>
-                            <div class="dropdown-submenu">
-                                <ul class="submenu-unlist">
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="contact-us.php">Contact Us</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="needTeam.php">Need Team Support</a></li>
-                                    <li class="submenu-list-menu"><a class="drop-link-menubar" href="privacy&policy.php">Privacy & Policy</a></li>
-                                </ul>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="contact-us.php">Contact Us</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="needTeam.php">Need Team Support</a></li>
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="privacy&policy.php">Privacy & Policy</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="stay&hotel.php">Stay and Hotel</a></li>
-                        <li class="menubar-list-menu"><a class="link-menubar" href="magazine.php">Magazine Latest Edition</a></li>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="about_us.php">Accommodations</a>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="stay&hotel.php">Stay and Hotel</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menubar-list-menu"><a class="link-menubar" href="magazine.php">Magazine Latest</a>
+                            <div class="drop-down-submenu-main-box">
+                                <div class="dropdown-submenu">
+                                    <ul class="submenu-unlist">
+                                        <li class="submenu-list-menu"><a class="drop-link-menubar" href="hotel.php">Magazine Latest Edition</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div class="header-form-btn-box">
+                <div class="header-form-btn-box">       
                     <ul class="form-unlist-box">
                         <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO VISIT</a>
                             <div class="visitor-megamenu-main-body">
@@ -181,7 +242,7 @@
                         </li>
                         <li class="form-list-btn"><a class="link-form-btn" href="#">I WANT TO EXHIBIT</a>
                             <div class="visitor-megamenu-main-body">
-                                <div class="visitor-megamenu-sub-box">
+                                <div class="exhibit-megamenu-sub-box">
                                     <div class="visitor-primary-heading">EXHIBIT REGISTRATION</div>
                                     <div class="row g-3">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
